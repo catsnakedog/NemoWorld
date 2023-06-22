@@ -38,7 +38,6 @@ public class EventTriggerEX : MonoBehaviour
 
     }
     protected virtual void OnPointerDown(PointerEventData data) { }
-
     protected virtual void OnDrag(PointerEventData data) { }
     protected virtual void OnEndDrag(PointerEventData data) { }
     protected virtual void OnPointerClick(PointerEventData data) { }

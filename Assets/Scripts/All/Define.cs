@@ -9,12 +9,16 @@ public class Define
         Level1,
         Level2,
         Level3,
-        MaxCount
+        MaxCount 
     }
 
     public enum UItype
     {
         MainLobby,
+        Option,
+        Help,
+        Story,
+        Adventure,
         MaxCount
     }
 }

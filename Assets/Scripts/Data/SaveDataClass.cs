@@ -39,17 +39,23 @@ public class Cost
 {
     public int gold;
     public int energy;
+    public int test1;
+    public int test2;
 
-    public Cost(int gold, int energy)
+    public Cost(int gold, int energy, int test1, int test2)
     {
         this.gold = gold;
         this.energy = energy;
+        this.test1 = test1;
+        this.test2 = test2;
     }
 
     public Cost()
     {
         gold = 0;
         energy = 0;
+        test1 = 0;
+        test2 = 0;
     }
 }
 

@@ -19,6 +19,7 @@ public class MainController : MonoBehaviour
     {
         main = this.GetComponent<MainController>();
         resource = gameObject.AddComponent<ResourceController>();
+        UI = gameObject.AddComponent<UILevelController>();
 
         resource.init();
         UI.init();

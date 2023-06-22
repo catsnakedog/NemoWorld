@@ -6,7 +6,7 @@ public class UILevelController : MonoBehaviour
 {
     MainController main;
 
-    List<GameObject> Levels = new List<GameObject>();
+    public List<GameObject> Levels = new List<GameObject>();
 
     public void init()
     {
