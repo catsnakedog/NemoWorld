@@ -1,0 +1,26 @@
+{
+    "inGameData": {
+        "cost": {
+            "gold": 0,
+            "energy": 0,
+            "test1": 0,
+            "test2": 0
+        },
+        "itemList": {
+            "headItem": [
+                "HeadTest1"
+            ],
+            "clothItem": [
+                "ClothTest1"
+            ],
+            "wingItem": [
+                "WingTest1"
+            ]
+        },
+        "ch": {
+            "head": "",
+            "cloth": "",
+            "wing": ""
+        }
+    }
+}

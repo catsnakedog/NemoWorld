@@ -16,6 +16,10 @@ public class CostToggle : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        if(costInfoUI == null)
+        {
+            costInfoUI = GameObject.FindWithTag("Cost").transform.GetChild(1).gameObject;
+        }
         if(!isOn)
         {
             costInfoUI.SetActive(true);

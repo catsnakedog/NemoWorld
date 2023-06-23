@@ -27,11 +27,11 @@ public class CostText : MonoBehaviour
 
     void CostTextSetting()
     {
-        textDict["Gold"].text = Single.saveData.inGameData.cost.gold.ToString();
-        textDict["Gold1"].text = Single.saveData.inGameData.cost.gold.ToString();
-        textDict["Energy"].text = Single.saveData.inGameData.cost.energy.ToString();
-        textDict["Energy1"].text = Single.saveData.inGameData.cost.energy.ToString();
-        textDict["Test1"].text = Single.saveData.inGameData.cost.test1.ToString();
-        textDict["Test2"].text = Single.saveData.inGameData.cost.test2.ToString();
+        textDict["Gold"].text = Single.Data.inGameData.cost.gold.ToString();
+        textDict["Gold1"].text = Single.Data.inGameData.cost.gold.ToString();
+        textDict["Energy"].text = Single.Data.inGameData.cost.energy.ToString();
+        textDict["Energy1"].text = Single.Data.inGameData.cost.energy.ToString();
+        textDict["Test1"].text = Single.Data.inGameData.cost.test1.ToString();
+        textDict["Test2"].text = Single.Data.inGameData.cost.test2.ToString();
     }
 }

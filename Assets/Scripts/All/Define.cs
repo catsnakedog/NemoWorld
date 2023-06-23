@@ -19,6 +19,25 @@ public class Define
         Help,
         Story,
         Adventure,
+        Skin,
+        MaxCount
+    }
+
+    public enum SpriteDict
+    {
+        HeadTest1,
+        ClothTest1,
+        WingTest1,
+        MaxCount
+    }
+
+    public enum BGM
+    {
+        MaxCount
+    }
+
+    public enum SFX
+    {
         MaxCount
     }
 }

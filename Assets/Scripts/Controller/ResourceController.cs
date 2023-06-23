@@ -6,17 +6,15 @@ using static Define;
 
 public class ResourceController : MonoBehaviour
 {
-    DataManager Single;
-    MainController main;
 
     public List<GameObject> UItype { get; set; }
     public List<Material> EffectType { get; set; }
+    public Dictionary<string, Sprite> sprite { get; set; }
 
     public void init()
     {
-        Single = DataManager.Single;
-        main = MainController.main;
         UItypeSetting();
+        SpriteSetting();
     }
 
     void UItypeSetting()
@@ -25,6 +23,15 @@ public class ResourceController : MonoBehaviour
         for (int i = 0; i < (int)Define.UItype.MaxCount; i++)
         {
             UItype.Add(Resources.Load<GameObject>("Prefabs/UI/" + Enum.GetName(typeof(Define.UItype), i)));
+        }
+    }
+
+    void SpriteSetting()
+    {
+        sprite = new Dictionary<string, Sprite>();
+        for (int i = 0; i < (int)Define.SpriteDict.MaxCount; i++)
+        {
+            sprite.Add(Enum.GetName(typeof(Define.SpriteDict), i), Resources.Load<Sprite>("Sprite/" + Enum.GetName(typeof(Define.SpriteDict), i)));
         }
     }
 }

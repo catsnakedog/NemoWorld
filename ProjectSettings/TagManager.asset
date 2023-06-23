@@ -8,6 +8,9 @@ TagManager:
   - Level2
   - Level3
   - Cost
+  - Skin
+  - MainController
+  - DataManager
   layers:
   - Default
   - TransparentFX
