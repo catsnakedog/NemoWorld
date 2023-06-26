@@ -28,12 +28,16 @@ public class InGameData
     public Cost cost;
     public ItemList itemList;
     public Ch ch;
+    public List<string> storyClearList;
+    public List<string> adventureClearList;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList)
     {
         this.cost = cost;
         this.itemList = itemList;
         this.ch = ch;
+        this.storyClearList = storyClearList;
+        this.adventureClearList = adventureClearList;
     }
 
     public InGameData()
@@ -41,6 +45,8 @@ public class InGameData
         cost = new Cost();
         itemList = new ItemList();
         ch = new Ch();
+        storyClearList = new List<string>();
+        adventureClearList = new List<string>();
     }
 }
 

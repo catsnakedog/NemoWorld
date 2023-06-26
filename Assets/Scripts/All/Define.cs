@@ -20,6 +20,7 @@ public class Define
         Story,
         Adventure,
         Skin,
+        StorySelect,
         MaxCount
     }
 
