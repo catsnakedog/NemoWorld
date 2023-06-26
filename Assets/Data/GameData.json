@@ -21,6 +21,78 @@
             "head": "",
             "cloth": "",
             "wing": ""
-        }
+        },
+        "storyClearList": [],
+        "adventureClearList": [],
+        "stage": 0,
+        "gameMode": ""
+    },
+    "optionData": {
+        "volumeBGM": 0.0,
+        "volumeSFX": 0.0
+    },
+    "questData": {
+        "questInfo": [
+            {
+                "stage": 1,
+                "gameMode": "easy",
+                "info": "test info test123 test321",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            },
+            {
+                "stage": 2,
+                "gameMode": "easy",
+                "info": "test info test456 test322",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            },
+            {
+                "stage": 3,
+                "gameMode": "easy",
+                "info": "test info test123 test323213123",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            },
+            {
+                "stage": 1,
+                "gameMode": "hard",
+                "info": "test info test123 test3243123213213123123",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            },
+            {
+                "stage": 2,
+                "gameMode": "hard",
+                "info": "test info test123 test32533",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            },
+            {
+                "stage": 3,
+                "gameMode": "hard",
+                "info": "test info test123 test32644444",
+                "type1": 0,
+                "type2": 0,
+                "type3": 0,
+                "type4": 0,
+                "type5": 0
+            }
+        ]
     }
 }

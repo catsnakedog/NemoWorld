@@ -12,6 +12,7 @@ public class AdventureBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        DataManager.Single.Data.inGameData.gameMode = "hard";
         MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Adventure);
     }
 }

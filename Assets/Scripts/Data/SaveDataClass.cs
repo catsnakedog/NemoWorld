@@ -8,15 +8,18 @@ public class SaveDataClass
 {
     public InGameData inGameData;
     public OptionData optionData;
-    public SaveDataClass(InGameData inGameData, OptionData optionData)
+    public QuestData questData;
+    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData)
     {
         this.inGameData = inGameData;
         this.optionData = optionData;
+        this.questData = questData;
     }
     public SaveDataClass()
     {
         inGameData = new InGameData();
         optionData = new OptionData();
+        questData = new QuestData();
     }
 }
 
@@ -30,14 +33,18 @@ public class InGameData
     public Ch ch;
     public List<string> storyClearList;
     public List<string> adventureClearList;
+    public int stage;
+    public string gameMode;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode)
     {
         this.cost = cost;
         this.itemList = itemList;
         this.ch = ch;
         this.storyClearList = storyClearList;
         this.adventureClearList = adventureClearList;
+        this.stage = stage;
+        this.gameMode = gameMode;
     }
 
     public InGameData()
@@ -47,6 +54,8 @@ public class InGameData
         ch = new Ch();
         storyClearList = new List<string>();
         adventureClearList = new List<string>();
+        stage = 0;
+        gameMode = "";
     }
 }
 
@@ -139,6 +148,63 @@ public class OptionData
     {
         volumeBGM = 0f;
         volumeSFX = 0f;
+    }
+}
+
+#endregion
+
+#region QuestData
+
+[System.Serializable]
+public class QuestData
+{
+    public List<QuestInfo> questInfo;
+
+    public QuestData(List<QuestInfo> questInfo)
+    {
+        this.questInfo = questInfo;
+    }
+
+    public QuestData()
+    {
+        questInfo = new List<QuestInfo>();
+    }
+}
+
+[System.Serializable]
+public class QuestInfo
+{
+    public int stage;
+    public string gameMode;
+    public string info;
+    public int type1;
+    public int type2;
+    public int type3;
+    public int type4;
+    public int type5;
+
+    public QuestInfo(int stage, string gameMode, string info, int type1, int type2, int type3, int type4, int type5)
+    {
+        this.stage = stage;
+        this.gameMode = gameMode;
+        this.info = info;
+        this.type1 = type1;
+        this.type2 = type2;
+        this.type3 = type3;
+        this.type4 = type4;
+        this.type5 = type4;
+    }
+
+    public QuestInfo()
+    {
+        stage = 0;
+        gameMode = "";
+        info = "";
+        type1 = 0;
+        type2 = 0;
+        type3 = 0;
+        type4 = 0;
+        type5 = 0;
     }
 }
 

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class StorySelectBtn : EventTriggerEX
+public class StageSelectLeftBtn : EventTriggerEX
 {
-    [SerializeField]
-    int stage;
     protected void Start()
     {
         init();
@@ -14,7 +12,6 @@ public class StorySelectBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        DataManager.Single.Data.inGameData.stage = stage;
-        MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.StorySelect);
+        Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);
     }
 }

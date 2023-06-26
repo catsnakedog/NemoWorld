@@ -36,7 +36,7 @@ public class DataManager : MonoBehaviour
         jsonManager.SaveJson(Data);
     }
 
-    public void Load() // json에 기록돼있는 데이터들을 saveData에 볼러온다
+    public void Load() // json에 기록돼있는 데이터들을 불러온다
     {
         Data = jsonManager.LoadSaveData();
     }
