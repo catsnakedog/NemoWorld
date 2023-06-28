@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor;
 
 [System.Serializable]
 public class SaveDataClass
@@ -37,8 +38,9 @@ public class InGameData
     public string gameMode;
     public Dictionary<int, int> adventureModeHighScore;
     public QuestInfo crruentQuest;
+    public int speed;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, int speed)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -49,6 +51,7 @@ public class InGameData
         this.gameMode = gameMode;
         this.adventureModeHighScore = adventureModeHighScore;
         this.crruentQuest = crruentQuest;
+        this.speed = speed;
     }
 
     public InGameData()
@@ -62,6 +65,7 @@ public class InGameData
         gameMode = "";
         adventureModeHighScore = new Dictionary<int, int>();
         crruentQuest = new QuestInfo();
+        speed = 0;
     }
 }
 

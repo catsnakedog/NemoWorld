@@ -23,6 +23,8 @@ public class Define
         StorySelect,
         InGameUI,
         Pause,
+        Gacha,
+        Shop,
         MaxCount
     }
 

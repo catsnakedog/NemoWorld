@@ -12,6 +12,8 @@ TagManager:
   - MainController
   - DataManager
   - Map
+  - Ch
+  - Land
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ using static Define;
 public class ResourceController : MonoBehaviour
 {
 
+    public GameObject ch { get; set; }
     public List<GameObject> UItype { get; set; }
     public List<GameObject> Map { get; set; }
     public List<Material> EffectType { get; set; }
@@ -17,6 +18,7 @@ public class ResourceController : MonoBehaviour
         UItypeSetting();
         MapTypeSetting();
         SpriteSetting();
+        ChSetting();
     }
 
     void UItypeSetting()
@@ -37,6 +39,10 @@ public class ResourceController : MonoBehaviour
         }
     }
 
+    void ChSetting()
+    {
+        ch = Resources.Load<GameObject>("Prefabs/Ch/Ch");
+    }
     void SpriteSetting()
     {
         sprite = new Dictionary<string, Sprite>();
