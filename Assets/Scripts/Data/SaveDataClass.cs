@@ -35,8 +35,10 @@ public class InGameData
     public List<string> adventureClearList;
     public int stage;
     public string gameMode;
+    public Dictionary<int, int> adventureModeHighScore;
+    public QuestInfo crruentQuest;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -45,6 +47,8 @@ public class InGameData
         this.adventureClearList = adventureClearList;
         this.stage = stage;
         this.gameMode = gameMode;
+        this.adventureModeHighScore = adventureModeHighScore;
+        this.crruentQuest = crruentQuest;
     }
 
     public InGameData()
@@ -56,6 +60,8 @@ public class InGameData
         adventureClearList = new List<string>();
         stage = 0;
         gameMode = "";
+        adventureModeHighScore = new Dictionary<int, int>();
+        crruentQuest = new QuestInfo();
     }
 }
 

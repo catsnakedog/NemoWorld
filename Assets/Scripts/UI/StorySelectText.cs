@@ -28,12 +28,15 @@ public class StorySelectText : MonoBehaviour
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {
-            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "hard get mode";
+
+            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "high score";
+            transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = "0"; // 임시값 수정 필요
         }
     }
 
     void QuestInfoTextSet()
     {
+        if (DataManager.Single.Data.inGameData.gameMode == "hard") return;
         string info = "error";
         for(int i = 0; i< DataManager.Single.Data.questData.questInfo.Count; i++)
         {
@@ -41,6 +44,7 @@ public class StorySelectText : MonoBehaviour
             {
                 if (DataManager.Single.Data.questData.questInfo[i].gameMode == DataManager.Single.Data.inGameData.gameMode)
                 {
+                    DataManager.Single.Data.inGameData.crruentQuest = DataManager.Single.Data.questData.questInfo[i];
                     info = DataManager.Single.Data.questData.questInfo[i].info;
                     break;
                 }

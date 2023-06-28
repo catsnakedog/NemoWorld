@@ -21,6 +21,14 @@ public class Define
         Adventure,
         Skin,
         StorySelect,
+        InGameUI,
+        Pause,
+        MaxCount
+    }
+
+    public enum Map
+    {
+        Stage1,
         MaxCount
     }
 

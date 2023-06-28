@@ -11,6 +11,7 @@ TagManager:
   - Skin
   - MainController
   - DataManager
+  - Map
   layers:
   - Default
   - TransparentFX
