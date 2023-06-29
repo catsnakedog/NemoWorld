@@ -31,6 +31,7 @@ public class Define
     public enum Map
     {
         Stage1,
+        Stage2,
         MaxCount
     }
 
