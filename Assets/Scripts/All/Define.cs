@@ -36,6 +36,16 @@ public class Define
         MaxCount
     }
 
+    public enum hardMap
+    {
+        Start,
+        Part1,
+        Part2,
+        Part3,
+        End,
+        MaxCount
+    }
+
     public enum SpriteDict
     {
         HeadTest1,

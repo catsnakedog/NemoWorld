@@ -36,7 +36,6 @@ public class StorySelectText : MonoBehaviour
 
     void QuestInfoTextSet()
     {
-        if (DataManager.Single.Data.inGameData.gameMode == "hard") return;
         string info = "error";
         for(int i = 0; i< DataManager.Single.Data.questData.questInfo.Count; i++)
         {

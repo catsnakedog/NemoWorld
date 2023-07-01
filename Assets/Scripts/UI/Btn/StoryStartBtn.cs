@@ -4,7 +4,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InGameStartBtn : EventTriggerEX
+public class StoryStartBtn : EventTriggerEX
 {
     protected void Start()
     {
@@ -13,7 +13,6 @@ public class InGameStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        Debug.Log(DataManager.Single.Data.inGameData.crruentQuest.stage);
         GameObject temp = Instantiate(MainController.main.resource.Map[DataManager.Single.Data.inGameData.crruentQuest.stage-1], new Vector3(0f, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
