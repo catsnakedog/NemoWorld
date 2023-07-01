@@ -128,7 +128,8 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -128, y: -128}
+    - - {x: 124, y: -128}
+      - {x: -128, y: 123}
       - {x: -128, y: 128}
       - {x: 128, y: -128}
     bones: []
