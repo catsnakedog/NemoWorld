@@ -13,9 +13,8 @@ public class InGameStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        StringBuilder sb = new StringBuilder("Stage");
-        sb.Append("1");
-        GameObject temp = Instantiate(MainController.main.resource.Map[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        Debug.Log(DataManager.Single.Data.inGameData.crruentQuest.stage);
+        GameObject temp = Instantiate(MainController.main.resource.Map[DataManager.Single.Data.inGameData.crruentQuest.stage-1], new Vector3(0f, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);

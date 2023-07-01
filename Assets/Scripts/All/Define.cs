@@ -32,6 +32,7 @@ public class Define
     {
         Stage1,
         Stage2,
+        Stage3,
         MaxCount
     }
 

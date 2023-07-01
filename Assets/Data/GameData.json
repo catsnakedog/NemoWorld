@@ -22,10 +22,29 @@
             "cloth": "",
             "wing": ""
         },
-        "storyClearList": [],
-        "adventureClearList": [],
+        "storyClearList": [
+            "stage1",
+            "stage2",
+            "stage3"
+        ],
+        "adventureClearList": [
+            "stage1",
+            "stage2",
+            "stage3"
+        ],
         "stage": 0,
-        "gameMode": ""
+        "gameMode": "",
+        "crruentQuest": {
+            "stage": 0,
+            "gameMode": "",
+            "info": "",
+            "type1": 0,
+            "type2": 0,
+            "type3": 0,
+            "type4": 0,
+            "type5": 0
+        },
+        "speed": 0
     },
     "optionData": {
         "volumeBGM": 0.0,
