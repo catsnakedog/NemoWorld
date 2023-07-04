@@ -38,9 +38,14 @@ public class InGameData
     public string gameMode;
     public Dictionary<int, int> adventureModeHighScore;
     public QuestInfo crruentQuest;
-    public int speed;
+    public float speed;
+    public string color;
+    public bool isGod;
+    public bool isPurple;
+    public bool isShield;
+    public int jumpMaxCount;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, int speed)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -52,6 +57,11 @@ public class InGameData
         this.adventureModeHighScore = adventureModeHighScore;
         this.crruentQuest = crruentQuest;
         this.speed = speed;
+        this.color = color;
+        this.isGod = isGod;
+        this.isPurple = isPurple;
+        this.isShield = isShield;
+        this.jumpMaxCount = jumpMaxCount;
     }
 
     public InGameData()
@@ -66,6 +76,11 @@ public class InGameData
         adventureModeHighScore = new Dictionary<int, int>();
         crruentQuest = new QuestInfo();
         speed = 0;
+        color = "";
+        isGod = false;
+        isPurple = false;
+        isShield = false;
+        jumpMaxCount = 2;
     }
 }
 
@@ -187,22 +202,14 @@ public class QuestInfo
     public int stage;
     public string gameMode;
     public string info;
-    public int type1;
-    public int type2;
-    public int type3;
-    public int type4;
-    public int type5;
+    public int time;
 
-    public QuestInfo(int stage, string gameMode, string info, int type1, int type2, int type3, int type4, int type5)
+    public QuestInfo(int stage, string gameMode, string info, int time)
     {
         this.stage = stage;
         this.gameMode = gameMode;
         this.info = info;
-        this.type1 = type1;
-        this.type2 = type2;
-        this.type3 = type3;
-        this.type4 = type4;
-        this.type5 = type4;
+        this.time = time;
     }
 
     public QuestInfo()
@@ -210,11 +217,7 @@ public class QuestInfo
         stage = 0;
         gameMode = "";
         info = "";
-        type1 = 0;
-        type2 = 0;
-        type3 = 0;
-        type4 = 0;
-        type5 = 0;
+        time = 0;
     }
 }
 

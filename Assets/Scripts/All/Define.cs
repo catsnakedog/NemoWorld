@@ -22,6 +22,7 @@ public class Define
         Skin,
         StorySelect,
         InGameUI,
+        InGameBG,
         Pause,
         Gacha,
         Shop,
@@ -51,6 +52,10 @@ public class Define
         HeadTest1,
         ClothTest1,
         WingTest1,
+        BG1_1,
+        BG1_2,
+        BG1_3,
+        BG1_4,
         MaxCount
     }
 

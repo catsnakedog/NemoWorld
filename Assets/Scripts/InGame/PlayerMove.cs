@@ -7,10 +7,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField]
     float jumpPower;
-    [SerializeField]
-    int jumpMaxCount;
 
     int jumpCount;
+
+    private void Start()
+    {
+        DataManager.Single.Data.inGameData.jumpMaxCount = 2;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,14 +23,9 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void init()
-    {
-
-    }
-
     public void Jump()
     {
-        if(jumpCount < jumpMaxCount)
+        if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;

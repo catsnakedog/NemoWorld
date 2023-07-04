@@ -6,7 +6,6 @@ using UnityEngine;
 public class MapMove : MonoBehaviour
 {
     Action mapAction;
-    [SerializeField]
     public int speed { get; set; }
 
     private void FixedUpdate()
@@ -21,12 +20,11 @@ public class MapMove : MonoBehaviour
 
     void init()
     {
-        speed = DataManager.Single.Data.inGameData.speed;
         mapAction += PlayerMove;
     }
 
     void PlayerMove()
     {
-        gameObject.transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+        gameObject.transform.Translate(-DataManager.Single.Data.inGameData.speed * Time.deltaTime, 0f, 0f);
     }
 }
