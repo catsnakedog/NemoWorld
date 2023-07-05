@@ -29,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
+            // 점프 에니메이션
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
         }
