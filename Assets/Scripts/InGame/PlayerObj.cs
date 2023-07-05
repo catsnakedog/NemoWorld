@@ -9,13 +9,15 @@ using UnityEngine;
 public class PlayerObj : MonoBehaviour
 {
     Action playerAction;
-    Coroutine playerCoroutine;
+    Coroutine[] playerCoroutine;
     string itemType;
     string[] items = { "ItemRed", "ItemOrange", "ItemYellow", "ItemGreen", "ItemBlue", "ItemNavy", "ItemPurple" };
     string[] colorObjs = { "Red", "Orange", "Yellow", "Green", "Blue", "Navy", "Purple" };
 
     private void Start()
     {
+        playerCoroutine = new Coroutine[items.Length];
+
         DataManager.Single.Data.inGameData.speed = 2;
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
@@ -64,11 +66,26 @@ public class PlayerObj : MonoBehaviour
 
     void PlayerGetItem()
     {
+        if(playerCoroutine[Array.IndexOf(items, itemType)] != null)
+        {
+            StopCoroutine(playerCoroutine[Array.IndexOf(items, itemType)]);
+
+            if (itemType == "ItemRed")
+            {
+                if (playerCoroutine[Array.IndexOf(items, "ItemGreen")] != null)
+                    StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemGreen")]);
+            }
+            if (itemType == "ItemGreen")
+            {
+                if (playerCoroutine[Array.IndexOf(items, "ItemRed")] != null)
+                    StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemRed")]);
+            }
+        }
         // æ∆¿Ã≈€ ≈âµÊ ¿Ã∆Â∆Æ
         StringBuilder sb = new StringBuilder(itemType);
         sb.Remove(0, 4);
         DataManager.Single.Data.inGameData.color = sb.ToString();
-        playerCoroutine = StartCoroutine(itemType);
+        playerCoroutine[Array.IndexOf(items, itemType)] = StartCoroutine(itemType);
     }
 
     IEnumerator SpeedUp()
@@ -76,6 +93,11 @@ public class PlayerObj : MonoBehaviour
         for(int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.1f);
+            if (DataManager.Single.Data.inGameData.speed >= 3f)
+            {
+                DataManager.Single.Data.inGameData.speed = 3f;
+                break;
+            }
             DataManager.Single.Data.inGameData.speed += 0.1f;
         }
     }

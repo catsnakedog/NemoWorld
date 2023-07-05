@@ -9,10 +9,12 @@ public class PlayerMove : MonoBehaviour
     float jumpPower;
 
     int jumpCount;
+    Rigidbody2D rb;
 
     private void Start()
     {
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
         }
     }

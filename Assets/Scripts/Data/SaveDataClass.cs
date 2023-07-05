@@ -44,8 +44,10 @@ public class InGameData
     public bool isPurple;
     public bool isShield;
     public int jumpMaxCount;
+    public List<int> mapList;
+    public string result;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -62,6 +64,8 @@ public class InGameData
         this.isPurple = isPurple;
         this.isShield = isShield;
         this.jumpMaxCount = jumpMaxCount;
+        this.mapList = mapList;
+        this.result = result;
     }
 
     public InGameData()
@@ -81,6 +85,8 @@ public class InGameData
         isPurple = false;
         isShield = false;
         jumpMaxCount = 2;
+        mapList = new List<int>();
+        result = "";
     }
 }
 

@@ -45,6 +45,8 @@ public class AdventureStartBtn : EventTriggerEX
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+
+        DataManager.Single.Data.inGameData.mapList = mapList;
     }
 
     void MapTypeSetting()

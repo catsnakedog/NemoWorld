@@ -26,6 +26,7 @@ public class Define
         Pause,
         Gacha,
         Shop,
+        GameResult,
         MaxCount
     }
 
