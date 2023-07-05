@@ -8,6 +8,11 @@ using UnityEngine;
 
 public class PlayerObj : MonoBehaviour
 {
+    [SerializeField]
+    int redSpeed;
+    [SerializeField]
+    int greenSpeed;
+
     Action playerAction;
     Coroutine[] playerCoroutine;
     string itemType;
@@ -18,7 +23,7 @@ public class PlayerObj : MonoBehaviour
     {
         playerCoroutine = new Coroutine[items.Length];
 
-        DataManager.Single.Data.inGameData.speed = 2;
+        DataManager.Single.Data.inGameData.speed = 3;
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
@@ -106,7 +111,7 @@ public class PlayerObj : MonoBehaviour
 
     IEnumerator ItemRed()
     {
-        DataManager.Single.Data.inGameData.speed = 5;
+        DataManager.Single.Data.inGameData.speed = redSpeed;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.speed = 3;
     }
@@ -123,7 +128,7 @@ public class PlayerObj : MonoBehaviour
     }
     IEnumerator ItemGreen()
     {
-        DataManager.Single.Data.inGameData.speed = 2;
+        DataManager.Single.Data.inGameData.speed = greenSpeed;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.speed = 3;
     }
