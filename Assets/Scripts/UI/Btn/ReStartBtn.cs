@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
@@ -50,6 +51,7 @@ public class ReStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        QuestInfoTextSet();
         if(DataManager.Single.Data.inGameData.gameMode == "easy")
         {
             GameObject temp = Instantiate(MainController.main.resource.Map[DataManager.Single.Data.inGameData.crruentQuest.stage - 1], new Vector3(0f, 0f, 0f), Quaternion.identity);
@@ -68,5 +70,29 @@ public class ReStartBtn : EventTriggerEX
             MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
             MapTypeSetting();
         }
+    }
+
+    void QuestInfoTextSet()
+    {
+        string info = "error";
+        for (int i = 0; i < DataManager.Single.Data.questData.questInfo.Count; i++)
+        {
+            if (DataManager.Single.Data.questData.questInfo[i].stage == DataManager.Single.Data.inGameData.stage)
+            {
+                if (DataManager.Single.Data.questData.questInfo[i].gameMode == DataManager.Single.Data.inGameData.gameMode)
+                {
+                    QuestCopy(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    void QuestCopy(int i)
+    {
+        DataManager.Single.Data.inGameData.crruentQuest.stage = DataManager.Single.Data.questData.questInfo[i].stage;
+        DataManager.Single.Data.inGameData.crruentQuest.gameMode = DataManager.Single.Data.questData.questInfo[i].gameMode;
+        DataManager.Single.Data.inGameData.crruentQuest.info = DataManager.Single.Data.questData.questInfo[i].info;
+        DataManager.Single.Data.inGameData.crruentQuest.time = DataManager.Single.Data.questData.questInfo[i].time;
     }
 }

@@ -28,7 +28,6 @@ public class DataManager : MonoBehaviour
         jsonManager = new JsonManager();
 
         Load();
-        Save();
 
         GameObject.FindWithTag("MainController").GetComponent<MainController>().init();
     }

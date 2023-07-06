@@ -47,7 +47,8 @@
         "isShield": false,
         "jumpMaxCount": 2,
         "mapList": [],
-        "result": ""
+        "result": "",
+        "fever": 0
     },
     "optionData": {
         "volumeBGM": 0.0,

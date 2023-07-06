@@ -66,6 +66,8 @@ public class PlayerObj : MonoBehaviour
             // 쉴드 이펙트 제거
             return;
         }
+
+        Debug.Log("hurt");
         // 플레이어 장애물 충돌
         playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
 

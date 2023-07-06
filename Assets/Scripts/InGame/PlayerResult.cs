@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class PlayerResult : MonoBehaviour
@@ -40,6 +41,24 @@ public class PlayerResult : MonoBehaviour
 
     void Clear()
     {
+        StringBuilder sb = new StringBuilder("stage");
+        sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
+
+        if(DataManager.Single.Data.inGameData.crruentQuest.gameMode == "easy")
+        {
+            if (!DataManager.Single.Data.inGameData.storyClearList.Contains(sb.ToString()))
+            {
+                DataManager.Single.Data.inGameData.storyClearList.Add(sb.ToString());
+            }
+        }
+        if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
+        {
+            if (!DataManager.Single.Data.inGameData.adventureClearList.Contains(sb.ToString()))
+            {
+                DataManager.Single.Data.inGameData.adventureClearList.Add(sb.ToString());
+            }
+        }
+
         DataManager.Single.Data.inGameData.result = "clear";
         Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);
         Transform[] transforms = GameObject.FindWithTag("Map").GetComponentsInChildren<Transform>();

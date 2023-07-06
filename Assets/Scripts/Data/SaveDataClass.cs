@@ -46,8 +46,9 @@ public class InGameData
     public int jumpMaxCount;
     public List<int> mapList;
     public string result;
+    public int fever;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -66,6 +67,7 @@ public class InGameData
         this.jumpMaxCount = jumpMaxCount;
         this.mapList = mapList;
         this.result = result;
+        this.fever = fever;
     }
 
     public InGameData()
@@ -87,6 +89,7 @@ public class InGameData
         jumpMaxCount = 2;
         mapList = new List<int>();
         result = "";
+        fever = 0;
     }
 }
 

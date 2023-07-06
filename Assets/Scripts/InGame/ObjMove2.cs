@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjMove : MonoBehaviour
+public class ObjMove2 : MonoBehaviour
 {
     Action ObjAction;
     GameObject ch;
@@ -35,7 +35,7 @@ public class ObjMove : MonoBehaviour
     }
 
     IEnumerator Move()
-    { 
+    {
         float waitTime = (distance / speed) / number;
 
         if (direction == "Up")
@@ -46,11 +46,11 @@ public class ObjMove : MonoBehaviour
         else if (direction == "Down")
         {
             xPlus = 0;
-            yPlus = - distance / number;
+            yPlus = -distance / number;
         }
         else if (direction == "Left")
         {
-            xPlus = - distance / number;
+            xPlus = -distance / number;
             yPlus = 0;
         }
         else if (direction == "Right")
@@ -64,31 +64,11 @@ public class ObjMove : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             gameObject.transform.position = new Vector3(gameObject.transform.position.x + xPlus, gameObject.transform.position.y + yPlus, gameObject.transform.position.z);
         }
-
-
-        if (direction == "Up")
-        {
-            direction = "Down";
-        }
-        else if (direction == "Down")
-        {
-            direction = "Up";
-        }
-        else if (direction == "Left")
-        {
-            direction = "Right";
-        }
-        else if (direction == "Right")
-        {
-            direction = "Left";
-        }
-
-        ObjCoroutine = StartCoroutine(Move());
     }
 
     void ObjStart()
     {
-        if((transform.position.x - ch.transform.position.x) <= whatDistanceItStart)
+        if ((transform.position.x - ch.transform.position.x) <= whatDistanceItStart)
         {
             ObjCoroutine = StartCoroutine(Move());
             ObjAction -= ObjStart;

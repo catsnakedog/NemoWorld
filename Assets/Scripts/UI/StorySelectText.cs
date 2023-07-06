@@ -43,12 +43,20 @@ public class StorySelectText : MonoBehaviour
             {
                 if (DataManager.Single.Data.questData.questInfo[i].gameMode == DataManager.Single.Data.inGameData.gameMode)
                 {
-                    DataManager.Single.Data.inGameData.crruentQuest = DataManager.Single.Data.questData.questInfo[i];
+                    QuestCopy(i);
                     info = DataManager.Single.Data.questData.questInfo[i].info;
                     break;
                 }
             }
         }
         transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = info;
+    }
+
+    void QuestCopy(int i)
+    {
+        DataManager.Single.Data.inGameData.crruentQuest.stage = DataManager.Single.Data.questData.questInfo[i].stage;
+        DataManager.Single.Data.inGameData.crruentQuest.gameMode = DataManager.Single.Data.questData.questInfo[i].gameMode;
+        DataManager.Single.Data.inGameData.crruentQuest.info = DataManager.Single.Data.questData.questInfo[i].info;
+        DataManager.Single.Data.inGameData.crruentQuest.time = DataManager.Single.Data.questData.questInfo[i].time;
     }
 }
