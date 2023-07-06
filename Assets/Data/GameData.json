@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 0,
+            "energy": 112,
             "test1": 0,
             "test2": 0
         },
@@ -32,23 +32,24 @@
             "stage2",
             "stage3"
         ],
-        "stage": 0,
-        "gameMode": "",
+        "stage": 1,
+        "gameMode": "easy",
         "crruentQuest": {
-            "stage": 0,
-            "gameMode": "",
-            "info": "",
-            "time": 0
+            "stage": 1,
+            "gameMode": "easy",
+            "info": "test info test123 test321",
+            "time": 37
         },
         "speed": 0.0,
-        "color": "",
+        "color": "Purple",
         "isGod": false,
-        "isPurple": false,
+        "isPurple": true,
         "isShield": false,
         "jumpMaxCount": 2,
         "mapList": [],
-        "result": "",
-        "fever": 0
+        "result": "clear",
+        "fever": 16,
+        "cutToonName": ""
     },
     "optionData": {
         "volumeBGM": 0.0,
@@ -93,5 +94,9 @@
                 "time": 250
             }
         ]
+    },
+    "timeData": {
+        "beforeTime": "2023-07-06 PM 10:59:04",
+        "crruentTime": ""
     }
 }

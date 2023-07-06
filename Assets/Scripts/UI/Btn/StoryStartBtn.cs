@@ -13,6 +13,12 @@ public class StoryStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
+        {
+            // 에너지 부족!
+            return;
+        }
+        DataManager.Single.Data.inGameData.cost.energy--;
         GameObject temp = Instantiate(MainController.main.resource.Map[DataManager.Single.Data.inGameData.crruentQuest.stage-1], new Vector3(0f, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();

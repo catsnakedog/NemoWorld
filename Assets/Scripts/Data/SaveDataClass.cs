@@ -10,17 +10,20 @@ public class SaveDataClass
     public InGameData inGameData;
     public OptionData optionData;
     public QuestData questData;
-    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData)
+    public TimeData timeData;
+    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData)
     {
         this.inGameData = inGameData;
         this.optionData = optionData;
         this.questData = questData;
+        this.timeData = timeData;
     }
     public SaveDataClass()
     {
         inGameData = new InGameData();
         optionData = new OptionData();
         questData = new QuestData();
+        timeData = new TimeData();
     }
 }
 
@@ -47,8 +50,9 @@ public class InGameData
     public List<int> mapList;
     public string result;
     public int fever;
+    public string cutToonName;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -68,6 +72,7 @@ public class InGameData
         this.mapList = mapList;
         this.result = result;
         this.fever = fever;
+        this.cutToonName = cutToonName;
     }
 
     public InGameData()
@@ -90,6 +95,7 @@ public class InGameData
         mapList = new List<int>();
         result = "";
         fever = 0;
+        cutToonName = "";
     }
 }
 
@@ -230,4 +236,26 @@ public class QuestInfo
     }
 }
 
+#endregion
+
+#region TimeData
+
+[System.Serializable]
+public class TimeData
+{
+    public string beforeTime;
+    public string crruentTime;
+
+    public TimeData(string beforeTime, string crruentTime)
+    {
+        this.beforeTime = beforeTime;
+        this.crruentTime = crruentTime;
+    }
+
+    public TimeData()
+    {
+        this.beforeTime = "";
+        this.crruentTime = "";
+    }
+}
 #endregion

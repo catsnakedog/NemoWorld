@@ -73,6 +73,12 @@ public class AdventureStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        if(DataManager.Single.Data.inGameData.cost.energy <= 0)
+        {
+            // 에너지 부족!
+            return;
+        }
+        DataManager.Single.Data.inGameData.cost.energy--;
         MapTypeSetting();
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
         ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);

@@ -49,6 +49,8 @@ public class PlayerResult : MonoBehaviour
             if (!DataManager.Single.Data.inGameData.storyClearList.Contains(sb.ToString()))
             {
                 DataManager.Single.Data.inGameData.storyClearList.Add(sb.ToString());
+                sb.Append("EasyCutToon");
+                DataManager.Single.Data.inGameData.cutToonName = sb.ToString();
             }
         }
         if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
@@ -56,6 +58,8 @@ public class PlayerResult : MonoBehaviour
             if (!DataManager.Single.Data.inGameData.adventureClearList.Contains(sb.ToString()))
             {
                 DataManager.Single.Data.inGameData.adventureClearList.Add(sb.ToString());
+                sb.Append("HardCutToon");
+                DataManager.Single.Data.inGameData.cutToonName = sb.ToString();
             }
         }
 
