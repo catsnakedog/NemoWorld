@@ -10,11 +10,13 @@ public class PlayerMove : MonoBehaviour
 
     int jumpCount;
     Rigidbody2D rb;
+    Animator playerAnimation;
 
     private void Start()
     {
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        playerAnimation = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,6 +24,7 @@ public class PlayerMove : MonoBehaviour
         if(collision.gameObject.tag == "Land")
         {
             jumpCount = 0;
+            
         }
     }
 
@@ -30,6 +33,7 @@ public class PlayerMove : MonoBehaviour
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
             // 점프 에니메이션
+            playerAnimation.SetTrigger(Define.PlayerAnim.Jump.ToString());
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
         }

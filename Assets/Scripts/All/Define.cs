@@ -69,4 +69,13 @@ public class Define
     {
         MaxCount
     }
+
+    public enum PlayerAnim
+    {
+        Blink,
+        Run,
+        Jump,
+        CoinGet,
+        Hit
+    }
 }

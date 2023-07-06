@@ -19,9 +19,12 @@ public class PlayerObj : MonoBehaviour
     string[] items = { "ItemRed", "ItemOrange", "ItemYellow", "ItemGreen", "ItemBlue", "ItemNavy", "ItemPurple" };
     string[] colorObjs = { "Red", "Orange", "Yellow", "Green", "Blue", "Navy", "Purple" };
 
+    Animator playerAnimation;
+
     private void Start()
     {
         playerCoroutine = new Coroutine[items.Length];
+        playerAnimation = GetComponent<Animator>();
 
         DataManager.Single.Data.inGameData.speed = 3;
         DataManager.Single.Data.inGameData.color = "default";
@@ -64,6 +67,8 @@ public class PlayerObj : MonoBehaviour
             return;
         }
         // 플레이어 장애물 충돌
+        playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
+
         DataManager.Single.Data.inGameData.crruentQuest.time -= 5;
         DataManager.Single.Data.inGameData.speed -= 1;
         StartCoroutine(SpeedUp());
@@ -87,6 +92,8 @@ public class PlayerObj : MonoBehaviour
             }
         }
         // 아이템 흭득 이펙트
+        playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+
         StringBuilder sb = new StringBuilder(itemType);
         sb.Remove(0, 4);
         DataManager.Single.Data.inGameData.color = sb.ToString();
