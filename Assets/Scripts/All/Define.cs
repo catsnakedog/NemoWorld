@@ -27,6 +27,7 @@ public class Define
         Gacha,
         Shop,
         GameResult,
+        CutToon,
         MaxCount
     }
 
@@ -57,6 +58,12 @@ public class Define
         BG1_2,
         BG1_3,
         BG1_4,
+        stage1EasyCutToon,
+        stage2EasyCutToon,
+        stage3EasyCutToon,
+        stage1HardCutToon,
+        stage2HardCutToon,
+        stage3HardCutToon,
         MaxCount
     }
 

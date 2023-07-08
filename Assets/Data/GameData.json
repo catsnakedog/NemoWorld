@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 112,
+            "energy": 157,
             "test1": 0,
             "test2": 0
         },
@@ -23,9 +23,7 @@
             "wing": ""
         },
         "storyClearList": [
-            "stage1",
-            "stage2",
-            "stage3"
+            "stage1"
         ],
         "adventureClearList": [
             "stage1",
@@ -38,18 +36,19 @@
             "stage": 1,
             "gameMode": "easy",
             "info": "test info test123 test321",
-            "time": 37
+            "time": 52
         },
         "speed": 0.0,
-        "color": "Purple",
-        "isGod": false,
-        "isPurple": true,
+        "color": "default",
+        "isGod": true,
+        "isPurple": false,
         "isShield": false,
         "jumpMaxCount": 2,
         "mapList": [],
         "result": "clear",
-        "fever": 16,
-        "cutToonName": ""
+        "fever": 8,
+        "cutToonName": "stage1EasyCutToon",
+        "isFever": true
     },
     "optionData": {
         "volumeBGM": 0.0,
@@ -96,7 +95,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-06 PM 10:59:04",
+        "beforeTime": "2023-07-08 PM 10:05:49",
         "crruentTime": ""
     }
 }

@@ -51,8 +51,9 @@ public class InGameData
     public string result;
     public int fever;
     public string cutToonName;
+    public bool isFever;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -73,6 +74,7 @@ public class InGameData
         this.result = result;
         this.fever = fever;
         this.cutToonName = cutToonName;
+        this.isFever = isFever;
     }
 
     public InGameData()
@@ -96,6 +98,7 @@ public class InGameData
         result = "";
         fever = 0;
         cutToonName = "";
+        isFever = false;
     }
 }
 

@@ -41,6 +41,7 @@ public class PlayerResult : MonoBehaviour
 
     void Clear()
     {
+        bool isCutToon = false;
         StringBuilder sb = new StringBuilder("stage");
         sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
 
@@ -51,6 +52,7 @@ public class PlayerResult : MonoBehaviour
                 DataManager.Single.Data.inGameData.storyClearList.Add(sb.ToString());
                 sb.Append("EasyCutToon");
                 DataManager.Single.Data.inGameData.cutToonName = sb.ToString();
+                isCutToon = true;
             }
         }
         if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
@@ -60,6 +62,7 @@ public class PlayerResult : MonoBehaviour
                 DataManager.Single.Data.inGameData.adventureClearList.Add(sb.ToString());
                 sb.Append("HardCutToon");
                 DataManager.Single.Data.inGameData.cutToonName = sb.ToString();
+                isCutToon = true;
             }
         }
 
@@ -72,7 +75,12 @@ public class PlayerResult : MonoBehaviour
         }
         Destroy(GameObject.FindWithTag("Ch").transform.GetChild(0).gameObject);
 
-        MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.GameResult);
+        if (isCutToon)
+        {
+            MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.CutToon);
+        }
+        else
+            MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.GameResult);
     }
 
     void Die()

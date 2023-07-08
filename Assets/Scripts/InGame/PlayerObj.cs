@@ -31,6 +31,8 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
         DataManager.Single.Data.inGameData.isShield = false;
+        DataManager.Single.Data.inGameData.isFever = false;
+        DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
     }
 
