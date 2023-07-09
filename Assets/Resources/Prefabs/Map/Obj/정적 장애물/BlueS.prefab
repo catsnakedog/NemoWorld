@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2957347419440529223}
   - component: {fileID: 3800791720087930099}
-  - component: {fileID: 7326659615499214774}
+  - component: {fileID: 5952299051915940479}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7326659615499214774
+--- !u!58 &5952299051915940479
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,9 +125,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.025720764, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7789426
