@@ -37,7 +37,7 @@ public class InGameData
 {
     public Cost cost;
     public ItemList itemList;
-    public Ch ch;
+    public Ch ch;//캐릭터 스킨 착장
     public List<string> storyClearList;
     public List<string> adventureClearList;
     public int stage;

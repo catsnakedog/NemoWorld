@@ -11,6 +11,7 @@ public class EventTriggerEX : MonoBehaviour
     protected void init()
     {
         eventTrigger = gameObject.GetComponent<EventTrigger>();
+
         EventTrigger.Entry entry_PointerDown = new EventTrigger.Entry();
         entry_PointerDown.eventID = EventTriggerType.PointerDown;
         entry_PointerDown.callback.AddListener((data) => { OnPointerDown((PointerEventData)data); });

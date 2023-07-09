@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
         if(collision.gameObject.tag == "Land")
         {
             jumpCount = 0;
-            
+            playerAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), false);
         }
     }
 
@@ -32,8 +32,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
-            // 점프 에니메이션
-            playerAnimation.SetTrigger(Define.PlayerAnim.Jump.ToString());
+            playerAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), true);
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
             DataManager.Single.Data.missionData.jumpCount++;
