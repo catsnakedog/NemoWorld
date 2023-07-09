@@ -848,13 +848,14 @@ GameObject:
   - component: {fileID: 7163878784961389734}
   - component: {fileID: 7163878784961389732}
   - component: {fileID: 7163878784961389733}
+  - component: {fileID: 4709058606694469351}
   m_Layer: 5
   m_Name: Mission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7163878784961389734
 RectTransform:
   m_ObjectHideFlags: 0
@@ -913,6 +914,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4709058606694469351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163878784961389735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aed8e1bd2079e48a6cae5366976c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7163878785919904627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1128,7 @@ MonoBehaviour:
   m_text: questInfo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e59edc4cf8798f347b921284596db3fc, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3312210640060133613, guid: e59edc4cf8798f347b921284596db3fc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1178,7 +1191,7 @@ MonoBehaviour:
   m_margin: {x: 10, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7163878786221099756

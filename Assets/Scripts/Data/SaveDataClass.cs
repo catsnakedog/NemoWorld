@@ -11,12 +11,14 @@ public class SaveDataClass
     public OptionData optionData;
     public QuestData questData;
     public TimeData timeData;
-    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData)
+    public MissionData missionData;
+    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData)
     {
         this.inGameData = inGameData;
         this.optionData = optionData;
         this.questData = questData;
         this.timeData = timeData;
+        this.missionData = missionData;
     }
     public SaveDataClass()
     {
@@ -24,6 +26,7 @@ public class SaveDataClass
         optionData = new OptionData();
         questData = new QuestData();
         timeData = new TimeData();
+        missionData = new MissionData();
     }
 }
 
@@ -52,8 +55,9 @@ public class InGameData
     public int fever;
     public string cutToonName;
     public bool isFever;
+    public bool isHit;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -75,6 +79,7 @@ public class InGameData
         this.fever = fever;
         this.cutToonName = cutToonName;
         this.isFever = isFever;
+        this.isHit = isHit;
     }
 
     public InGameData()
@@ -99,6 +104,7 @@ public class InGameData
         fever = 0;
         cutToonName = "";
         isFever = false;
+        isHit = false;
     }
 }
 
@@ -261,4 +267,30 @@ public class TimeData
         this.crruentTime = "";
     }
 }
+#endregion
+
+#region MissionData
+
+[System.Serializable]
+public class MissionData
+{
+    public int jumpCount;
+    public int silverCoinCount;
+    public int hitCount;
+
+    public MissionData(int jumpCount, int silverCoinCount, int hitCount)
+    {
+        this.jumpCount = jumpCount;
+        this.silverCoinCount = silverCoinCount;
+        this.hitCount = hitCount;
+    }
+
+    public MissionData()
+    {
+        jumpCount = 0;
+        silverCoinCount = 0;
+        hitCount = 0;
+    }
+}
+
 #endregion

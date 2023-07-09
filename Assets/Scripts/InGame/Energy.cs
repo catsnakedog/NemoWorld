@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
+    int energyTime;
     private void Start()
     {
+        energyTime = 5;
         TimeSpan timespan;
         DateTime userIndate;
         DateTime now;
@@ -16,9 +18,9 @@ public class Energy : MonoBehaviour
 
         timespan = now - userIndate;
 
-        DataManager.Single.Data.inGameData.cost.energy += (int)timespan.TotalHours;
+        DataManager.Single.Data.inGameData.cost.energy += (int)(timespan.TotalMinutes / energyTime);
 
-        TimeSpan after = new TimeSpan(0, (int)(timespan.TotalMinutes % 60), 0);
+        TimeSpan after = new TimeSpan(0, (int)(timespan.TotalMinutes % energyTime), 0);
         after = now - DateTime.Parse(after.ToString());
         DataManager.Single.Data.timeData.beforeTime = DateTime.Parse(after.ToString()).ToString();
 

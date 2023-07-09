@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerObj : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class PlayerObj : MonoBehaviour
         playerCoroutine = new Coroutine[items.Length];
         playerAnimation = GetComponent<Animator>();
 
-        DataManager.Single.Data.inGameData.speed = 3;
+        DataManager.Single.Data.inGameData.speed = 4;
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
@@ -59,9 +59,16 @@ public class PlayerObj : MonoBehaviour
         }
     }
 
+    void CoinGet()
+    {
+        // 코인 흭득 관련
+        DataManager.Single.Data.missionData.silverCoinCount++;
+    }
+
     void PlayerHurt()
     {
         if (DataManager.Single.Data.inGameData.isGod) return;
+        if (DataManager.Single.Data.inGameData.isHit) return;
         if (DataManager.Single.Data.inGameData.isShield)
         {
             DataManager.Single.Data.inGameData.isShield = false;
@@ -69,13 +76,14 @@ public class PlayerObj : MonoBehaviour
             return;
         }
 
-        Debug.Log("hurt");
+        DataManager.Single.Data.missionData.hitCount++;
         // 플레이어 장애물 충돌
         playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
 
         DataManager.Single.Data.inGameData.crruentQuest.time -= 5;
         DataManager.Single.Data.inGameData.speed -= 1;
         StartCoroutine(SpeedUp());
+        StartCoroutine(HitEffect());
     }
 
     void PlayerGetItem()
@@ -116,6 +124,24 @@ public class PlayerObj : MonoBehaviour
             }
             DataManager.Single.Data.inGameData.speed += 0.1f;
         }
+    }
+
+    IEnumerator HitEffect()
+    {
+        bool flag = false;
+        DataManager.Single.Data.inGameData.isHit = true;
+        for (int i = 0; i < 5; i++)
+        {
+            float a;
+            if (flag)
+                a = 0.3f;
+            else
+                a = 1f;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, a);
+            yield return new WaitForSeconds(0.2f);
+            flag = !flag;
+        }
+        DataManager.Single.Data.inGameData.isHit = false;
     }
 
     #region item

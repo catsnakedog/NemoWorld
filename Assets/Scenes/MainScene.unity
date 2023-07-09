@@ -352,6 +352,8 @@ MonoBehaviour:
       result: 
       fever: 0
       cutToonName: 
+      isFever: 0
+      isHit: 0
     optionData:
       volumeBGM: 0
       volumeSFX: 0
@@ -360,6 +362,10 @@ MonoBehaviour:
     timeData:
       beforeTime: 
       crruentTime: 
+    missionData:
+      jumpCount: 0
+      silverCoinCount: 0
+      hitCount: 0
 --- !u!4 &352979551
 Transform:
   m_ObjectHideFlags: 0

@@ -36,6 +36,7 @@ public class PlayerMove : MonoBehaviour
             playerAnimation.SetTrigger(Define.PlayerAnim.Jump.ToString());
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
+            DataManager.Single.Data.missionData.jumpCount++;
             if (!DataManager.Single.Data.inGameData.isFever)
                 DataManager.Single.Data.inGameData.fever++;
         }

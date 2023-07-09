@@ -24,11 +24,10 @@ public class StorySelectText : MonoBehaviour
     {
         if(DataManager.Single.Data.inGameData.gameMode == "easy")
         {
-            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "easy get mode";
+            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {
-
             transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "high score";
             transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = "0"; // 임시값 수정 필요
         }
