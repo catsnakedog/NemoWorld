@@ -31,11 +31,11 @@ public class Define
         MaxCount
     }
 
-    public enum Map
+    public enum easyMap
     {
-        Stage1,
-        Stage2,
-        Stage3,
+        Start,
+        Stage,
+        End,
         MaxCount
     }
 

@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 207,
+            "energy": 211,
             "test1": 0,
             "test2": 0
         },
@@ -25,24 +25,26 @@
         "storyClearList": [
             "stage1"
         ],
-        "adventureClearList": [],
+        "adventureClearList": [
+            "stage1"
+        ],
         "stage": 1,
         "gameMode": "easy",
         "crruentQuest": {
             "stage": 1,
             "gameMode": "easy",
             "info": "점프 60번 달성",
-            "time": 60
+            "time": 75
         },
-        "speed": 2.59999942779541,
-        "color": "Red",
+        "speed": 4.0,
+        "color": "Yellow",
         "isGod": false,
         "isPurple": false,
         "isShield": false,
         "jumpMaxCount": 2,
         "mapList": [],
         "result": "clear",
-        "fever": 14,
+        "fever": 13,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": true
@@ -92,12 +94,12 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-10 AM 1:55:33",
+        "beforeTime": "2023-07-10 AM 2:31:14",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 14,
+        "jumpCount": 13,
         "silverCoinCount": 0,
-        "hitCount": 3
+        "hitCount": 0
     }
 }

@@ -9,14 +9,12 @@ public class ResourceController : MonoBehaviour
 
     public GameObject ch { get; set; }
     public List<GameObject> UItype { get; set; }
-    public List<GameObject> Map { get; set; }
     public List<Material> EffectType { get; set; }
     public Dictionary<string, Sprite> sprite { get; set; }
 
     public void init()
     {
         UItypeSetting();
-        MapTypeSetting();
         SpriteSetting();
         ChSetting();
     }
@@ -27,15 +25,6 @@ public class ResourceController : MonoBehaviour
         for (int i = 0; i < (int)Define.UItype.MaxCount; i++)
         {
             UItype.Add(Resources.Load<GameObject>("Prefabs/UI/" + Enum.GetName(typeof(Define.UItype), i)));
-        }
-    }
-
-    void MapTypeSetting()
-    {
-        Map = new List<GameObject>();
-        for (int i = 0; i < (int)Define.Map.MaxCount; i++)
-        {
-            Map.Add(Resources.Load<GameObject>("Prefabs/Map/" + Enum.GetName(typeof(Define.Map), i)));
         }
     }
 
