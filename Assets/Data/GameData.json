@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 157,
+            "energy": 177,
             "test1": 0,
             "test2": 0
         },
@@ -30,13 +30,13 @@
             "stage2",
             "stage3"
         ],
-        "stage": 1,
+        "stage": 2,
         "gameMode": "easy",
         "crruentQuest": {
-            "stage": 1,
+            "stage": 2,
             "gameMode": "easy",
-            "info": "test info test123 test321",
-            "time": 52
+            "info": "test info test456 test322",
+            "time": 80
         },
         "speed": 0.0,
         "color": "default",
@@ -95,7 +95,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-08 PM 10:05:49",
+        "beforeTime": "2023-07-09 PM 6:07:33",
         "crruentTime": ""
     }
 }
