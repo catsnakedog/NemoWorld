@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 211,
+            "energy": 212,
             "test1": 0,
             "test2": 0
         },
@@ -23,10 +23,14 @@
             "wing": ""
         },
         "storyClearList": [
-            "stage1"
+            "stage1",
+            "stage2",
+            "stage3"
         ],
         "adventureClearList": [
-            "stage1"
+            "stage1",
+            "stage2",
+            "stage3"
         ],
         "stage": 1,
         "gameMode": "easy",
@@ -94,7 +98,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-10 AM 2:31:14",
+        "beforeTime": "2023-07-10 AM 2:38:11",
         "crruentTime": ""
     },
     "missionData": {
