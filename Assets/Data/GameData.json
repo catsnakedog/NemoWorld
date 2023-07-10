@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 449,
+            "energy": 450,
             "test1": 0,
             "test2": 0
         },
@@ -37,9 +37,9 @@
         "gameMode": "hard",
         "crruentQuest": {
             "stage": 1,
-            "gameMode": "hard",
-            "info": "아이템 선택",
-            "time": 170
+            "gameMode": "easy",
+            "info": "점프 60번 달성",
+            "time": 80
         },
         "speed": 4.0,
         "color": "Red",
@@ -116,7 +116,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-11 AM 1:22:36",
+        "beforeTime": "2023-07-11 AM 1:28:21",
         "crruentTime": ""
     },
     "missionData": {

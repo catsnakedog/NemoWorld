@@ -23,7 +23,7 @@ public class AdventureStartBtn : EventTriggerEX
         int size;
         size = 0;
 
-        List<int> partList = new List<int>() { 1, 2, 3 };
+        List<int> partList = new List<int>() { 1, 2, 3, 4 };
         List<int> mapList = new List<int>();
 
         /*

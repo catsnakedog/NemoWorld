@@ -45,6 +45,7 @@ public class Define
         Part1,
         Part2,
         Part3,
+        Part4,
         End,
         MaxCount
     }
