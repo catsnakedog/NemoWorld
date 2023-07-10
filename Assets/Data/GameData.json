@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 0,
-            "energy": 450,
+            "energy": 454,
             "test1": 0,
             "test2": 0
         },
@@ -39,10 +39,10 @@
             "stage": 1,
             "gameMode": "easy",
             "info": "점프 60번 달성",
-            "time": 80
+            "time": 79
         },
         "speed": 4.0,
-        "color": "Red",
+        "color": "default",
         "isGod": false,
         "isPurple": false,
         "isShield": false,
@@ -53,7 +53,7 @@
             3
         ],
         "result": "die",
-        "fever": 7,
+        "fever": 2,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
@@ -116,12 +116,12 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-11 AM 1:28:21",
+        "beforeTime": "2023-07-11 AM 1:53:39",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 70,
+        "jumpCount": 2,
         "silverCoinCount": 0,
-        "hitCount": 4
+        "hitCount": 0
     }
 }
