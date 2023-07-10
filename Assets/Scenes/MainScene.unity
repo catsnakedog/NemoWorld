@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,6 +354,18 @@ MonoBehaviour:
       cutToonName: 
       isFever: 0
       isHit: 0
+      coinGetAmount: 0
+      inGameItem:
+        shieldItem: 0
+        saveItem: 0
+        coinItem: 0
+        goldIncreaseAmount: 0
+        isUseShieldItem: 0
+        isUseSaveItem: 0
+        isUseCoinItem: 0
+        shieldItemAmount: 0
+        saveItemAmount: 0
+        coinItemAmount: 0
     optionData:
       volumeBGM: 0
       volumeSFX: 0

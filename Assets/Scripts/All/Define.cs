@@ -54,6 +54,8 @@ public class Define
         HeadTest1,
         ClothTest1,
         WingTest1,
+        diePlayer,
+        clearPlayer,
         BG1_1,
         BG1_2,
         BG1_3,

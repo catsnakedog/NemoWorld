@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,6 +14,15 @@ public class GameLeftBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        if (DataManager.Single.Data.inGameData.inGameItem.coinItem)
+        {
+            DataManager.Single.Data.inGameData.cost.gold += (int)(DataManager.Single.Data.inGameData.coinGetAmount * ((DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount) + 1));
+        }
+        else
+        {
+            DataManager.Single.Data.inGameData.cost.gold += DataManager.Single.Data.inGameData.coinGetAmount;
+        }
+
         Time.timeScale = 1f;
         Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);
         if(GameObject.FindWithTag("Level3").transform.GetComponentsInChildren<Transform>().Length > 1)

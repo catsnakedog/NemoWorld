@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEditor;
+using System.Runtime.InteropServices;
 
 [System.Serializable]
 public class SaveDataClass
@@ -56,8 +57,10 @@ public class InGameData
     public string cutToonName;
     public bool isFever;
     public bool isHit;
+    public int coinGetAmount;
+    public InGameItem inGameItem;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -80,6 +83,8 @@ public class InGameData
         this.cutToonName = cutToonName;
         this.isFever = isFever;
         this.isHit = isHit;
+        this.coinGetAmount = coinGetAmount;
+        this.inGameItem = inGameItem;
     }
 
     public InGameData()
@@ -105,6 +110,51 @@ public class InGameData
         cutToonName = "";
         isFever = false;
         isHit = false;
+        coinGetAmount = 0;
+        inGameItem = new InGameItem();
+    }
+}
+
+[System.Serializable]
+public class InGameItem
+{
+    public bool shieldItem;
+    public bool saveItem;
+    public bool coinItem;
+    public float goldIncreaseAmount;
+    public bool isUseShieldItem;
+    public bool isUseSaveItem;
+    public bool isUseCoinItem;
+    public int shieldItemAmount;
+    public int saveItemAmount;
+    public int coinItemAmount;
+
+    public InGameItem(bool shieldItem, bool saveItem, bool coinItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, int shieldItemAmount, int saveItemAmount, int coinItemAmount)
+    {
+        this.shieldItem = shieldItem;
+        this.saveItem = saveItem;
+        this.coinItem = coinItem;
+        this.goldIncreaseAmount = goldIncreaseAmount;
+        this.isUseShieldItem = isUseShieldItem;
+        this.isUseSaveItem = isUseSaveItem;
+        this.isUseCoinItem = isUseCoinItem;
+        this.shieldItemAmount = shieldItemAmount;
+        this.saveItemAmount = saveItemAmount;
+        this.coinItemAmount = coinItemAmount;
+    }
+
+    public InGameItem()
+    {
+        shieldItem = false;
+        saveItem = false;
+        coinItem = false;
+        goldIncreaseAmount = 0;
+        isUseShieldItem = false;
+        isUseSaveItem = false;
+        isUseCoinItem = false;
+        shieldItemAmount = 0;
+        saveItemAmount = 0;
+        coinItemAmount = 0;
     }
 }
 
