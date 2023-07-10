@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8812546847019522895}
   - component: {fileID: 8728986965137987061}
   - component: {fileID: 7076553611615452354}
+  - component: {fileID: 8904603917961334230}
   m_Layer: 0
   m_Name: Navy
   m_TagString: Untagged
@@ -100,6 +101,18 @@ CircleCollider2D:
   m_Offset: {x: 0.019785244, y: 0}
   serializedVersion: 2
   m_Radius: 0.7769929
+--- !u!114 &8904603917961334230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076553611615452355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7876102121589049667
 GameObject:
   m_ObjectHideFlags: 0

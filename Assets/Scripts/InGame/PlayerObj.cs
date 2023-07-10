@@ -19,21 +19,38 @@ public class PlayerObj : MonoBehaviour
     string[] items = { "ItemRed", "ItemOrange", "ItemYellow", "ItemGreen", "ItemBlue", "ItemNavy", "ItemPurple" };
     string[] colorObjs = { "Red", "Orange", "Yellow", "Green", "Blue", "Navy", "Purple" };
 
+    GameObject shield;
+
     Animator playerAnimation;
 
     private void Start()
     {
         playerCoroutine = new Coroutine[items.Length];
         playerAnimation = GetComponent<Animator>();
+        shield = transform.GetChild(0).GetChild(3).gameObject;
+
+        DataManager.Single.Data.inGameData.inGameItem.shieldItem = DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem;
+        DataManager.Single.Data.inGameData.inGameItem.saveItem = DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem;
+        DataManager.Single.Data.inGameData.inGameItem.coinItem = DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem;
 
         DataManager.Single.Data.inGameData.speed = 4;
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
-        DataManager.Single.Data.inGameData.isShield = false;
+        if(DataManager.Single.Data.inGameData.inGameItem.shieldItem)
+        {
+            DataManager.Single.Data.inGameData.isShield = true;
+            shield.SetActive(true);
+        }
+        else
+        {
+            DataManager.Single.Data.inGameData.isShield = false;
+        }
         DataManager.Single.Data.inGameData.isFever = false;
+        DataManager.Single.Data.inGameData.isHit = false;
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
+        DataManager.Single.Data.inGameData.coinGetAmount = 0;
     }
 
     private void FixedUpdate()
@@ -57,12 +74,29 @@ public class PlayerObj : MonoBehaviour
         {
             PlayerHurt();
         }
+        else if (Obj.name == "GoldCoin")
+        {
+            GoldCoinGet();
+            Obj.gameObject.SetActive(false);
+        }
+        else if (Obj.name == "SilverCoin")
+        {
+            SilverCoinGet();
+            Obj.gameObject.SetActive(false);
+        }
     }
 
-    void CoinGet()
+    void SilverCoinGet()
     {
-        // ÄÚÀÎ Å‰µæ °ü·Ã
+        playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+        DataManager.Single.Data.inGameData.coinGetAmount += 1;
         DataManager.Single.Data.missionData.silverCoinCount++;
+    }
+
+    void GoldCoinGet()
+    {
+        playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+        DataManager.Single.Data.inGameData.coinGetAmount += 5;
     }
 
     void PlayerHurt()
@@ -72,7 +106,7 @@ public class PlayerObj : MonoBehaviour
         if (DataManager.Single.Data.inGameData.isShield)
         {
             DataManager.Single.Data.inGameData.isShield = false;
-            // ½¯µå ÀÌÆåÆ® Á¦°Å
+            shield.SetActive(false);
             return;
         }
 
@@ -117,12 +151,11 @@ public class PlayerObj : MonoBehaviour
         for(int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.1f);
-            if (DataManager.Single.Data.inGameData.speed >= 3f)
-            {
-                DataManager.Single.Data.inGameData.speed = 3f;
-                break;
-            }
             DataManager.Single.Data.inGameData.speed += 0.1f;
+        }
+        if (DataManager.Single.Data.inGameData.speed >= 4f)
+        {
+            DataManager.Single.Data.inGameData.speed = 4f;
         }
     }
 
@@ -150,7 +183,7 @@ public class PlayerObj : MonoBehaviour
     {
         DataManager.Single.Data.inGameData.speed = redSpeed;
         yield return new WaitForSeconds(5f);
-        DataManager.Single.Data.inGameData.speed = 3;
+        DataManager.Single.Data.inGameData.speed = 4;
     }
     IEnumerator ItemOrange()
     {
@@ -167,11 +200,12 @@ public class PlayerObj : MonoBehaviour
     {
         DataManager.Single.Data.inGameData.speed = greenSpeed;
         yield return new WaitForSeconds(5f);
-        DataManager.Single.Data.inGameData.speed = 3;
+        DataManager.Single.Data.inGameData.speed = 4;
     }
     IEnumerator ItemBlue()
     {
         DataManager.Single.Data.inGameData.isShield = true;
+        shield.SetActive(true);
         yield return new WaitForSeconds(0f);
     }
     IEnumerator ItemNavy()

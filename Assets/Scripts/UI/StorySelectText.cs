@@ -24,11 +24,20 @@ public class StorySelectText : MonoBehaviour
     {
         if(DataManager.Single.Data.inGameData.gameMode == "easy")
         {
-            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
+            StringBuilder sb = new StringBuilder("stage");
+            sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
+            if (DataManager.Single.Data.inGameData.adventureClearList.Contains(sb.ToString()))
+            {
+                transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
+            }
+            else
+            {
+                transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
+            }
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {
-            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "high score";
+            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "아이템 선택";
             transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = "0"; // 임시값 수정 필요
         }
     }

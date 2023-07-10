@@ -354,6 +354,7 @@ MonoBehaviour:
       cutToonName: 
       isFever: 0
       isHit: 0
+      coinGetAmount: 0
     optionData:
       volumeBGM: 0
       volumeSFX: 0
