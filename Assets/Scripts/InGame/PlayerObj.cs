@@ -68,6 +68,7 @@ public class PlayerObj : MonoBehaviour
         if (items.Contains(Obj.name))
         {
             itemType = Obj.name;
+            Obj.gameObject.SetActive(false);
             PlayerGetItem();
         }
         else if (colorObjs.Contains(Obj.name))

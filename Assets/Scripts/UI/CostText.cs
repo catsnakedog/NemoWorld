@@ -25,6 +25,11 @@ public class CostText : MonoBehaviour
         CostTextSetting();
     }
 
+    void Update()
+    {
+        CostTextSetting();
+    }
+
     void CostTextSetting()
     {
         textDict["Gold"].text = Single.Data.inGameData.cost.gold.ToString();

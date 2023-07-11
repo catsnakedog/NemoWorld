@@ -1,8 +1,8 @@
 {
     "inGameData": {
         "cost": {
-            "gold": 0,
-            "energy": 689,
+            "gold": 110907,
+            "energy": 719,
             "test1": 0,
             "test2": 0
         },
@@ -31,6 +31,7 @@
             "stage1",
             "stage2",
             "stage3",
+            "stage1",
             "stage1"
         ],
         "stage": 1,
@@ -39,39 +40,39 @@
             "stage": 1,
             "gameMode": "hard",
             "info": "아이템 선택",
-            "time": 264
+            "time": 262
         },
         "speed": 4.0,
         "color": "default",
         "isGod": false,
         "isPurple": false,
-        "isShield": false,
+        "isShield": true,
         "jumpMaxCount": 2,
         "mapList": [
             0,
             0,
             0
         ],
-        "result": "die",
-        "fever": 2,
+        "result": "clear",
+        "fever": 4,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
         "coinGetAmount": 0,
         "inGameItem": {
-            "shieldItem": false,
-            "saveItem": false,
-            "coinItem": false,
+            "shieldItem": true,
+            "saveItem": true,
+            "coinItem": true,
             "timeItem": true,
             "goldIncreaseAmount": 0.0,
-            "isUseShieldItem": false,
-            "isUseSaveItem": false,
-            "isUseCoinItem": false,
+            "isUseShieldItem": true,
+            "isUseSaveItem": true,
+            "isUseCoinItem": true,
             "isUseTimeItem": true,
-            "shieldItemAmount": 2,
-            "saveItemAmount": 2,
-            "coinItemAmount": 1,
-            "timeItemAmount": 1
+            "shieldItemAmount": 12,
+            "saveItemAmount": 12,
+            "coinItemAmount": 11,
+            "timeItemAmount": 22
         }
     },
     "optionData": {
@@ -119,11 +120,11 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-11 PM 11:23:01",
+        "beforeTime": "2023-07-12 AM 2:11:56",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 2,
+        "jumpCount": 4,
         "silverCoinCount": 0,
         "hitCount": 0
     }
