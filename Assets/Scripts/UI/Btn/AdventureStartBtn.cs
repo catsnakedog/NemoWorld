@@ -73,7 +73,16 @@ public class AdventureStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        if(DataManager.Single.Data.inGameData.cost.energy <= 0)
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem)
+            DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem)
+            DataManager.Single.Data.inGameData.inGameItem.saveItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem)
+            DataManager.Single.Data.inGameData.inGameItem.coinItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem)
+            DataManager.Single.Data.inGameData.inGameItem.timeItemAmount--;
+
+        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
         {
             // 에너지 부족!
             return;

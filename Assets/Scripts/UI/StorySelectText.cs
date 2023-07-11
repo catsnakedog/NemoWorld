@@ -8,37 +8,36 @@ public class StorySelectText : MonoBehaviour
 {
     protected void Start()
     {
+        QuestInfoTextSet();
         StageTextSet();
         ModeTextSet();
-        QuestInfoTextSet();
     }
 
     void StageTextSet()
     {
         StringBuilder sb = new StringBuilder("Stage");
-        sb.Append(DataManager.Single.Data.inGameData.stage.ToString());
+        sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage.ToString());
         transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = sb.ToString();
     }
 
     void ModeTextSet()
     {
-        if(DataManager.Single.Data.inGameData.gameMode == "easy")
+        if(DataManager.Single.Data.inGameData.crruentQuest.gameMode == "easy")
         {
             StringBuilder sb = new StringBuilder("stage");
             sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
+            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
+            transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
+            transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.crruentQuest.info;
             if (DataManager.Single.Data.inGameData.adventureClearList.Contains(sb.ToString()))
             {
                 transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
-            }
-            else
-            {
-                transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
             }
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {
             transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "아이템 선택";
-            transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = "0"; // 임시값 수정 필요
+            transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
         }
     }
 
@@ -52,12 +51,10 @@ public class StorySelectText : MonoBehaviour
                 if (DataManager.Single.Data.questData.questInfo[i].gameMode == DataManager.Single.Data.inGameData.gameMode)
                 {
                     QuestCopy(i);
-                    info = DataManager.Single.Data.questData.questInfo[i].info;
                     break;
                 }
             }
         }
-        transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = info;
     }
 
     void QuestCopy(int i)

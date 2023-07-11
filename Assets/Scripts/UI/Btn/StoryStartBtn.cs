@@ -18,24 +18,6 @@ public class StoryStartBtn : EventTriggerEX
         init();
     }
 
-    protected override void OnPointerDown(PointerEventData data)
-    {
-        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
-        {
-            // 에너지 부족!
-            return;
-        }
-        DataManager.Single.Data.inGameData.cost.energy--;
-
-
-        GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
-        ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);
-
-        MapTypeSetting();
-        MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.InGameBG);
-        MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
-    }
-
     void MapTypeSetting()
     {
         map = new List<GameObject>();
@@ -65,5 +47,32 @@ public class StoryStartBtn : EventTriggerEX
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
+    }
+
+    protected override void OnPointerDown(PointerEventData data)
+    {
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem)
+            DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem)
+            DataManager.Single.Data.inGameData.inGameItem.saveItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem)
+            DataManager.Single.Data.inGameData.inGameItem.coinItemAmount--;
+        if (DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem)
+            DataManager.Single.Data.inGameData.inGameItem.timeItemAmount--;
+
+        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
+        {
+            // 에너지 부족!
+            return;
+        }
+        DataManager.Single.Data.inGameData.cost.energy--;
+
+
+        GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
+        ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);
+
+        MapTypeSetting();
+        MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.InGameBG);
+        MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
     }
 }

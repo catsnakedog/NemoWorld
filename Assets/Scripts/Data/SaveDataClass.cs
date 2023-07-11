@@ -121,26 +121,32 @@ public class InGameItem
     public bool shieldItem;
     public bool saveItem;
     public bool coinItem;
+    public bool timeItem;
     public float goldIncreaseAmount;
     public bool isUseShieldItem;
     public bool isUseSaveItem;
     public bool isUseCoinItem;
+    public bool isUseTimeItem;
     public int shieldItemAmount;
     public int saveItemAmount;
     public int coinItemAmount;
+    public int timeItemAmount;
 
-    public InGameItem(bool shieldItem, bool saveItem, bool coinItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, int shieldItemAmount, int saveItemAmount, int coinItemAmount)
+    public InGameItem(bool shieldItem, bool saveItem, bool coinItem, bool timeItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, bool isUseTimeItem,int shieldItemAmount, int saveItemAmount, int coinItemAmount, int timeItemAmount)
     {
         this.shieldItem = shieldItem;
         this.saveItem = saveItem;
         this.coinItem = coinItem;
+        this.timeItem = timeItem;
         this.goldIncreaseAmount = goldIncreaseAmount;
         this.isUseShieldItem = isUseShieldItem;
         this.isUseSaveItem = isUseSaveItem;
         this.isUseCoinItem = isUseCoinItem;
+        this.isUseTimeItem = isUseTimeItem;
         this.shieldItemAmount = shieldItemAmount;
         this.saveItemAmount = saveItemAmount;
         this.coinItemAmount = coinItemAmount;
+        this.timeItemAmount = timeItemAmount;
     }
 
     public InGameItem()
@@ -148,13 +154,16 @@ public class InGameItem
         shieldItem = false;
         saveItem = false;
         coinItem = false;
+        timeItem = false;
         goldIncreaseAmount = 0;
         isUseShieldItem = false;
         isUseSaveItem = false;
         isUseCoinItem = false;
+        isUseTimeItem = false;
         shieldItemAmount = 0;
         saveItemAmount = 0;
         coinItemAmount = 0;
+        timeItemAmount = 0;
     }
 }
 

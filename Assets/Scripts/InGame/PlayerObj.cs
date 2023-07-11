@@ -32,6 +32,7 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.inGameItem.shieldItem = DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem;
         DataManager.Single.Data.inGameData.inGameItem.saveItem = DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem;
         DataManager.Single.Data.inGameData.inGameItem.coinItem = DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem;
+        DataManager.Single.Data.inGameData.inGameItem.timeItem = DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem;
 
         DataManager.Single.Data.inGameData.speed = 4;
         DataManager.Single.Data.inGameData.color = "default";
@@ -45,6 +46,10 @@ public class PlayerObj : MonoBehaviour
         else
         {
             DataManager.Single.Data.inGameData.isShield = false;
+        }
+        if (DataManager.Single.Data.inGameData.inGameItem.timeItem)
+        {
+            DataManager.Single.Data.inGameData.crruentQuest.time += 15;
         }
         DataManager.Single.Data.inGameData.isFever = false;
         DataManager.Single.Data.inGameData.isHit = false;
