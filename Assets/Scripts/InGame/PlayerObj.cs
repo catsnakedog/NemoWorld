@@ -61,27 +61,28 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.coinGetAmount = 0;
 
         //Skin Set
-        string head = DataManager.Single.Data.inGameData.ch.head;
-        string cloth = DataManager.Single.Data.inGameData.ch.cloth;
-        string wing = DataManager.Single.Data.inGameData.ch.wing;
+        StringBuilder sb = new StringBuilder("Sprite/Skin/");
         GameObject Head = transform.GetChild(0).GetChild(0).gameObject;
         GameObject Cloth = transform.GetChild(0).GetChild(0).gameObject;
         GameObject Wing = transform.GetChild(0).GetChild(0).gameObject;
 
-        if (!head.Equals(""))
+        if (!DataManager.Single.Data.inGameData.ch.head.Equals(""))
         {
-            Head.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/" + head);
+            Head.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Head/" + DataManager.Single.Data.inGameData.ch.head).ToString());
             Head.SetActive(true);
+            sb.Remove(12, sb.Length - 12);
         }
-        if (!cloth.Equals("")) 
+        if (!DataManager.Single.Data.inGameData.ch.cloth.Equals("")) 
         {
-            Cloth.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/"+ cloth);
+            Cloth.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Cloth/" + DataManager.Single.Data.inGameData.ch.cloth).ToString());
             Cloth.SetActive(true);
+            sb.Remove(12, sb.Length - 12);
         }
-        if (!wing.Equals(""))
+        if (!DataManager.Single.Data.inGameData.ch.wing.Equals(""))
         {
-            Wing.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/"+ wing);
+            Wing.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Wing/" + DataManager.Single.Data.inGameData.ch.wing).ToString());
             Wing.SetActive(true);
+            sb.Remove(12, sb.Length - 12);
         }
     }
 
