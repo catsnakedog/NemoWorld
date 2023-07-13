@@ -1,8 +1,8 @@
 {
     "inGameData": {
         "cost": {
-            "gold": 110748,
-            "energy": 1214,
+            "gold": 110756,
+            "energy": 1240,
             "test1": 0,
             "test2": 0
         },
@@ -40,12 +40,12 @@
         "gameMode": "easy",
         "crruentQuest": {
             "stage": 1,
-            "gameMode": "hard",
-            "info": "아이템 선택",
-            "time": 61
+            "gameMode": "easy",
+            "info": "점프 60번 달성",
+            "time": -1
         },
-        "speed": 3.9999990463256838,
-        "color": "Blue",
+        "speed": 2.9999942779541017,
+        "color": "Yellow",
         "isGod": false,
         "isPurple": false,
         "isShield": false,
@@ -59,18 +59,18 @@
         "fever": 12,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
-        "isHit": false,
-        "coinGetAmount": 6,
+        "isHit": true,
+        "coinGetAmount": 8,
         "inGameItem": {
-            "shieldItem": true,
+            "shieldItem": false,
             "saveItem": false,
-            "coinItem": true,
-            "timeItem": true,
+            "coinItem": false,
+            "timeItem": false,
             "goldIncreaseAmount": 0.0,
-            "isUseShieldItem": true,
-            "isUseSaveItem": true,
-            "isUseCoinItem": true,
-            "isUseTimeItem": true,
+            "isUseShieldItem": false,
+            "isUseSaveItem": false,
+            "isUseCoinItem": false,
+            "isUseTimeItem": false,
             "shieldItemAmount": 19,
             "saveItemAmount": 19,
             "coinItemAmount": 10,
@@ -122,12 +122,12 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-13 PM 8:20:25",
+        "beforeTime": "2023-07-13 PM 10:37:51",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 143,
-        "silverCoinCount": 1,
-        "hitCount": 15
+        "jumpCount": 33,
+        "silverCoinCount": 8,
+        "hitCount": 7
     }
 }
