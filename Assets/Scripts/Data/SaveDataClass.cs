@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 [System.Serializable]
 public class SaveDataClass
 {
+    public bool isFirst;
     public InGameData inGameData;
     public OptionData optionData;
     public QuestData questData;
     public TimeData timeData;
     public MissionData missionData;
-    public SaveDataClass(InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData)
+    public SaveDataClass(bool isFirst,InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData)
     {
+        this.isFirst = isFirst;
         this.inGameData = inGameData;
         this.optionData = optionData;
         this.questData = questData;
@@ -23,6 +25,7 @@ public class SaveDataClass
     }
     public SaveDataClass()
     {
+        isFirst = false;
         inGameData = new InGameData();
         optionData = new OptionData();
         questData = new QuestData();
@@ -322,7 +325,7 @@ public class TimeData
 
     public TimeData()
     {
-        this.beforeTime = "";
+        this.beforeTime = "2023 - 07 - 13 PM 10:30:47";
         this.crruentTime = "";
     }
 }

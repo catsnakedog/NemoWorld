@@ -103,4 +103,32 @@ public class Define
         CoinGet,
         Hit
     }
+
+    /// <summary>
+    /// TODO : 가격에 따라 분류
+    /// </summary>
+    public enum Head
+    {
+        Crown,
+        PinkFlower,
+        Wizard,
+        YellowFlower
+    }
+    public enum Cloth
+    {
+        Angel,
+        General,
+        Straw,
+        Wizard
+    }
+    public enum Wing
+    {
+        Angel,
+        BlueButterfly,
+        Butterfly,
+        General,
+        PinkAngel,
+        PinkButterfly,
+        PurpleButterfly
+    }
 }

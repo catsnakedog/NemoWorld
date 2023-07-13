@@ -6,6 +6,7 @@ using System.Text;
 
 public class JsonManager
 {
+    public QuestDataScriptable quest;
     public void SaveJson(SaveDataClass saveData) // 데이터를 저장하는 함수
     {
         string jsonText;
@@ -15,7 +16,7 @@ public class JsonManager
 
 #endif
 #if UNITY_ANDROID
-        savePath = Application.persistentDataPath + "/Data/GameData.json";
+        savePath = Application.persistentDataPath + "/GameData.json";
 #endif
         jsonText = JsonUtility.ToJson(saveData, true);
         FileStream fileStream = new FileStream(savePath, FileMode.Create);
@@ -27,14 +28,20 @@ public class JsonManager
     public SaveDataClass LoadSaveData()
     {
         SaveDataClass gameData;
+
         string loadPath = Application.dataPath + "/Data/GameData.json";
 
 #if UNITY_EDITOR_WIN
 
 #endif
 #if UNITY_ANDROID
-        loadPath = Application.persistentDataPath + "/Data/GameData.json";
+        loadPath = Application.persistentDataPath + "/GameData.json";
 #endif
+        if (!Directory.Exists(loadPath))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath);
+        }
+
         if (File.Exists(loadPath))
         {
             FileStream stream = new FileStream(loadPath, FileMode.Open);
@@ -48,6 +55,8 @@ public class JsonManager
         {
             gameData = new SaveDataClass();
         }
+
+        gameData.questData = quest.questData;
 
         return gameData;
     }

@@ -12,6 +12,8 @@ public class DataManager : MonoBehaviour
 
     public ResourceManager resource;
 
+    public QuestDataScriptable quest;
+
     void Awake()
     {
         if (Single == null) // DataManager의 유일성 보장
@@ -38,6 +40,7 @@ public class DataManager : MonoBehaviour
 
     public void Load() // json에 기록돼있는 데이터들을 불러온다
     {
+        jsonManager.quest = quest;
         Data = jsonManager.LoadSaveData();
     }
 }

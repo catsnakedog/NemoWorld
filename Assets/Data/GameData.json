@@ -2,7 +2,7 @@
     "inGameData": {
         "cost": {
             "gold": 110748,
-            "energy": 1214,
+            "energy": 1236,
             "test1": 0,
             "test2": 0
         },
@@ -37,12 +37,12 @@
             "stage1"
         ],
         "stage": 1,
-        "gameMode": "easy",
+        "gameMode": "hard",
         "crruentQuest": {
             "stage": 1,
-            "gameMode": "hard",
-            "info": "아이템 선택",
-            "time": 61
+            "gameMode": "easy",
+            "info": "점프 60번 달성",
+            "time": 80
         },
         "speed": 3.9999990463256838,
         "color": "Blue",
@@ -67,10 +67,10 @@
             "coinItem": true,
             "timeItem": true,
             "goldIncreaseAmount": 0.0,
-            "isUseShieldItem": true,
-            "isUseSaveItem": true,
-            "isUseCoinItem": true,
-            "isUseTimeItem": true,
+            "isUseShieldItem": false,
+            "isUseSaveItem": false,
+            "isUseCoinItem": false,
+            "isUseTimeItem": false,
             "shieldItemAmount": 19,
             "saveItemAmount": 19,
             "coinItemAmount": 10,
@@ -122,7 +122,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-13 PM 8:20:25",
+        "beforeTime": "2023-07-13 PM 10:12:03",
         "crruentTime": ""
     },
     "missionData": {

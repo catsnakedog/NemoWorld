@@ -60,6 +60,30 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
         DataManager.Single.Data.inGameData.coinGetAmount = 0;
+
+        //Skin Set
+        string head = DataManager.Single.Data.inGameData.ch.head;
+        string cloth = DataManager.Single.Data.inGameData.ch.cloth;
+        string wing = DataManager.Single.Data.inGameData.ch.wing;
+        GameObject Head = transform.GetChild(0).GetChild(0).gameObject;
+        GameObject Cloth = transform.GetChild(0).GetChild(0).gameObject;
+        GameObject Wing = transform.GetChild(0).GetChild(0).gameObject;
+
+        if (!head.Equals(""))
+        {
+            Head.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/" + head);
+            Head.SetActive(true);
+        }
+        if (!cloth.Equals("")) 
+        {
+            Cloth.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/"+ cloth);
+            Cloth.SetActive(true);
+        }
+        if (!wing.Equals(""))
+        {
+            Wing.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/Skin/Head/"+ wing);
+            Wing.SetActive(true);
+        }
     }
 
     private void FixedUpdate()
