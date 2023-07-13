@@ -1,8 +1,8 @@
 {
     "inGameData": {
         "cost": {
-            "gold": 110756,
-            "energy": 1240,
+            "gold": 110558,
+            "energy": 1255,
             "test1": 0,
             "test2": 0
         },
@@ -71,8 +71,8 @@
             "isUseSaveItem": false,
             "isUseCoinItem": false,
             "isUseTimeItem": false,
-            "shieldItemAmount": 19,
-            "saveItemAmount": 19,
+            "shieldItemAmount": 41,
+            "saveItemAmount": 30,
             "coinItemAmount": 10,
             "timeItemAmount": 29
         }
@@ -122,7 +122,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-13 PM 10:37:51",
+        "beforeTime": "2023-07-13 PM 11:55:57",
         "crruentTime": ""
     },
     "missionData": {
