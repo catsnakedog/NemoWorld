@@ -37,15 +37,15 @@
             "stage1"
         ],
         "stage": 1,
-        "gameMode": "easy",
+        "gameMode": "hard",
         "crruentQuest": {
             "stage": 1,
             "gameMode": "easy",
             "info": "점프 60번 달성",
-            "time": -1
+            "time": 80
         },
-        "speed": 2.9999942779541017,
-        "color": "Yellow",
+        "speed": 3.9999990463256838,
+        "color": "Blue",
         "isGod": false,
         "isPurple": false,
         "isShield": false,
@@ -59,13 +59,13 @@
         "fever": 12,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
-        "isHit": true,
-        "coinGetAmount": 8,
+        "isHit": false,
+        "coinGetAmount": 6,
         "inGameItem": {
-            "shieldItem": false,
+            "shieldItem": true,
             "saveItem": false,
-            "coinItem": false,
-            "timeItem": false,
+            "coinItem": true,
+            "timeItem": true,
             "goldIncreaseAmount": 0.0,
             "isUseShieldItem": false,
             "isUseSaveItem": false,
@@ -126,8 +126,8 @@
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 33,
-        "silverCoinCount": 8,
-        "hitCount": 7
+        "jumpCount": 143,
+        "silverCoinCount": 1,
+        "hitCount": 15
     }
 }
