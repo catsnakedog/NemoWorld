@@ -127,7 +127,7 @@ MonoBehaviour:
   distance: 3
   speed: 0
   whatDistanceItStart: 0
-  number: 120
+  number: 60
 --- !u!1 &6843817374117977318
 GameObject:
   m_ObjectHideFlags: 0
