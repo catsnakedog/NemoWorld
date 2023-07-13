@@ -15,11 +15,14 @@ public class PlayerObj : MonoBehaviour
 
     Action playerAction;
     Coroutine[] playerCoroutine;
+    Coroutine effectCoroutine;
+
     string itemType;
     string[] items = { "ItemRed", "ItemOrange", "ItemYellow", "ItemGreen", "ItemBlue", "ItemNavy", "ItemPurple" };
     string[] colorObjs = { "Red", "Orange", "Yellow", "Green", "Blue", "Navy", "Purple" };
 
     GameObject shield;
+    SpriteRenderer effect;
 
     Animator playerAnimation;
 
@@ -27,7 +30,8 @@ public class PlayerObj : MonoBehaviour
     {
         playerCoroutine = new Coroutine[items.Length];
         playerAnimation = GetComponent<Animator>();
-        shield = transform.GetChild(0).GetChild(3).gameObject;
+        shield = transform.GetChild(1).gameObject;
+        effect = transform.GetChild(2).GetComponent<SpriteRenderer>();
 
         DataManager.Single.Data.inGameData.inGameItem.shieldItem = DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem;
         DataManager.Single.Data.inGameData.inGameItem.saveItem = DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem;
@@ -143,12 +147,20 @@ public class PlayerObj : MonoBehaviour
                     StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemRed")]);
             }
         }
-        // æ∆¿Ã≈€ ≈âµÊ ¿Ã∆Â∆Æ
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
 
         StringBuilder sb = new StringBuilder(itemType);
         sb.Remove(0, 4);
         DataManager.Single.Data.inGameData.color = sb.ToString();
+
+        sb.Clear();
+        sb.Append("Effect");
+        sb.Append(DataManager.Single.Data.inGameData.color.ToString());
+        effect.sprite = MainController.main.resource.sprite[sb.ToString()];
+
+        effectCoroutine = null;
+        effectCoroutine = StartCoroutine(ItemEffect());
+
         playerCoroutine[Array.IndexOf(items, itemType)] = StartCoroutine(itemType);
     }
 
@@ -181,6 +193,13 @@ public class PlayerObj : MonoBehaviour
             flag = !flag;
         }
         DataManager.Single.Data.inGameData.isHit = false;
+    }
+
+    IEnumerator ItemEffect()
+    {
+        effect.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        effect.gameObject.SetActive(false);
     }
 
     #region item

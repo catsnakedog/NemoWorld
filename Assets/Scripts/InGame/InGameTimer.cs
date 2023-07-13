@@ -18,7 +18,7 @@ public class InGameTimer : MonoBehaviour
         StartCoroutine(Timer());
     }
 
-    IEnumerator Timer()
+    void Update()
     {
         sb.Clear();
         string temp1 = System.Math.Truncate(DataManager.Single.Data.inGameData.crruentQuest.time / 60f).ToString();
@@ -26,7 +26,11 @@ public class InGameTimer : MonoBehaviour
         sb.Append(temp1);
         sb.Append(" : ");
         sb.Append(temp2);
-        time.text = sb.ToString(); 
+        time.text = sb.ToString();
+    }
+
+    IEnumerator Timer()
+    {
         yield return new WaitForSeconds(1f);
         if(DataManager.Single.Data.inGameData.crruentQuest.time > 0)
         {

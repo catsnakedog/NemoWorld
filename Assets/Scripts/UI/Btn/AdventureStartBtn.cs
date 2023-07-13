@@ -10,9 +10,6 @@ public class AdventureStartBtn : EventTriggerEX
 {
     [SerializeField]
     List<GameObject> map;
-
-    [SerializeField]
-    int mapNumber;
     private void Start()
     {
         init();
@@ -26,18 +23,13 @@ public class AdventureStartBtn : EventTriggerEX
         List<int> partList = new List<int>() { 1, 2, 3, 4 };
         List<int> mapList = new List<int>();
 
-        /*
         for (int i = 0; i < 3; i++)
         {
             int randomNum = UnityEngine.Random.Range(0, partList.Count);
             mapList.Add(partList[randomNum]);
             partList.RemoveAt(randomNum);
         }
-        */ // 일단 테스트를 위해서 비활성화 (맵 랜덤리스트 생성 부분)
 
-        mapList.Add(mapNumber);
-        mapList.Add(mapNumber);
-        mapList.Add(mapNumber);
 
         GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);

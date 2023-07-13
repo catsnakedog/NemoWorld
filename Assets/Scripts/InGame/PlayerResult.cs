@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class PlayerResult : MonoBehaviour
@@ -10,8 +11,8 @@ public class PlayerResult : MonoBehaviour
 
     private void Start()
     {
-        playerAction += isFall;
-        playerAction += isTimeOut;
+        playerAction += IsFall;
+        playerAction += IsTimeOut;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,15 +24,51 @@ public class PlayerResult : MonoBehaviour
         }
     }
 
-    void isFall()
+    void IsFall()
     {
         if (gameObject.transform.position.y < -4f)
         {
-            Die();
+            if(DataManager.Single.Data.inGameData.inGameItem.saveItem)
+            {
+                DataManager.Single.Data.inGameData.inGameItem.saveItem = false;
+                playerAction -= IsFall;
+                StartCoroutine(FallSave());
+            }
+            else
+            {
+                Die();
+            }
         }
     }
 
-    void isTimeOut()
+    IEnumerator FallSave()
+    {
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        DataManager.Single.Data.inGameData.speed = 0;
+        yield return new WaitForSeconds(2f);
+        gameObject.transform.position = new Vector3(-5.5f, 2f, 0f);
+
+        bool flag = true;
+
+        for(int i = 0; i<5; i++)
+        {
+            float a;
+            if (flag)
+                a = 1f;
+            else
+                a = 0.3f;
+
+            yield return new WaitForSeconds(0.2f);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, a);
+            flag = !flag;
+        }
+
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        DataManager.Single.Data.inGameData.speed = 4;
+        playerAction += IsFall;
+    }
+
+    void IsTimeOut()
     {
         if (DataManager.Single.Data.inGameData.crruentQuest.time <= 0)
         {
