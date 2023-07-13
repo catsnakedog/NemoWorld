@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObjMove2 : MonoBehaviour
 {
     Action ObjAction;
+    Action ObjFixedAction;
     GameObject ch;
     Coroutine ObjCoroutine;
 
@@ -19,9 +20,6 @@ public class ObjMove2 : MonoBehaviour
     float whatDistanceItStart;
     [SerializeField]
     int number = 60;
-
-    float xPlus;
-    float yPlus;
 
     private void Start()
     {
@@ -42,35 +40,28 @@ public class ObjMove2 : MonoBehaviour
         ObjAction?.Invoke();
     }
 
-    IEnumerator Move()
+    private void FixedUpdate()
     {
-        float waitTime = (float)(distance / speed) / (float)number;
+        ObjFixedAction?.Invoke();
+    }
 
+    void Move()
+    {
         if (direction == "Up")
         {
-            xPlus = 0;
-            yPlus = distance / number;
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + Time.deltaTime * speed, 0);
         }
         else if (direction == "Down")
         {
-            xPlus = 0;
-            yPlus = -distance / number;
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - Time.deltaTime * speed, 0);
         }
         else if (direction == "Left")
         {
-            xPlus = -distance / number;
-            yPlus = 0;
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x - Time.deltaTime * speed, gameObject.transform.position.y, 0);
         }
         else if (direction == "Right")
         {
-            xPlus = distance / number;
-            yPlus = 0;
-        }
-
-        for (int i = 0; i < number; i++)
-        {
-            yield return new WaitForSeconds(waitTime);
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x + xPlus, gameObject.transform.position.y + yPlus, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x + Time.deltaTime * speed, gameObject.transform.position.y, 0);
         }
     }
 
@@ -78,8 +69,8 @@ public class ObjMove2 : MonoBehaviour
     {
         if ((transform.position.x - ch.transform.position.x) <= whatDistanceItStart)
         {
-            ObjCoroutine = StartCoroutine(Move());
             ObjAction -= ObjStart;
+            ObjFixedAction += Move;
         }
     }
 }
