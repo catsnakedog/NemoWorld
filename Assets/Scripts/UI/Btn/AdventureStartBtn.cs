@@ -57,7 +57,7 @@ public class AdventureStartBtn : EventTriggerEX
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }
-        temp = Instantiate(map[4], new Vector3(size, 0f, 0f), Quaternion.identity);
+        temp = Instantiate(map[5], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();

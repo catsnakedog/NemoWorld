@@ -37,6 +37,8 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.inGameItem.coinItem = DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem;
         DataManager.Single.Data.inGameData.inGameItem.timeItem = DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem;
 
+        DataManager.Single.Data.inGameData.isGreenItem = false;
+        DataManager.Single.Data.inGameData.isRedItem = false;
         DataManager.Single.Data.inGameData.speed = 4;
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
@@ -160,8 +162,10 @@ public class PlayerObj : MonoBehaviour
         {
             StopCoroutine(playerCoroutine[Array.IndexOf(items, itemType)]);
 
+
             if (itemType == "ItemRed")
             {
+                DataManager.Single.Data.inGameData.isRedItem = false;
                 if (playerCoroutine[Array.IndexOf(items, "ItemGreen")] != null)
                 {
                     StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemGreen")]);
@@ -170,6 +174,7 @@ public class PlayerObj : MonoBehaviour
             }
             if (itemType == "ItemGreen")
             {
+                DataManager.Single.Data.inGameData.isGreenItem = false;
                 if (playerCoroutine[Array.IndexOf(items, "ItemRed")] != null)
                 {
                     StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemRed")]);
