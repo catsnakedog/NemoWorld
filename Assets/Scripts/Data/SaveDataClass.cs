@@ -62,8 +62,12 @@ public class InGameData
     public bool isHit;
     public int coinGetAmount;
     public InGameItem inGameItem;
+    public List<GameObject> ObjList;
+    public bool isRedItem;
+    public bool isGreenItem;
+    public List<int> beforeMapList;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -88,6 +92,10 @@ public class InGameData
         this.isHit = isHit;
         this.coinGetAmount = coinGetAmount;
         this.inGameItem = inGameItem;
+        ObjList = objList;
+        this.isRedItem = isRedItem;
+        this.isGreenItem = isGreenItem;
+        this.beforeMapList = beforeMapList;
     }
 
     public InGameData()
@@ -115,6 +123,10 @@ public class InGameData
         isHit = false;
         coinGetAmount = 0;
         inGameItem = new InGameItem();
+        ObjList = new List<GameObject>();
+        isRedItem = false;
+        isGreenItem = false;
+        beforeMapList = new List<int>();
     }
 }
 

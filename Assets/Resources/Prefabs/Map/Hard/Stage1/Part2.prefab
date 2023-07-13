@@ -3805,7 +3805,7 @@ MonoBehaviour:
   distance: 10
   speed: 5
   whatDistanceItStart: 3
-  number: 60
+  number: 120
 --- !u!1 &1863630378425203327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +4978,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 10
-  number: 60
+  number: 120
 --- !u!1 &2492613465727778877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,7 +5106,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 20
-  number: 60
+  number: 120
 --- !u!1 &2492613466471855755
 GameObject:
   m_ObjectHideFlags: 0
@@ -5270,7 +5270,7 @@ MonoBehaviour:
   distance: 10
   speed: 5
   whatDistanceItStart: 3
-  number: 60
+  number: 120
 --- !u!1 &2592461682540503357
 GameObject:
   m_ObjectHideFlags: 0
@@ -8059,7 +8059,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 10
-  number: 60
+  number: 120
 --- !u!1 &3443659911910939664
 GameObject:
   m_ObjectHideFlags: 0
@@ -9001,7 +9001,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 10
-  number: 60
+  number: 120
 --- !u!1 &3672639500953429287
 GameObject:
   m_ObjectHideFlags: 0
@@ -9391,7 +9391,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 20
-  number: 60
+  number: 120
 --- !u!1 &3865885096540297270
 GameObject:
   m_ObjectHideFlags: 0
@@ -9817,7 +9817,7 @@ MonoBehaviour:
   distance: 10
   speed: 6
   whatDistanceItStart: 4
-  number: 60
+  number: 120
 --- !u!1 &4066261284888327632
 GameObject:
   m_ObjectHideFlags: 0
@@ -10430,7 +10430,7 @@ MonoBehaviour:
   distance: 7
   speed: 5
   whatDistanceItStart: 15
-  number: 60
+  number: 120
 --- !u!1 &4278216114529968543
 GameObject:
   m_ObjectHideFlags: 0
@@ -10887,7 +10887,7 @@ MonoBehaviour:
   distance: 10
   speed: 5
   whatDistanceItStart: 3
-  number: 60
+  number: 120
 --- !u!1 &4514822981324872364
 GameObject:
   m_ObjectHideFlags: 0
@@ -13224,7 +13224,7 @@ MonoBehaviour:
   distance: 5
   speed: 3
   whatDistanceItStart: 10
-  number: 60
+  number: 120
 --- !u!1 &5876856075253630366
 GameObject:
   m_ObjectHideFlags: 0
@@ -17470,7 +17470,7 @@ MonoBehaviour:
   distance: 5
   speed: 4
   whatDistanceItStart: 15
-  number: 60
+  number: 120
 --- !u!1 &8076169807516325273
 GameObject:
   m_ObjectHideFlags: 0
@@ -18585,7 +18585,7 @@ MonoBehaviour:
   distance: 10
   speed: 8
   whatDistanceItStart: 4
-  number: 60
+  number: 120
 --- !u!1 &8375638364955535936
 GameObject:
   m_ObjectHideFlags: 0
@@ -18987,7 +18987,7 @@ MonoBehaviour:
   distance: 10
   speed: 5
   whatDistanceItStart: 3
-  number: 60
+  number: 120
 --- !u!1 &8683493076774096122
 GameObject:
   m_ObjectHideFlags: 0
@@ -26981,7 +26981,7 @@ Tilemap:
       - {fileID: 21300000, guid: 8db360aa2bd2f9e46807b4194f27a28e, type: 3}
       - {fileID: 21300000, guid: aa2a23d3b29f0594f99be74926e02f0b, type: 3}
       - {fileID: 21300000, guid: bb06010b073209447b47883bea802101, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 92, y: -3, z: 0}
@@ -28269,7 +28269,7 @@ Tilemap:
       - {fileID: 21300000, guid: 8db360aa2bd2f9e46807b4194f27a28e, type: 3}
       - {fileID: 21300000, guid: aa2a23d3b29f0594f99be74926e02f0b, type: 3}
       - {fileID: 21300000, guid: bb06010b073209447b47883bea802101, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 307, y: -3, z: 0}

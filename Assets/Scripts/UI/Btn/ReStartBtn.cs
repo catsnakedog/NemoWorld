@@ -85,6 +85,8 @@ public class ReStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        DataManager.Single.Data.inGameData.ObjList.Clear();
+
         QuestInfoTextSet();
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
         ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);

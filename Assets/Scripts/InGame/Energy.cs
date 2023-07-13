@@ -9,6 +9,7 @@ public class Energy : MonoBehaviour
     private void Start()
     {
         energyTime = 5;
+
         TimeSpan timespan;
         DateTime userIndate;
         DateTime now;

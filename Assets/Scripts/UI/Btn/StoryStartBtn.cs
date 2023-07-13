@@ -51,6 +51,12 @@ public class StoryStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
+        {
+            // 에너지 부족!
+            return;
+        }
+
         if (DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem)
             DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount--;
         if (DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem)
@@ -60,13 +66,9 @@ public class StoryStartBtn : EventTriggerEX
         if (DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem)
             DataManager.Single.Data.inGameData.inGameItem.timeItemAmount--;
 
-        if (DataManager.Single.Data.inGameData.cost.energy <= 0)
-        {
-            // 에너지 부족!
-            return;
-        }
-        DataManager.Single.Data.inGameData.cost.energy--;
+        DataManager.Single.Data.inGameData.ObjList.Clear();
 
+        DataManager.Single.Data.inGameData.cost.energy--;
 
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
         ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);

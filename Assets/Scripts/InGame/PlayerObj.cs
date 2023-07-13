@@ -15,7 +15,6 @@ public class PlayerObj : MonoBehaviour
 
     Action playerAction;
     Coroutine[] playerCoroutine;
-    Coroutine effectCoroutine;
 
     string itemType;
     string[] items = { "ItemRed", "ItemOrange", "ItemYellow", "ItemGreen", "ItemBlue", "ItemNavy", "ItemPurple" };
@@ -163,12 +162,18 @@ public class PlayerObj : MonoBehaviour
             if (itemType == "ItemRed")
             {
                 if (playerCoroutine[Array.IndexOf(items, "ItemGreen")] != null)
+                {
                     StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemGreen")]);
+                    DataManager.Single.Data.inGameData.isGreenItem = false;
+                }
             }
             if (itemType == "ItemGreen")
             {
                 if (playerCoroutine[Array.IndexOf(items, "ItemRed")] != null)
+                {
                     StopCoroutine(playerCoroutine[Array.IndexOf(items, "ItemRed")]);
+                    DataManager.Single.Data.inGameData.isRedItem = false;
+                }
             }
         }
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
@@ -181,9 +186,7 @@ public class PlayerObj : MonoBehaviour
         sb.Append("Effect");
         sb.Append(DataManager.Single.Data.inGameData.color.ToString());
         effect.sprite = MainController.main.resource.sprite[sb.ToString()];
-
-        effectCoroutine = null;
-        effectCoroutine = StartCoroutine(ItemEffect());
+        effect.gameObject.SetActive(true);
 
         playerCoroutine[Array.IndexOf(items, itemType)] = StartCoroutine(itemType);
     }
@@ -195,10 +198,13 @@ public class PlayerObj : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             DataManager.Single.Data.inGameData.speed += 0.1f;
         }
-        if (DataManager.Single.Data.inGameData.speed >= 4f)
-        {
+
+        if(DataManager.Single.Data.inGameData.isRedItem)
+            DataManager.Single.Data.inGameData.speed = 6f;
+        else if (DataManager.Single.Data.inGameData.isGreenItem)
+            DataManager.Single.Data.inGameData.speed = 2f;
+        else
             DataManager.Single.Data.inGameData.speed = 4f;
-        }
     }
 
     IEnumerator HitEffect()
@@ -219,20 +225,15 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.isHit = false;
     }
 
-    IEnumerator ItemEffect()
-    {
-        effect.gameObject.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        effect.gameObject.SetActive(false);
-    }
-
     #region item
 
     IEnumerator ItemRed()
     {
+        DataManager.Single.Data.inGameData.isRedItem = true;
         DataManager.Single.Data.inGameData.speed = redSpeed;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.speed = 4;
+        DataManager.Single.Data.inGameData.isRedItem = false;
     }
     IEnumerator ItemOrange()
     {
@@ -247,9 +248,11 @@ public class PlayerObj : MonoBehaviour
     }
     IEnumerator ItemGreen()
     {
+        DataManager.Single.Data.inGameData.isGreenItem = true;
         DataManager.Single.Data.inGameData.speed = greenSpeed;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.speed = 4;
+        DataManager.Single.Data.inGameData.isGreenItem = false;
     }
     IEnumerator ItemBlue()
     {
