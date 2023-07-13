@@ -44,7 +44,7 @@ public class ObjMove : MonoBehaviour
 
     IEnumerator Move()
     { 
-        float waitTime = (distance / speed) / number;
+        float waitTime = (float)(distance / speed) / (float)number;
 
         if (direction == "Up")
         {
