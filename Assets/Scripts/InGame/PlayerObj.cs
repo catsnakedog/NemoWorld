@@ -191,7 +191,10 @@ public class PlayerObj : MonoBehaviour
         sb.Clear();
         sb.Append("Effect");
         sb.Append(DataManager.Single.Data.inGameData.color.ToString());
-        effect.sprite = MainController.main.resource.sprite[sb.ToString()];
+        if(!DataManager.Single.Data.inGameData.isFever)
+        {
+            effect.sprite = MainController.main.resource.sprite[sb.ToString()];
+        }
         effect.gameObject.SetActive(true);
 
         playerCoroutine[Array.IndexOf(items, itemType)] = StartCoroutine(itemType);

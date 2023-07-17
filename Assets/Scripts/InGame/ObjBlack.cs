@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjBlack : MonoBehaviour
 {
     SpriteRenderer sr;
+    bool isActive;
 
     private void Start()
     {
@@ -14,11 +15,20 @@ public class ObjBlack : MonoBehaviour
     {
         if(DataManager.Single.Data.inGameData.isPurple)
         {
-            sr.color = Color.black;
+            if(!isActive)
+            {
+                StartCoroutine(PurpleEffect());
+                isActive = true;
+            }
         }
-        else
-        {
-            sr.color = Color.white;
-        }
+    }
+
+    IEnumerator PurpleEffect()
+    {
+        Sprite temp  = sr.sprite;
+        sr.sprite = MainController.main.resource.sprite["EffectSaw"];
+        yield return new WaitForSeconds(5f);
+        sr.sprite = temp;
+        isActive = false;
     }
 }

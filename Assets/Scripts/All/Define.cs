@@ -76,6 +76,8 @@ public class Define
         EffectBlue,
         EffectNavy,
         EffectPurple,
+        EffectFever,
+        EffectSaw,
         stage1EasyCutToon,
         stage2EasyCutToon,
         stage3EasyCutToon,

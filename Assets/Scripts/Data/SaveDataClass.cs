@@ -170,7 +170,7 @@ public class InGameItem
         saveItem = false;
         coinItem = false;
         timeItem = false;
-        goldIncreaseAmount = 0;
+        goldIncreaseAmount = 0.4f;
         isUseShieldItem = false;
         isUseSaveItem = false;
         isUseCoinItem = false;

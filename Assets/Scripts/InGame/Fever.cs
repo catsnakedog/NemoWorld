@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class Fever : MonoBehaviour
@@ -8,6 +9,7 @@ public class Fever : MonoBehaviour
     [SerializeField]
     float feverTime;
 
+    GameObject effect;
     Action feverAction;
     void Update()
     {
@@ -17,6 +19,7 @@ public class Fever : MonoBehaviour
     private void Start()
     {
         feverAction += FeverCheck;
+        effect = transform.GetChild(2).gameObject;
     }
 
     void FeverCheck()
@@ -30,16 +33,33 @@ public class Fever : MonoBehaviour
 
     IEnumerator FeverStart()
     {
+        effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite["EffectFever"];
         DataManager.Single.Data.inGameData.isFever = true;
         DataManager.Single.Data.inGameData.isGod = true;
+        StartCoroutine(EffectFever());
         for(int i= 0; i < 20; i++)
         {
             yield return new WaitForSeconds(feverTime / 20);
             DataManager.Single.Data.inGameData.fever--;
         }
+        StringBuilder sb = new StringBuilder("Effect");
+        sb.Append(DataManager.Single.Data.inGameData.color);
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.isGod = false;
         feverAction += FeverCheck;
         DataManager.Single.Data.inGameData.isFever = false;
+        effect.transform.localRotation = Quaternion.identity;
+        effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite[sb.ToString()];
+    }
+
+    IEnumerator EffectFever()
+    {
+        float a = 0f;
+        for(int i=0; i < 60; i++)
+        {
+            effect.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, a));
+            yield return new WaitForSeconds(feverTime / 60f);
+            a += 4f;
+        }
     }
 }

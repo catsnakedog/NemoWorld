@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 6390158844152152555}
   - component: {fileID: 7773186837216289717}
   - component: {fileID: 480816117748616317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Start
   m_TagString: Land
   m_Icon: {fileID: 0}

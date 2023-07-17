@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 443996740975992352}
   - component: {fileID: 5619904258551710544}
   - component: {fileID: 535649902397203308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: Land
   m_Icon: {fileID: 0}
