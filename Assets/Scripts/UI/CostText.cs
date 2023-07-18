@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Linq;
 
 public class CostText : MonoBehaviour
 {
@@ -33,10 +32,11 @@ public class CostText : MonoBehaviour
     void CostTextSetting()
     {
         textDict["Gold"].text = Single.Data.inGameData.cost.gold.ToString();
-        textDict["Gold1"].text = Single.Data.inGameData.cost.gold.ToString();
-        textDict["Energy"].text = Single.Data.inGameData.cost.energy.ToString();
-        textDict["Energy1"].text = Single.Data.inGameData.cost.energy.ToString();
-        textDict["Test1"].text = Single.Data.inGameData.cost.test1.ToString();
-        textDict["Test2"].text = Single.Data.inGameData.cost.test2.ToString();
+        textDict["Energy"].text = Single.Data.inGameData.cost.energy.ToString() + "/15";
+        textDict["HatGacha"].text = Single.Data.inGameData.cost.hatGacha.ToString();
+        textDict["ClothGacha"].text = Single.Data.inGameData.cost.clothGacha.ToString();
+        textDict["WingGacha"].text = Single.Data.inGameData.cost.wingGacha.ToString();
+        textDict["GachaPiece"].text = Single.Data.inGameData.cost.gachaPiece.ToString();
+        transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.name;
     }
 }

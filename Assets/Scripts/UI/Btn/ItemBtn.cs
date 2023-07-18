@@ -18,7 +18,8 @@ public class ItemBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        if(!flag)
+        MainController.main.sound.Play("buttonSFX");
+        if (!flag)
         {
             switch (number)
             {

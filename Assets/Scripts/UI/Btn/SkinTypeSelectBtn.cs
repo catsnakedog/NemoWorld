@@ -29,6 +29,7 @@ public class SkinTypeSelectBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         int cnt = 0;
         for (int i = 1; i < transforms.Length; i++)
         {

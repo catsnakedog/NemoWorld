@@ -18,7 +18,8 @@ public class ItemBuyBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        if(DataManager.Single.Data.inGameData.cost.gold >= price)
+        MainController.main.sound.Play("buttonSFX");
+        if (DataManager.Single.Data.inGameData.cost.gold >= price)
         {
             DataManager.Single.Data.inGameData.cost.gold -= price;
             switch(type)

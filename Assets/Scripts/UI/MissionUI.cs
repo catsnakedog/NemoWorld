@@ -26,7 +26,7 @@ public class MissionUI : MonoBehaviour
     {
         sb.Append("stage");
         sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
-        if (DataManager.Single.Data.inGameData.adventureClearList.Contains(sb.ToString()))
+        if (DataManager.Single.Data.inGameData.missionClearList.Contains(sb.ToString()))
         {
             gameObject.SetActive(false);
         }

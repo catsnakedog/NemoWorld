@@ -36,6 +36,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
+            MainController.main.sound.Play("jumpSFX");
             playerAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), true);
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;

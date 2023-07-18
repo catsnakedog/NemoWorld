@@ -45,7 +45,8 @@ public class SkinSelectBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
-        switch(type)
+        MainController.main.sound.Play("buttonSFX");
+        switch (type)
         {
             case "Head":
                 if (number < DataManager.Single.Data.inGameData.itemList.headItem.Count)

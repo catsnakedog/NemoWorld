@@ -28,6 +28,7 @@ public class Define
         Shop,
         GameResult,
         CutToon,
+        FirstUI,
         MaxCount
     }
 
@@ -84,16 +85,31 @@ public class Define
         stage1HardCutToon,
         stage2HardCutToon,
         stage3HardCutToon,
+        Up,
+        Down,
         MaxCount
     }
 
     public enum BGM
     {
+        storyBGM,
+        mainBGM,
+        rankingBGM,
+        adventureBGM,
         MaxCount
     }
 
     public enum SFX
     {
+        buttonSFX,
+        clearSFX,
+        coinSFX,
+        deathSFX,
+        gachaSFX,
+        hitSFX,
+        itemSFX,
+        jumpSFX,
+        shieldBreakSFX,
         MaxCount
     }
 

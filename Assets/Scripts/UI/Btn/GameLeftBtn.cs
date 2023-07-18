@@ -14,6 +14,7 @@ public class GameLeftBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         if (DataManager.Single.Data.inGameData.inGameItem.coinItem)
         {
             DataManager.Single.Data.inGameData.cost.gold += (int)(DataManager.Single.Data.inGameData.coinGetAmount * ((DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount) + 1));
@@ -40,5 +41,6 @@ public class GameLeftBtn : EventTriggerEX
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard") MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Adventure);
         if (DataManager.Single.Data.inGameData.gameMode == "easy") MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Story);
+        MainController.main.sound.Play("mainBGM");
     }
 }

@@ -39,11 +39,12 @@ public class SaveDataClass
 [System.Serializable]
 public class InGameData
 {
-    public Cost cost;
+    public Cost cost; // 재화 관련
     public ItemList itemList;
     public Ch ch;//캐릭터 스킨 착장
     public List<string> storyClearList;
     public List<string> adventureClearList;
+    public List<string> missionClearList;
     public int stage;
     public string gameMode;
     public Dictionary<int, int> adventureModeHighScore;
@@ -61,19 +62,22 @@ public class InGameData
     public bool isFever;
     public bool isHit;
     public int coinGetAmount;
-    public InGameItem inGameItem;
+    public InGameItem inGameItem; // 도전모드 아이템 관련
     public List<GameObject> ObjList;
     public bool isRedItem;
     public bool isGreenItem;
     public List<int> beforeMapList;
+    public bool isFirst;
+    public string name;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name)
     {
         this.cost = cost;
         this.itemList = itemList;
         this.ch = ch;
         this.storyClearList = storyClearList;
         this.adventureClearList = adventureClearList;
+        this.missionClearList = missionClearList;
         this.stage = stage;
         this.gameMode = gameMode;
         this.adventureModeHighScore = adventureModeHighScore;
@@ -96,6 +100,8 @@ public class InGameData
         this.isRedItem = isRedItem;
         this.isGreenItem = isGreenItem;
         this.beforeMapList = beforeMapList;
+        this.isFirst = isFirst;
+        this.name = name;
     }
 
     public InGameData()
@@ -105,6 +111,7 @@ public class InGameData
         ch = new Ch();
         storyClearList = new List<string>();
         adventureClearList = new List<string>();
+        missionClearList = new List<string>();
         stage = 0;
         gameMode = "";
         adventureModeHighScore = new Dictionary<int, int>();
@@ -127,6 +134,8 @@ public class InGameData
         isRedItem = false;
         isGreenItem = false;
         beforeMapList = new List<int>();
+        isFirst = true;
+        name = "";
     }
 }
 
@@ -142,10 +151,10 @@ public class InGameItem
     public bool isUseSaveItem;
     public bool isUseCoinItem;
     public bool isUseTimeItem;
-    public int shieldItemAmount;
-    public int saveItemAmount;
-    public int coinItemAmount;
-    public int timeItemAmount;
+    public int shieldItemAmount; // 플레이어가 보유중인 아이템 갯수
+    public int saveItemAmount; // 플레이어가 보유중인 아이템 갯수
+    public int coinItemAmount; // 플레이어가 보유중인 아이템 갯수
+    public int timeItemAmount; // 플레이어가 보유중인 아이템 갯수
 
     public InGameItem(bool shieldItem, bool saveItem, bool coinItem, bool timeItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, bool isUseTimeItem,int shieldItemAmount, int saveItemAmount, int coinItemAmount, int timeItemAmount)
     {
@@ -185,25 +194,31 @@ public class InGameItem
 [System.Serializable]
 public class Cost
 {
-    public int gold;
-    public int energy;
-    public int test1;
-    public int test2;
+    public int gold; // 골드
+    public int energy; // 에너지
+    public int hatGacha; // 여기서부터는 마음대로 수정하셔서 사용하시면 됩니다.
+    public int clothGacha;
+    public int wingGacha;
+    public int gachaPiece;
 
-    public Cost(int gold, int energy, int test1, int test2)
+    public Cost(int gold, int energy, int hatGacha, int clothGacha, int wingGacha, int gachaPiece)
     {
         this.gold = gold;
         this.energy = energy;
-        this.test1 = test1;
-        this.test2 = test2;
+        this.hatGacha = hatGacha;
+        this.clothGacha = clothGacha;
+        this.wingGacha = wingGacha;
+        this.gachaPiece = gachaPiece;
     }
 
     public Cost()
     {
         gold = 0;
         energy = 0;
-        test1 = 0;
-        test2 = 0;
+        hatGacha = 0;
+        clothGacha = 0;
+        wingGacha = 0;
+        gachaPiece = 0;
     }
 }
 
@@ -260,17 +275,23 @@ public class OptionData
 {
     public float volumeBGM;
     public float volumeSFX;
+    public bool muteBGM;
+    public bool muteSFX;
 
-    public OptionData( float volumeBGM, float volumeSFX )
+    public OptionData( float volumeBGM, float volumeSFX, bool muteBGM, bool muteSFX)
     {
         this.volumeBGM = volumeBGM;
         this.volumeSFX = volumeSFX;
+        this.muteBGM = muteBGM;
+        this.muteSFX = muteSFX;
     }
 
     public OptionData()
     {
         volumeBGM = 0f;
         volumeSFX = 0f;
+        muteBGM = false;
+        muteSFX = false;
     }
 }
 

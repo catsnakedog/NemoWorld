@@ -12,6 +12,7 @@ public class StoryBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         DataManager.Single.Data.inGameData.gameMode = "easy";
         MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Story);
     }

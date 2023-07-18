@@ -78,6 +78,7 @@ public class AdventureStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         if (DataManager.Single.Data.inGameData.cost.energy <= 0)
         {
             // 에너지 부족!
@@ -101,5 +102,6 @@ public class AdventureStartBtn : EventTriggerEX
         ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);
         MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.InGameBG);
         MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
+        MainController.main.sound.Play("adventureBGM");
     }
 }

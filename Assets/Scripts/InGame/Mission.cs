@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Mission : MonoBehaviour
 {
+    StringBuilder sb;
     // Start is called before the first frame update
     void Start()
     {
-        StringBuilder sb = new StringBuilder("stage");
+        sb = new StringBuilder("stage");
         sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
 
+        if (DataManager.Single.Data.inGameData.crruentQuest.gameMode != "easy")
+            return;
         Invoke(sb.ToString(), 0f);
     }
 
@@ -18,7 +21,10 @@ public class Mission : MonoBehaviour
     {
         if(DataManager.Single.Data.missionData.jumpCount >= 60)
         {
-            DataManager.Single.Data.inGameData.adventureClearList.Add("stage1");
+            if (!DataManager.Single.Data.inGameData.missionClearList.Contains(sb.ToString()))
+            {
+                DataManager.Single.Data.inGameData.missionClearList.Add("stage1");
+            }
         }
     }
 
@@ -26,7 +32,10 @@ public class Mission : MonoBehaviour
     {
         if (DataManager.Single.Data.missionData.silverCoinCount >= 10)
         {
-            DataManager.Single.Data.inGameData.adventureClearList.Add("stage2");
+            if (!DataManager.Single.Data.inGameData.missionClearList.Contains(sb.ToString()))
+            {
+                DataManager.Single.Data.inGameData.missionClearList.Add("stage2");
+            }
         }
     }
 
@@ -34,7 +43,10 @@ public class Mission : MonoBehaviour
     {
         if (DataManager.Single.Data.missionData.hitCount <= 2)
         {
-            DataManager.Single.Data.inGameData.adventureClearList.Add("stage3");
+            if (!DataManager.Single.Data.inGameData.missionClearList.Contains(sb.ToString()))
+            {
+                DataManager.Single.Data.inGameData.missionClearList.Add("stage3");
+            }
         }
     }
 }

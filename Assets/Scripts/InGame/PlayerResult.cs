@@ -78,6 +78,7 @@ public class PlayerResult : MonoBehaviour
 
     void Clear()
     {
+        MainController.main.sound.Play("clearSFX");
         bool isCutToon = false;
         StringBuilder sb = new StringBuilder("stage");
         sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
@@ -122,6 +123,7 @@ public class PlayerResult : MonoBehaviour
 
     void Die()
     {
+        MainController.main.sound.Play("deathSFX");
         DataManager.Single.Data.inGameData.result = "die";
         Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);
         Transform[] transforms = GameObject.FindWithTag("Map").GetComponentsInChildren<Transform>();

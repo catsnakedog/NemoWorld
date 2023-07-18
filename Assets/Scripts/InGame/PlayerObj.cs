@@ -124,6 +124,7 @@ public class PlayerObj : MonoBehaviour
 
     void SilverCoinGet()
     {
+        MainController.main.sound.Play("coinSFX");
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         DataManager.Single.Data.inGameData.coinGetAmount += 1;
         DataManager.Single.Data.missionData.silverCoinCount++;
@@ -131,6 +132,7 @@ public class PlayerObj : MonoBehaviour
 
     void GoldCoinGet()
     {
+        MainController.main.sound.Play("coinSFX");
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         DataManager.Single.Data.inGameData.coinGetAmount += 5;
     }
@@ -141,6 +143,7 @@ public class PlayerObj : MonoBehaviour
         if (DataManager.Single.Data.inGameData.isHit) return;
         if (DataManager.Single.Data.inGameData.isShield)
         {
+            MainController.main.sound.Play("shieldBreakSFX");
             DataManager.Single.Data.inGameData.isShield = false;
             shield.SetActive(false);
             return;
@@ -150,6 +153,8 @@ public class PlayerObj : MonoBehaviour
         // 플레이어 장애물 충돌
         playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
 
+        MainController.main.sound.Play("hitSFX");
+
         DataManager.Single.Data.inGameData.crruentQuest.time -= 5;
         DataManager.Single.Data.inGameData.speed -= 1;
         StartCoroutine(SpeedUp());
@@ -158,7 +163,8 @@ public class PlayerObj : MonoBehaviour
 
     void PlayerGetItem()
     {
-        if(playerCoroutine[Array.IndexOf(items, itemType)] != null)
+        MainController.main.sound.Play("itemSFX");
+        if (playerCoroutine[Array.IndexOf(items, itemType)] != null)
         {
             StopCoroutine(playerCoroutine[Array.IndexOf(items, itemType)]);
 

@@ -85,6 +85,7 @@ public class ReStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         DataManager.Single.Data.inGameData.ObjList.Clear();
 
         QuestInfoTextSet();

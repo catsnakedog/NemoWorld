@@ -12,6 +12,7 @@ public class ResumeBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         Time.timeScale = 1f;
         Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
     }

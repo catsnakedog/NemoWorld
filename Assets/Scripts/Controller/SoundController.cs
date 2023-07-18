@@ -39,6 +39,10 @@ public class SoundController : MonoBehaviour
     }
     public void Play(string soundName, float pitch = 1.0f) // 전달받은 soundName을 찾아서 실행시킨다
     {
+        BGMSource.volume = DataManager.Single.Data.optionData.volumeBGM;
+        SFXSource.volume = DataManager.Single.Data.optionData.volumeSFX;
+        BGMSource.mute = DataManager.Single.Data.optionData.muteBGM;
+        SFXSource.mute = DataManager.Single.Data.optionData.muteSFX;
         if (BGMNames.Contains(soundName))
         {
             if (BGMSource.isPlaying)
