@@ -63,6 +63,7 @@ public class AdventureStartBtn : EventTriggerEX
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
+        DataManager.Single.Data.inGameData.maxX = size;
         DataManager.Single.Data.inGameData.mapList = mapList;
     }
 

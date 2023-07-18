@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
+        DataManager.Single.Data.inGameData.moveAmount = 0;
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
     }

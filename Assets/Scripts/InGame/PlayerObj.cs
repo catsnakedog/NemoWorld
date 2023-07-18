@@ -43,7 +43,8 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.color = "default";
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
-        if(DataManager.Single.Data.inGameData.inGameItem.shieldItem)
+        DataManager.Single.Data.inGameData.isItem = false;
+        if (DataManager.Single.Data.inGameData.inGameItem.shieldItem)
         {
             DataManager.Single.Data.inGameData.isShield = true;
             shield.SetActive(true);
@@ -90,6 +91,7 @@ public class PlayerObj : MonoBehaviour
 
     private void FixedUpdate()
     {
+        DataManager.Single.Data.inGameData.moveAmount += DataManager.Single.Data.inGameData.speed * Time.deltaTime;
         playerAction?.Invoke();
     }
 
@@ -150,6 +152,7 @@ public class PlayerObj : MonoBehaviour
         }
 
         DataManager.Single.Data.missionData.hitCount++;
+        DataManager.Single.Data.inGameData.isTimeDown = true;
         // 플레이어 장애물 충돌
         playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
 
@@ -252,12 +255,14 @@ public class PlayerObj : MonoBehaviour
     }
     IEnumerator ItemOrange()
     {
+        DataManager.Single.Data.inGameData.isItem = true;
         DataManager.Single.Data.inGameData.jumpMaxCount = 3;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
     }
     IEnumerator ItemYellow()
     {
+        DataManager.Single.Data.inGameData.isTimeUp = true;
         DataManager.Single.Data.inGameData.crruentQuest.time += 5;
         yield return new WaitForSeconds(0f);
     }
@@ -277,12 +282,17 @@ public class PlayerObj : MonoBehaviour
     }
     IEnumerator ItemNavy()
     {
-        DataManager.Single.Data.inGameData.isGod = true;
-        yield return new WaitForSeconds(5f);
+        DataManager.Single.Data.inGameData.isItem = true;
+        for (int i=0;i < 10; i++)
+        {
+            DataManager.Single.Data.inGameData.isGod = true;
+            yield return new WaitForSeconds(0.5f);
+        }
         DataManager.Single.Data.inGameData.isGod = false;
     }
     IEnumerator ItemPurple()
     {
+        DataManager.Single.Data.inGameData.isItem = true;
         DataManager.Single.Data.inGameData.isPurple = true;
         yield return new WaitForSeconds(5f);
         DataManager.Single.Data.inGameData.isPurple = false;

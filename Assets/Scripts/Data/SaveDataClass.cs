@@ -69,8 +69,13 @@ public class InGameData
     public List<int> beforeMapList;
     public bool isFirst;
     public string name;
+    public float maxX;
+    public float moveAmount;
+    public bool isTimeUp;
+    public bool isTimeDown;
+    public bool isItem;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -102,6 +107,11 @@ public class InGameData
         this.beforeMapList = beforeMapList;
         this.isFirst = isFirst;
         this.name = name;
+        this.maxX = maxX;
+        this.moveAmount = moveAmount;
+        this.isTimeUp = isTImeUp;
+        this.isTimeDown = isTimeDown;
+        this.isItem = isItem;
     }
 
     public InGameData()
@@ -136,6 +146,11 @@ public class InGameData
         beforeMapList = new List<int>();
         isFirst = true;
         name = "";
+        maxX = 0;
+        moveAmount = 0;
+        isTimeUp = false;
+        isTimeDown = false;
+        isItem = false;
     }
 }
 

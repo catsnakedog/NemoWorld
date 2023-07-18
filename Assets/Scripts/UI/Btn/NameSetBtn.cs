@@ -34,6 +34,7 @@ public class NameSetBtn : MonoBehaviour
             return;
         }
 
+        DataManager.Single.Data.inGameData.isFirst = false;
         DataManager.Single.Data.inGameData.name = name.text;
         // DataManager.Single.Data.inGameData.isFirst = false;
         MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.MainLobby);

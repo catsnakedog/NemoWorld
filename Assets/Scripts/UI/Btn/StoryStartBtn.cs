@@ -47,6 +47,8 @@ public class StoryStartBtn : EventTriggerEX
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
+        size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+        DataManager.Single.Data.inGameData.maxX = size;
     }
 
     protected override void OnPointerDown(PointerEventData data)
