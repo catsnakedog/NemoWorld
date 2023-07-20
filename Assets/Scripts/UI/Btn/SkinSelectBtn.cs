@@ -47,5 +47,34 @@ public class SkinSelectBtn : EventTriggerEX
     {
         MainController.main.sound.Play("buttonSFX");
         SkinSet.SetSkin(type, number);
+        /*
+        switch (type)
+        {
+            case "Head":
+                if (number < DataManager.Single.Data.inGameData.itemList.headItem.Count)
+                {
+                    DataManager.Single.Data.inGameData.ch.head = DataManager.Single.Data.inGameData.itemList.headItem[number];
+                    transform.Find("Head").gameObject.SetActive(true);
+                    transform.Find("Head").gameObject.GetComponent<Image>().sprite = MainController.main.resource.head_skin_sprite[DataManager.Single.Data.inGameData.ch.head];
+                }
+                return;
+            case "Cloth":
+                if (number < DataManager.Single.Data.inGameData.itemList.clothItem.Count)
+                {
+                    DataManager.Single.Data.inGameData.ch.cloth = DataManager.Single.Data.inGameData.itemList.clothItem[number];
+                    transform.Find("Cloth").gameObject.SetActive(true);
+                    transform.Find("Cloth").gameObject.GetComponent<Image>().sprite = MainController.main.resource.cloth_skin_sprite[DataManager.Single.Data.inGameData.ch.cloth];
+                }
+                return;
+            case "Wing":
+                if (number < DataManager.Single.Data.inGameData.itemList.wingItem.Count)
+                {
+                    DataManager.Single.Data.inGameData.ch.wing = DataManager.Single.Data.inGameData.itemList.wingItem[number];
+                    transform.Find("Wing").gameObject.SetActive(true);
+                    transform.Find("Wing").gameObject.GetComponent<Image>().sprite = MainController.main.resource.wing_skin_sprite[DataManager.Single.Data.inGameData.ch.wing];
+                }
+                return;
+        }
+        */
     }
 }

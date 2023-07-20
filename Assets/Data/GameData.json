@@ -26,7 +26,7 @@
             ]
         },
         "ch": {
-            "head": "Normal_Mario",
+            "head": "Normal_BlueCap",
             "cloth": "Epic_BlackCape2",
             "wing": "Epic_PinkClearButterfly"
         },
@@ -56,7 +56,7 @@
             "stage3"
         ],
         "stage": 1,
-        "gameMode": "hard",
+        "gameMode": "easy",
         "crruentQuest": {
             "stage": 1,
             "gameMode": "easy",
@@ -108,9 +108,9 @@
         "isItem": false
     },
     "optionData": {
-        "volumeBGM": 0.5,
+        "volumeBGM": 0.048929791897535327,
         "volumeSFX": 0.5,
-        "muteBGM": false,
+        "muteBGM": true,
         "muteSFX": false
     },
     "questData": {
@@ -154,7 +154,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-20 PM 10:56:59",
+        "beforeTime": "2023-07-21 AM 12:01:49",
         "crruentTime": ""
     },
     "missionData": {
