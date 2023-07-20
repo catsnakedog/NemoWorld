@@ -24,19 +24,19 @@ public class SkinSelectBtn : EventTriggerEX
                 case "Head":
                     if (value < DataManager.Single.Data.inGameData.itemList.headItem.Count)
                     {
-                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite[DataManager.Single.Data.inGameData.itemList.headItem[value]];
+                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.head_skin_sprite[DataManager.Single.Data.inGameData.itemList.headItem[value]];
                     }
                     return;
                 case "Cloth":
                     if (value < DataManager.Single.Data.inGameData.itemList.clothItem.Count)
                     {
-                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite[DataManager.Single.Data.inGameData.itemList.clothItem[value]];
+                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.cloth_skin_sprite[DataManager.Single.Data.inGameData.itemList.clothItem[value]];
                     }
                     return;
                 case "Wing":
                     if (value < DataManager.Single.Data.inGameData.itemList.wingItem.Count)
                     {
-                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite[DataManager.Single.Data.inGameData.itemList.wingItem[value]];
+                        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.wing_skin_sprite[DataManager.Single.Data.inGameData.itemList.wingItem[value]];
                     }
                     return;
             };
@@ -46,26 +46,6 @@ public class SkinSelectBtn : EventTriggerEX
     protected override void OnPointerDown(PointerEventData data)
     {
         MainController.main.sound.Play("buttonSFX");
-        switch (type)
-        {
-            case "Head":
-                if (number < DataManager.Single.Data.inGameData.itemList.headItem.Count)
-                {
-                    DataManager.Single.Data.inGameData.ch.head = DataManager.Single.Data.inGameData.itemList.headItem[number];
-                }
-                return;
-            case "Cloth":
-                if (number < DataManager.Single.Data.inGameData.itemList.clothItem.Count)
-                {
-                    DataManager.Single.Data.inGameData.ch.cloth = DataManager.Single.Data.inGameData.itemList.clothItem[number];
-                }
-                return;
-            case "Wing":
-                if (number < DataManager.Single.Data.inGameData.itemList.wingItem.Count)
-                {
-                    DataManager.Single.Data.inGameData.ch.wing = DataManager.Single.Data.inGameData.itemList.wingItem[number];
-                }
-                return;
-        }
+        SkinSet.SetSkin(type, number);
     }
 }

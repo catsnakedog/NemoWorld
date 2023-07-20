@@ -40,7 +40,7 @@ public class SaveDataClass
 public class InGameData
 {
     public Cost cost; // 재화 관련
-    public ItemList itemList;
+    public ItemList itemList;//보유 스킨
     public Ch ch;//캐릭터 스킨 착장
     public List<string> storyClearList;
     public List<string> adventureClearList;

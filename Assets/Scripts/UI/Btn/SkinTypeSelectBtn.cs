@@ -10,6 +10,7 @@ public class SkinTypeSelectBtn : EventTriggerEX
     [SerializeField]
     string type;
     Transform[] transforms;
+
     protected void Start()
     {
         init();

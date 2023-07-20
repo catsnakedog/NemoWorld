@@ -53,9 +53,6 @@ public class Define
 
     public enum SpriteDict
     {
-        HeadTest1,
-        ClothTest1,
-        WingTest1,
         diePlayer,
         clearPlayer,
         BG1_1,
@@ -122,31 +119,64 @@ public class Define
         Hit
     }
 
-    /// <summary>
-    /// TODO : 가격에 따라 분류
-    /// </summary>
-    public enum Head
+    public enum HeadSkin
     {
-        Crown,
-        PinkFlower,
-        Wizard,
-        YellowFlower
+        Normal_BlueCap,
+        Normal_DevilHorn,
+        Normal_Duck,
+        Normal_Mario,
+        Normal_OrangeCap,
+        Normal_Rio,
+        Normal_Santa,
+        Normal_Straw,
+        Epic_Crown,
+        Epic_Pororo,
+        Epic_Rabbit,
+        Epic_Satgat,
+        Epic_Sunbigat,
+        Legend_Angel,
+        Legend_Devil,
+        Legend_Wizard,
+        MaxCount
     }
-    public enum Cloth
+    public enum ClothSkin
     {
-        Angel,
-        General,
-        Straw,
-        Wizard
+        Normal_BlackOveralls,
+        Normal_BluePants,
+        Normal_Chick,
+        Normal_GreenPants,
+        Normal_PinkOveralls,
+        Normal_RedOveralls,
+        Normal_Wound,
+        Normal_YellowOveralls,
+        Epic_BlackCape1,
+        Epic_BlackCape2,
+        Epic_BlueCape,
+        Epic_Dress,
+        Epic_Mermaid,
+        Legend_Angel,
+        Legend_DemonWeapon,
+        Legend_Wizard,
+        MaxCount
     }
-    public enum Wing
+    public enum WingSkin
     {
-        Angel,
-        BlueButterfly,
-        Butterfly,
-        General,
-        PinkAngel,
-        PinkButterfly,
-        PurpleButterfly
+        Normal_Blue,
+        Normal_BlueButterfly,
+        Normal_Cloud,
+        Normal_Cute,
+        Normal_GreenFairy,
+        Normal_PinkButterfly,
+        Normal_Purple,
+        Normal_PurpleButterfly,
+        Epic_Blue,
+        Epic_BlueClearButterfly,
+        Epic_Golden,
+        Epic_PinkAngel,
+        Epic_PinkClearButterfly,
+        Legend_Angel,
+        Legend_Devil,
+        Legend_Wizard,
+        MaxCount
     }
 }
