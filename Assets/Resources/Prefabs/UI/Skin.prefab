@@ -2645,9 +2645,8 @@ GameObject:
   - component: {fileID: 3152760084843094922}
   - component: {fileID: 3152760084843094920}
   - component: {fileID: 3152760084843094923}
-  - component: {fileID: 8851030539572265682}
   m_Layer: 5
-  m_Name: Ch
+  m_Name: ChUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,18 +2712,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8851030539572265682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3152760084843094925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b149598b6650a40489e6a43b8072dfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3152760085044656344
 GameObject:
   m_ObjectHideFlags: 0

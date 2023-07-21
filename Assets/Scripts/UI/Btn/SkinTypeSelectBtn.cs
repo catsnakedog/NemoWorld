@@ -14,6 +14,7 @@ public class SkinTypeSelectBtn : EventTriggerEX
     protected void Start()
     {
         init();
+
         transforms = GameObject.FindWithTag("Skin").GetComponentsInChildren<Transform>();
         if (type != "Head") return;
         int cnt = 0;

@@ -26,7 +26,7 @@
             ]
         },
         "ch": {
-            "head": "Normal_BlueCap",
+            "head": "Normal_Mario",
             "cloth": "Epic_BlackCape2",
             "wing": "Epic_PinkClearButterfly"
         },
@@ -56,7 +56,7 @@
             "stage3"
         ],
         "stage": 1,
-        "gameMode": "easy",
+        "gameMode": "hard",
         "crruentQuest": {
             "stage": 1,
             "gameMode": "easy",
@@ -154,7 +154,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-21 AM 12:01:49",
+        "beforeTime": "2023-07-22 AM 8:22:41",
         "crruentTime": ""
     },
     "missionData": {
