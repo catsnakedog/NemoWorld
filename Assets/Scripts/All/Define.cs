@@ -84,6 +84,7 @@ public class Define
         stage3HardCutToon,
         Up,
         Down,
+        skin_none,
         MaxCount
     }
 
