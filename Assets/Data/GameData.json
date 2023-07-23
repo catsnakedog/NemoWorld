@@ -2,7 +2,7 @@
     "isFirst": false,
     "inGameData": {
         "cost": {
-            "gold": 110558,
+            "gold": 110571,
             "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
@@ -26,9 +26,9 @@
             ]
         },
         "ch": {
-            "head": "Normal_BlueCap",
-            "cloth": "",
-            "wing": ""
+            "head": "Normal_Mario",
+            "cloth": "Epic_BlackCape1",
+            "wing": "Epic_PinkClearButterfly"
         },
         "storyClearList": [
             "stage1",
@@ -61,10 +61,10 @@
             "stage": 1,
             "gameMode": "easy",
             "info": "점프 60번 달성",
-            "time": 80
+            "time": 95
         },
-        "speed": 3.9999990463256838,
-        "color": "Blue",
+        "speed": 4.0,
+        "color": "default",
         "isGod": false,
         "isPurple": false,
         "isShield": false,
@@ -75,16 +75,16 @@
             4
         ],
         "result": "die",
-        "fever": 12,
+        "fever": 8,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
-        "coinGetAmount": 6,
+        "coinGetAmount": 0,
         "inGameItem": {
-            "shieldItem": true,
+            "shieldItem": false,
             "saveItem": false,
-            "coinItem": true,
-            "timeItem": true,
+            "coinItem": false,
+            "timeItem": false,
             "goldIncreaseAmount": 0.0,
             "isUseShieldItem": false,
             "isUseSaveItem": false,
@@ -95,14 +95,51 @@
             "coinItemAmount": 10,
             "timeItemAmount": 29
         },
-        "ObjList": [],
+        "ObjList": [
+            {
+                "instanceID": -52578
+            },
+            {
+                "instanceID": -52592
+            },
+            {
+                "instanceID": -52718
+            },
+            {
+                "instanceID": -52732
+            },
+            {
+                "instanceID": -52894
+            },
+            {
+                "instanceID": -52932
+            },
+            {
+                "instanceID": -52946
+            },
+            {
+                "instanceID": -53032
+            },
+            {
+                "instanceID": -53050
+            },
+            {
+                "instanceID": -53064
+            },
+            {
+                "instanceID": -53078
+            },
+            {
+                "instanceID": -53408
+            }
+        ],
         "isRedItem": false,
         "isGreenItem": false,
         "beforeMapList": [],
         "isFirst": false,
         "name": "orie",
-        "maxX": 0.0,
-        "moveAmount": 0.0,
+        "maxX": 339.0,
+        "moveAmount": 23.199981689453126,
         "isTimeUp": false,
         "isTimeDown": false,
         "isItem": false
@@ -154,12 +191,12 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-22 PM 4:12:33",
+        "beforeTime": "2023-07-23 PM 10:15:46",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 143,
-        "silverCoinCount": 1,
-        "hitCount": 15
+        "jumpCount": 8,
+        "silverCoinCount": 0,
+        "hitCount": 0
     }
 }

@@ -15,9 +15,9 @@ public class SkinSelectBtn : EventTriggerEX
     {
         init();
 
-        head = GameObject.Find("ChUI").transform.FindChild("Head").gameObject;
-        cloth = GameObject.Find("ChUI").transform.FindChild("Cloth").gameObject;
-        wing = GameObject.Find("ChUI").transform.FindChild("Wing").gameObject;
+        head = GameObject.Find("ChUI").transform.Find("Head").gameObject;
+        cloth = GameObject.Find("ChUI").transform.Find("Cloth").gameObject;
+        wing = GameObject.Find("ChUI").transform.Find("Wing").gameObject;
 
         if (!DataManager.Single.Data.inGameData.ch.head.Equals(""))
         {
