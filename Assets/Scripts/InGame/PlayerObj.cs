@@ -25,6 +25,8 @@ public class PlayerObj : MonoBehaviour
 
     Animator playerAnimation, armAnimation;
 
+    bool isBoost;
+
     private void Start()
     {
         playerCoroutine = new Coroutine[items.Length];
@@ -46,6 +48,7 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.isGod = false;
         DataManager.Single.Data.inGameData.isPurple = false;
         DataManager.Single.Data.inGameData.isItem = false;
+        isBoost = false;
         if (DataManager.Single.Data.inGameData.inGameItem.shieldItem)
         {
             DataManager.Single.Data.inGameData.isShield = true;
@@ -59,12 +62,26 @@ public class PlayerObj : MonoBehaviour
         {
             DataManager.Single.Data.inGameData.crruentQuest.time += 15;
         }
+        if (DataManager.Single.Data.inGameData.inGameItem.boostItem)
+        {
+            isBoost = true;
+            StartCoroutine(Boost());
+        }
         DataManager.Single.Data.inGameData.isFever = false;
         DataManager.Single.Data.inGameData.isHit = false;
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
         DataManager.Single.Data.inGameData.coinGetAmount = 0;
     }
+
+    IEnumerator Boost()
+    {
+        DataManager.Single.Data.inGameData.speed = 6f;
+        yield return new WaitForSeconds(10f);
+        DataManager.Single.Data.inGameData.speed = 4f;
+        isBoost = false;
+    }
+
 
     private void FixedUpdate()
     {
@@ -76,17 +93,32 @@ public class PlayerObj : MonoBehaviour
     {
         if (items.Contains(Obj.name))
         {
+            if(isBoost)
+            {
+                if(Obj.name == "ItemRed" || Obj.name == "ItemGreen")
+                {
+                    return;
+                }
+            }
             itemType = Obj.name;
             Obj.gameObject.SetActive(false);
             PlayerGetItem();
         }
         else if (colorObjs.Contains(Obj.name))
         {
+            if (isBoost)
+            {
+                return;
+            }
             if (Obj.name != DataManager.Single.Data.inGameData.color)
                 PlayerHurt();
         }
         else if (Obj.name == "Obj")
         {
+            if (isBoost)
+            {
+                return;
+            }
             PlayerHurt();
         }
         else if (Obj.name == "GoldCoin")

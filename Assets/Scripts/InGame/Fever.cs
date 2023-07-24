@@ -11,6 +11,8 @@ public class Fever : MonoBehaviour
 
     GameObject effect;
     Action feverAction;
+
+    bool isFever;
     void Update()
     {
         feverAction?.Invoke();
@@ -18,15 +20,16 @@ public class Fever : MonoBehaviour
 
     private void Start()
     {
-        feverAction += FeverCheck;
+        isFever = false;
         effect = transform.GetChild(2).gameObject;
     }
 
-    void FeverCheck()
+    public void FeverCheck()
     {
+        if (isFever) return;
         if(DataManager.Single.Data.inGameData.fever >= 20)
         {
-            feverAction -= FeverCheck;
+            isFever = true;
             StartCoroutine(FeverStart());
         }
     }
@@ -46,10 +49,10 @@ public class Fever : MonoBehaviour
         sb.Append(DataManager.Single.Data.inGameData.color);
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.isGod = false;
-        feverAction += FeverCheck;
         DataManager.Single.Data.inGameData.isFever = false;
         effect.transform.localRotation = Quaternion.identity;
         effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite[sb.ToString()];
+        isFever = false;
     }
 
     IEnumerator EffectFever()

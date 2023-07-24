@@ -60,14 +60,11 @@ public class StoryStartBtn : EventTriggerEX
             return;
         }
 
-        if (DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem)
-            DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount--;
-        if (DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem)
-            DataManager.Single.Data.inGameData.inGameItem.saveItemAmount--;
-        if (DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem)
-            DataManager.Single.Data.inGameData.inGameItem.coinItemAmount--;
-        if (DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem)
-            DataManager.Single.Data.inGameData.inGameItem.timeItemAmount--;
+        DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem = false;
+        DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem = false;
+        DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem = false;
+        DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem = false;
+        DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem = false;
 
         DataManager.Single.Data.inGameData.ObjList.Clear();
 

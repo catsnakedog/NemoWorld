@@ -53,6 +53,25 @@ public class Define
         MaxCount
     }
 
+    public enum rankingMap
+    {
+        Start,
+        Part1,
+        Part2,
+        Part3,
+        Part4,
+        Part5,
+        Part6,
+        Part7,
+        Part8,
+        Part9,
+        Part10,
+        Part11,
+        Part12,
+        End,
+        MaxCount
+    }
+
     public enum SpriteDict
     {
         diePlayer,
