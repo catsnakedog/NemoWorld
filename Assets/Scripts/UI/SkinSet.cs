@@ -16,6 +16,13 @@ public class SkinSet : MonoBehaviour
         UISet += skin_change_set;
     }
 
+    private void Start()
+    {
+        UISet("Head", DataManager.Single.Data.inGameData.ch.head);
+        UISet("Cloth", DataManager.Single.Data.inGameData.ch.cloth);
+        UISet("Wing", DataManager.Single.Data.inGameData.ch.wing);
+    }
+
     void skin_change_set(string type, string skin)
     {
         switch (type)

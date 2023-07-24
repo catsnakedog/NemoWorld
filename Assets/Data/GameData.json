@@ -26,9 +26,9 @@
             ]
         },
         "ch": {
-            "head": "Normal_BlueCap",
-            "cloth": "Epic_Dress",
-            "wing": "Epic_BlueClearButterfly"
+            "head": "Normal_Mario",
+            "cloth": "",
+            "wing": "Epic_PinkClearButterfly"
         },
         "storyClearList": [
             "stage1",
@@ -158,7 +158,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-24 PM 6:06:36",
+        "beforeTime": "2023-07-24 PM 6:17:18",
         "crruentTime": ""
     },
     "missionData": {
