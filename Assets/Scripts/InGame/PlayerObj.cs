@@ -23,12 +23,13 @@ public class PlayerObj : MonoBehaviour
     GameObject shield;
     SpriteRenderer effect;
 
-    Animator playerAnimation;
+    Animator playerAnimation, armAnimation;
 
     private void Start()
     {
         playerCoroutine = new Coroutine[items.Length];
         playerAnimation = GetComponent<Animator>();
+        armAnimation = transform.Find("arm").gameObject.GetComponent<Animator>();
         shield = transform.GetChild(1).gameObject;
         effect = transform.GetChild(2).GetComponent<SpriteRenderer>();
 
@@ -63,31 +64,6 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
         DataManager.Single.Data.inGameData.coinGetAmount = 0;
-
-        //Skin Set
-        StringBuilder sb = new StringBuilder("Sprite/Skin/");
-        GameObject Head = transform.GetChild(0).GetChild(0).gameObject;
-        GameObject Cloth = transform.GetChild(0).GetChild(0).gameObject;
-        GameObject Wing = transform.GetChild(0).GetChild(0).gameObject;
-
-        if (!DataManager.Single.Data.inGameData.ch.head.Equals(""))
-        {
-            Head.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Head/" + DataManager.Single.Data.inGameData.ch.head).ToString());
-            Head.SetActive(true);
-            sb.Remove(12, sb.Length - 12);
-        }
-        if (!DataManager.Single.Data.inGameData.ch.cloth.Equals("")) 
-        {
-            Cloth.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Cloth/" + DataManager.Single.Data.inGameData.ch.cloth).ToString());
-            Cloth.SetActive(true);
-            sb.Remove(12, sb.Length - 12);
-        }
-        if (!DataManager.Single.Data.inGameData.ch.wing.Equals(""))
-        {
-            Wing.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(sb.Append("Wing/" + DataManager.Single.Data.inGameData.ch.wing).ToString());
-            Wing.SetActive(true);
-            sb.Remove(12, sb.Length - 12);
-        }
     }
 
     private void FixedUpdate()
@@ -128,7 +104,9 @@ public class PlayerObj : MonoBehaviour
     void SilverCoinGet()
     {
         MainController.main.sound.Play("coinSFX");
+        //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         DataManager.Single.Data.inGameData.coinGetAmount += 1;
         DataManager.Single.Data.missionData.silverCoinCount++;
     }
@@ -136,7 +114,9 @@ public class PlayerObj : MonoBehaviour
     void GoldCoinGet()
     {
         MainController.main.sound.Play("coinSFX");
+        //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         DataManager.Single.Data.inGameData.coinGetAmount += 5;
     }
 
@@ -154,8 +134,6 @@ public class PlayerObj : MonoBehaviour
 
         DataManager.Single.Data.missionData.hitCount++;
         DataManager.Single.Data.inGameData.isTimeDown = true;
-        // 플레이어 장애물 충돌
-        playerAnimation.SetTrigger(Define.PlayerAnim.Hit.ToString());
 
         MainController.main.sound.Play("hitSFX");
 
@@ -192,7 +170,9 @@ public class PlayerObj : MonoBehaviour
                 }
             }
         }
+        //Get Item Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
+        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
 
         StringBuilder sb = new StringBuilder(itemType);
         sb.Remove(0, 4);

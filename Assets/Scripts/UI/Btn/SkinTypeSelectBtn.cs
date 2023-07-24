@@ -20,7 +20,6 @@ public class SkinTypeSelectBtn : EventTriggerEX
 
         if (type != "Head") return;
 
-        Debug.Log(skin_prefab);
         Transform parent = GameObject.Find("Content").transform;
         for (int i = -1; i < DataManager.Single.Data.inGameData.itemList.headItem.Count; i++)
         {
