@@ -16,11 +16,14 @@ public class SkinTypeSelectBtn : EventTriggerEX
     {
         init();
 
+        SkinSet.UISet("Head", DataManager.Single.Data.inGameData.ch.head);
+        SkinSet.UISet("Cloth", DataManager.Single.Data.inGameData.ch.cloth);
+        SkinSet.UISet("Wing", DataManager.Single.Data.inGameData.ch.wing);
+
         skin_prefab = Resources.Load<GameObject>("Prefabs/UI/SkinPrefab");
 
         if (type != "Head") return;
 
-        Debug.Log(skin_prefab);
         Transform parent = GameObject.Find("Content").transform;
         for (int i = -1; i < DataManager.Single.Data.inGameData.itemList.headItem.Count; i++)
         {
