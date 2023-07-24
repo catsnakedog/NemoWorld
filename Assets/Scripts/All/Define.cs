@@ -21,6 +21,7 @@ public class Define
         Adventure,
         Skin,
         StorySelect,
+        AdventureSelect,
         InGameUI,
         InGameBG,
         Pause,
@@ -29,6 +30,7 @@ public class Define
         GameResult,
         CutToon,
         FirstUI,
+        RankingMode,
         MaxCount
     }
 

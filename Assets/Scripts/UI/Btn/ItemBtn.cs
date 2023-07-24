@@ -8,51 +8,57 @@ public class ItemBtn : EventTriggerEX
     [SerializeField]
     int number;
 
+    [SerializeField]
     bool flag;
+
+    [SerializeField]
+    GameObject obj;
 
     private void Start()
     {
-        flag = false;
         init();
     }
 
     protected override void OnPointerDown(PointerEventData data)
     {
         MainController.main.sound.Play("buttonSFX");
-        if (!flag)
+        if (flag)
         {
             switch (number)
             {
                 case 0:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(true);
+                        obj.SetActive(true);
                         DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem = true;
                     }
                     return;
                 case 1:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.saveItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(true);
+                        obj.SetActive(true);
                         DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem = true;
                     }
                     return;
                 case 2:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.coinItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(true);
+                        obj.SetActive(true);
                         DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem = true;
                     }
                     return;
                 case 3:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.timeItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(true);
+                        obj.SetActive(true);
                         DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem = true;
+                    }
+                    return;
+                case 4:
+                    if (DataManager.Single.Data.inGameData.inGameItem.boostItemAmount > 0)
+                    {
+                        obj.SetActive(true);
+                        DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem = true;
                     }
                     return;
             }
@@ -62,35 +68,38 @@ public class ItemBtn : EventTriggerEX
             switch (number)
             {
                 case 0:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(false);
+                        obj.SetActive(false);
                         DataManager.Single.Data.inGameData.inGameItem.isUseShieldItem = false;
                     }
                     return;
                 case 1:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.saveItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(false);
+                        obj.SetActive(false);
                         DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem = false;
                     }
                     return;
                 case 2:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.coinItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(false);
+                        obj.SetActive(false);
                         DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem = false;
                     }
                     return;
                 case 3:
-                    flag = !flag;
                     if (DataManager.Single.Data.inGameData.inGameItem.timeItemAmount > 0)
                     {
-                        transform.GetChild(1).gameObject.SetActive(false);
+                        obj.SetActive(false);
                         DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem = false;
+                    }
+                    return;
+                case 4:
+                    if (DataManager.Single.Data.inGameData.inGameItem.boostItemAmount > 0)
+                    {
+                        obj.SetActive(false);
+                        DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem = false;
                     }
                     return;
             }

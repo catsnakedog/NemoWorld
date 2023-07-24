@@ -14,6 +14,8 @@ public class SaveDataClass
     public QuestData questData;
     public TimeData timeData;
     public MissionData missionData;
+
+
     public SaveDataClass(bool isFirst,InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData)
     {
         this.isFirst = isFirst;
@@ -161,17 +163,20 @@ public class InGameItem
     public bool saveItem;
     public bool coinItem;
     public bool timeItem;
+    public bool boostItem;
     public float goldIncreaseAmount;
     public bool isUseShieldItem;
     public bool isUseSaveItem;
     public bool isUseCoinItem;
     public bool isUseTimeItem;
+    public bool isUseBoostItem;
     public int shieldItemAmount; // 플레이어가 보유중인 아이템 갯수
     public int saveItemAmount; // 플레이어가 보유중인 아이템 갯수
     public int coinItemAmount; // 플레이어가 보유중인 아이템 갯수
     public int timeItemAmount; // 플레이어가 보유중인 아이템 갯수
+    public int boostItemAmount;
 
-    public InGameItem(bool shieldItem, bool saveItem, bool coinItem, bool timeItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, bool isUseTimeItem,int shieldItemAmount, int saveItemAmount, int coinItemAmount, int timeItemAmount)
+    public InGameItem(bool shieldItem, bool saveItem, bool coinItem, bool timeItem, float goldIncreaseAmount, bool isUseShieldItem, bool isUseSaveItem, bool isUseCoinItem, bool isUseTimeItem,int shieldItemAmount, int saveItemAmount, int coinItemAmount, int timeItemAmount, bool boostItem, bool isUseBoostItem, int boostItemAmount)
     {
         this.shieldItem = shieldItem;
         this.saveItem = saveItem;
@@ -186,6 +191,9 @@ public class InGameItem
         this.saveItemAmount = saveItemAmount;
         this.coinItemAmount = coinItemAmount;
         this.timeItemAmount = timeItemAmount;
+        this.boostItem = boostItem;
+        this.isUseBoostItem = isUseBoostItem;
+        this.boostItemAmount = boostItemAmount;
     }
 
     public InGameItem()
@@ -203,6 +211,9 @@ public class InGameItem
         saveItemAmount = 0;
         coinItemAmount = 0;
         timeItemAmount = 0;
+        boostItem = false;
+        isUseBoostItem = false;
+        isUseTimeItem = false;
     }
 }
 

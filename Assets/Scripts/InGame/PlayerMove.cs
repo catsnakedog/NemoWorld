@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private Vector2 boxCastSize = new Vector2(0.55f, 0.05f);
+    private Vector2 boxCastSize = new Vector2(0.9f, 0.05f);
     private float boxCastMaxDistance = 0.55f;
 
     private bool IsOnGround()

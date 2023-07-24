@@ -36,6 +36,7 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.inGameItem.saveItem = DataManager.Single.Data.inGameData.inGameItem.isUseSaveItem;
         DataManager.Single.Data.inGameData.inGameItem.coinItem = DataManager.Single.Data.inGameData.inGameItem.isUseCoinItem;
         DataManager.Single.Data.inGameData.inGameItem.timeItem = DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem;
+        DataManager.Single.Data.inGameData.inGameItem.boostItem = DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem;
 
         DataManager.Single.Data.inGameData.isGreenItem = false;
         DataManager.Single.Data.inGameData.isRedItem = false;
