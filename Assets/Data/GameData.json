@@ -3,7 +3,7 @@
     "inGameData": {
         "cost": {
             "gold": 110573,
-            "energy": 13,
+            "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
@@ -12,17 +12,57 @@
         "itemList": {
             "headItem": [
                 "Normal_BlueCap",
-                "Normal_Mario"
+                "Normal_DevilHorn",
+                "Normal_Duck",
+                "Normal_Mario",
+                "Normal_OrangeCap",
+                "Normal_Rio",
+                "Normal_Santa",
+                "Normal_Straw",
+                "Epic_Crown",
+                "Epic_Pororo",
+                "Epic_Rabbit",
+                "Epic_Satgat",
+                "Epic_Sunbigat",
+                "Legend_Angel",
+                "Legend_Devil",
+                "Legend_Wizard"
             ],
             "clothItem": [
+                "Normal_BlackOveralls",
+                "Normal_BluePants",
+                "Normal_Chick",
+                "Normal_GreenPants",
+                "Normal_PinkOveralls",
+                "Normal_RedOveralls",
+                "Normal_Wound",
+                "Normal_YellowOveralls",
+                "Epic_BlackCape1",
+                "Epic_BlackCape2",
+                "Epic_PurpleCape",
                 "Epic_Dress",
                 "Epic_Mermaid",
-                "Epic_BlackCape1",
-                "Epic_BlackCape2"
+                "Legend_Angel",
+                "Legend_DemonWeapon",
+                "Legend_Wizard"
             ],
             "wingItem": [
+                "Normal_Blue",
+                "Normal_Sky",
+                "Normal_Cloud",
+                "Normal_Cute",
+                "Normal_Green",
+                "Normal_Pink",
+                "Normal_Purple",
+                "Normal_Golden",
                 "Epic_BlueClearButterfly",
-                "Epic_PinkClearButterfly"
+                "Epic_PinkClearButterfly",
+                "Epic_PurpleButterfly",
+                "Epic_BlueButterfly",
+                "Epic_PinkAngel",
+                "Legend_Angel",
+                "Legend_Devil",
+                "Legend_Wizard"
             ]
         },
         "ch": {
@@ -198,7 +238,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-24 PM 10:22:03",
+        "beforeTime": "2023-07-24 PM 10:38:00",
         "crruentTime": ""
     },
     "missionData": {
