@@ -2,8 +2,8 @@
     "isFirst": false,
     "inGameData": {
         "cost": {
-            "gold": 110572,
-            "energy": 15,
+            "gold": 110585,
+            "energy": 14,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
@@ -26,9 +26,9 @@
             ]
         },
         "ch": {
-            "head": "Normal_Mario",
-            "cloth": "Epic_BlackCape1",
-            "wing": "Epic_PinkClearButterfly"
+            "head": "Normal_BlueCap",
+            "cloth": "Epic_Mermaid",
+            "wing": "Epic_BlueClearButterfly"
         },
         "storyClearList": [
             "stage1",
@@ -59,15 +59,15 @@
         "gameMode": "easy",
         "crruentQuest": {
             "stage": 1,
-            "gameMode": "hard",
-            "info": "아이템 선택",
-            "time": 222
+            "gameMode": "easy",
+            "info": "점프 60번 달성",
+            "time": 46
         },
-        "speed": 4.0,
-        "color": "Red",
+        "speed": 6.0,
+        "color": "Yellow",
         "isGod": false,
         "isPurple": false,
-        "isShield": false,
+        "isShield": true,
         "jumpMaxCount": 2,
         "mapList": [
             1,
@@ -75,11 +75,11 @@
             1
         ],
         "result": "die",
-        "fever": 18,
+        "fever": 12,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
-        "coinGetAmount": 1,
+        "coinGetAmount": 13,
         "inGameItem": {
             "shieldItem": false,
             "saveItem": false,
@@ -98,75 +98,8 @@
             "timeItemAmount": 29,
             "boostItemAmount": 0
         },
-        "ObjList": [
-            {
-                "instanceID": -36874
-            },
-            {
-                "instanceID": -36982
-            },
-            {
-                "instanceID": -37594
-            },
-            {
-                "instanceID": -37608
-            },
-            {
-                "instanceID": -37918
-            },
-            {
-                "instanceID": -37946
-            },
-            {
-                "instanceID": -37960
-            },
-            {
-                "instanceID": -38114
-            },
-            {
-                "instanceID": -38128
-            },
-            {
-                "instanceID": -38142
-            },
-            {
-                "instanceID": -38530
-            },
-            {
-                "instanceID": -38638
-            },
-            {
-                "instanceID": -39250
-            },
-            {
-                "instanceID": -39264
-            },
-            {
-                "instanceID": -39574
-            },
-            {
-                "instanceID": -39602
-            },
-            {
-                "instanceID": -39616
-            },
-            {
-                "instanceID": -39770
-            },
-            {
-                "instanceID": -39784
-            },
-            {
-                "instanceID": -39798
-            },
-            {
-                "instanceID": -40186
-            },
-            {
-                "instanceID": -40294
-            }
-        ],
-        "isRedItem": false,
+        "ObjList": [],
+        "isRedItem": true,
         "isGreenItem": false,
         "beforeMapList": [
             1,
@@ -175,8 +108,8 @@
         ],
         "isFirst": false,
         "name": "orie",
-        "maxX": 1081.0,
-        "moveAmount": 198.3616943359375,
+        "maxX": 339.0,
+        "moveAmount": 262.5216064453125,
         "isTimeUp": false,
         "isTimeDown": false,
         "isItem": false
@@ -211,29 +144,29 @@
                 "stage": 1,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 280
+                "time": 190
             },
             {
                 "stage": 2,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 280
+                "time": 190
             },
             {
                 "stage": 3,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 280
+                "time": 190
             }
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-25 AM 12:07:10",
+        "beforeTime": "2023-07-25 AM 12:50:01",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 63,
-        "silverCoinCount": 1,
-        "hitCount": 4
+        "jumpCount": 55,
+        "silverCoinCount": 8,
+        "hitCount": 0
     }
 }
