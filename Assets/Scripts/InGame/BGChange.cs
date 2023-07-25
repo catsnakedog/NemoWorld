@@ -30,14 +30,16 @@ public class BGChange : MonoBehaviour
         sb.Append(DataManager.Single.Data.inGameData.crruentQuest.gameMode);
         sb.Append("_bg_n_");
         GetComponent<Image>().sprite = MainController.main.resource.sprite[sb.Append("BG").ToString()];
-        sb.Replace("BG", "0");
+        sb.Remove(10, 2);
 
         for (int i = 0; i < bg.Count; i++)
         {
             for (int j = 0; j < bg[i].Length; j++)
             {
-                bg[i][j].sprite = MainController.main.resource.sprite[sb.Replace(i.ToString(), (i + 1).ToString()).ToString()];
+                //Debug.Log(sb.Append(i.ToString() + "_" + (j % 2 + 1).ToString()).ToString());
+                bg[i][j].sprite = MainController.main.resource.sprite[sb.Append((i+1).ToString() + "_" + (j%2 + 1).ToString()).ToString()];
                 bg[i][j].gameObject.AddComponent<MoveBG>().Init(speed[i], Speed);
+                sb.Remove(10, 3);
             }
         }
 
@@ -63,18 +65,20 @@ public class BGChange : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         sb.Replace("_n_","_c_");
-        sb.Replace("3", "0");
+        sb.Replace(bg[0].Length.ToString(), "0");
 
         for (int i = 0; i < bg.Count; i++)
         {
             for (int j = 0; j < bg[i].Length; j++)
             {
-                bg[i][j].sprite = MainController.main.resource.sprite[sb.Replace(i.ToString(), (i + 1).ToString()).ToString()];
+                bg[i][j].sprite = MainController.main.resource.sprite[sb.Append((i + 1).ToString() + "_" + (j % 2 + 1).ToString()).ToString()];
+                sb.Remove(10, 3);
             }
 
             if (i == 2)
             {
-                GetComponent<Image>().sprite = MainController.main.resource.sprite[sb.Replace("3", "BG").ToString()];
+                GetComponent<Image>().sprite = MainController.main.resource.sprite[sb.Append("BG").ToString()];
+                sb.Remove(10, 2);
             }
             yield return new WaitForSeconds(time);
         }

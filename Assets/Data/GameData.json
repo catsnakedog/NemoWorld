@@ -2,7 +2,7 @@
     "isFirst": false,
     "inGameData": {
         "cost": {
-            "gold": 110620,
+            "gold": 110655,
             "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
@@ -59,9 +59,9 @@
         "gameMode": "easy",
         "crruentQuest": {
             "stage": 1,
-            "gameMode": "easy",
-            "info": "점프 60번 달성",
-            "time": 100
+            "gameMode": "hard",
+            "info": "아이템 선택",
+            "time": 173
         },
         "speed": 0.0,
         "color": "default",
@@ -74,7 +74,7 @@
             0
         ],
         "result": "clear",
-        "fever": 11,
+        "fever": 0,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
@@ -84,13 +84,13 @@
             "saveItem": false,
             "coinItem": false,
             "timeItem": false,
-            "boostItem": true,
+            "boostItem": false,
             "goldIncreaseAmount": 0.0,
             "isUseShieldItem": false,
             "isUseSaveItem": false,
             "isUseCoinItem": false,
             "isUseTimeItem": false,
-            "isUseBoostItem": true,
+            "isUseBoostItem": false,
             "shieldItemAmount": 39,
             "saveItemAmount": 29,
             "coinItemAmount": 9,
@@ -107,7 +107,7 @@
         "isFirst": false,
         "name": "orie",
         "maxX": 80.0,
-        "moveAmount": 66.8800048828125,
+        "moveAmount": 66.88076782226563,
         "isTimeUp": false,
         "isTimeDown": false,
         "isItem": false
@@ -159,11 +159,11 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-25 PM 10:59:06",
+        "beforeTime": "2023-07-26 AM 5:04:20",
         "crruentTime": ""
     },
     "missionData": {
-        "jumpCount": 11,
+        "jumpCount": 0,
         "silverCoinCount": 0,
         "hitCount": 0
     }
