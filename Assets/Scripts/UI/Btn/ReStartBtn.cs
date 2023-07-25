@@ -46,19 +46,46 @@ public class ReStartBtn : EventTriggerEX
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.AddComponent<MapMove>();
+            temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
                 temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
                 temp.AddComponent<MapMove>();
+                temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
                 size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             }
             temp = Instantiate(map[4], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.AddComponent<MapMove>();
+            temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }
+        else if (DataManager.Single.Data.inGameData.gameMode == "rank")
+        {
+            List<int> mapList = DataManager.Single.Data.inGameData.mapList;
+            GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
+            temp.AddComponent<MapMove>();
+            temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
+            size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+            for (int i = 0; i < 2; i++)
+            {
+                temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
+                temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
+                temp.AddComponent<MapMove>();
+                temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
+                size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+            }
+            temp = Instantiate(map[13], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
+            temp.AddComponent<MapMove>();
+            temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
+            size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+        }
+
+        DataManager.Single.Data.inGameData.maxX = size;
     }
 
     void MapTypeSetting()
@@ -77,6 +104,14 @@ public class ReStartBtn : EventTriggerEX
             for (int i = 0; i < (int)Define.hardMap.MaxCount; i++)
             {
                 map.Add(Resources.Load<GameObject>("Prefabs/Map/Hard/Stage" + DataManager.Single.Data.inGameData.crruentQuest.stage.ToString() + "/" + Enum.GetName(typeof(Define.hardMap), i)));
+            }
+        }
+        else if (DataManager.Single.Data.inGameData.gameMode == "rank")
+        {
+            map = new List<GameObject>();
+            for (int i = 0; i < (int)Define.rankingMap.MaxCount; i++)
+            {
+                map.Add(Resources.Load<GameObject>("Prefabs/Map/Ranking/" + Enum.GetName(typeof(Define.rankingMap), i)));
             }
         }
 

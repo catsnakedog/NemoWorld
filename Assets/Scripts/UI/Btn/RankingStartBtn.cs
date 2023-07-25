@@ -26,14 +26,14 @@ public class RankingStartBtn : EventTriggerEX
         List<int> partList = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         List<int> mapList = new List<int>();
 
-        /*
+        
         for (int i = 0; i < 2; i++)
         {
             int randomNum = UnityEngine.Random.Range(0, partList.Count);
             mapList.Add(partList[randomNum]);
             partList.RemoveAt(randomNum);
         }
-        */
+        
 
 
         while (DataManager.Single.Data.inGameData.beforeMapList == mapList)
@@ -49,7 +49,6 @@ public class RankingStartBtn : EventTriggerEX
 
         DataManager.Single.Data.inGameData.beforeMapList = mapList;
 
-        Debug.Log("a");
 
         GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
@@ -64,7 +63,7 @@ public class RankingStartBtn : EventTriggerEX
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }
-        temp = Instantiate(map[5], new Vector3(size, 0f, 0f), Quaternion.identity);
+        temp = Instantiate(map[13], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
@@ -86,6 +85,11 @@ public class RankingStartBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        DataManager.Single.Data.inGameData.crruentQuest.stage = 1;
+        DataManager.Single.Data.inGameData.crruentQuest.gameMode = "rank";
+        DataManager.Single.Data.inGameData.crruentQuest.info = "랭크 모드입니다";
+        DataManager.Single.Data.inGameData.crruentQuest.time = 33;
+
         MainController.main.sound.Play("buttonSFX");
         if (DataManager.Single.Data.inGameData.cost.energy <= 0)
         {
