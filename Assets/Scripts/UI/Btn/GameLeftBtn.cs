@@ -41,6 +41,7 @@ public class GameLeftBtn : EventTriggerEX
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard") MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Adventure);
         if (DataManager.Single.Data.inGameData.gameMode == "easy") MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.Story);
+        if (DataManager.Single.Data.inGameData.gameMode == "rank") MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.RankingMode);
         MainController.main.sound.Play("mainBGM");
     }
 }

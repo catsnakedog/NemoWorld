@@ -137,7 +137,14 @@ public class PlayerObj : MonoBehaviour
         MainController.main.sound.Play("coinSFX");
         //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
-        DataManager.Single.Data.inGameData.coinGetAmount += 1;
+        if(DataManager.Single.Data.inGameData.isPurple)
+        {
+            DataManager.Single.Data.inGameData.coinGetAmount += 2;
+        }
+        else
+        {
+            DataManager.Single.Data.inGameData.coinGetAmount += 1;
+        }
         DataManager.Single.Data.missionData.silverCoinCount++;
     }
 
@@ -146,7 +153,14 @@ public class PlayerObj : MonoBehaviour
         MainController.main.sound.Play("coinSFX");
         //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
-        DataManager.Single.Data.inGameData.coinGetAmount += 5;
+        if (DataManager.Single.Data.inGameData.isPurple)
+        {
+            DataManager.Single.Data.inGameData.coinGetAmount += 10;
+        }
+        else
+        {
+            DataManager.Single.Data.inGameData.coinGetAmount += 5;
+        }
     }
 
     void PlayerHurt()

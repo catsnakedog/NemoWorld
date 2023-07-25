@@ -88,7 +88,7 @@ public class RankingStartBtn : EventTriggerEX
         DataManager.Single.Data.inGameData.crruentQuest.stage = 1;
         DataManager.Single.Data.inGameData.crruentQuest.gameMode = "rank";
         DataManager.Single.Data.inGameData.crruentQuest.info = "랭크 모드입니다";
-        DataManager.Single.Data.inGameData.crruentQuest.time = 33;
+        DataManager.Single.Data.inGameData.crruentQuest.time = 190;
 
         MainController.main.sound.Play("buttonSFX");
         if (DataManager.Single.Data.inGameData.cost.energy <= 0)

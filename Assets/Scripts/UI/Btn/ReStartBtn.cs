@@ -64,6 +64,11 @@ public class ReStartBtn : EventTriggerEX
         }
         else if (DataManager.Single.Data.inGameData.gameMode == "rank")
         {
+            DataManager.Single.Data.inGameData.crruentQuest.stage = 1;
+            DataManager.Single.Data.inGameData.crruentQuest.gameMode = "rank";
+            DataManager.Single.Data.inGameData.crruentQuest.info = "랭크 모드입니다";
+            DataManager.Single.Data.inGameData.crruentQuest.time = 190;
+
             List<int> mapList = DataManager.Single.Data.inGameData.mapList;
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);

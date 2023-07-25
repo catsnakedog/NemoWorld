@@ -76,6 +76,11 @@ public class Define
     {
         diePlayer,
         clearPlayer,
+        Book0,
+        Book1,
+        Book2,
+        Book3,
+        Book4,
         EffectRed,
         EffectOrange,
         EffectYellow,

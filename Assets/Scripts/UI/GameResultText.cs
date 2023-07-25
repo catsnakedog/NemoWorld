@@ -27,12 +27,12 @@ public class GameResultText : MonoBehaviour
             {
                 sb.Clear();
                 sb.Append("0");
-                sb.Append(DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount);
+                sb.Append((int)(DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount));
             }
             else
             {
                 sb.Clear();
-                sb.Append(DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount);
+                sb.Append((int)(DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount));
             }
             transform.GetChild(3).GetChild(2).GetComponent<TMP_Text>().text = sb.ToString();
         }
@@ -51,6 +51,8 @@ public class GameResultText : MonoBehaviour
             transform.GetChild(3).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
         }
 
+
+
         if (DataManager.Single.Data.inGameData.result == "die")
         {
             transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["BG1_1"];
@@ -65,6 +67,11 @@ public class GameResultText : MonoBehaviour
             if(DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
             {
                 transform.GetChild(4).gameObject.SetActive(true);
+            }
+            if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
+            {
+                transform.GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300 + DataManager.Single.Data.inGameData.crruentQuest.time * 1000)).ToString();
             }
         }
     }
