@@ -31,6 +31,7 @@ public class Define
         CutToon,
         FirstUI,
         RankingMode,
+        Item,
         MaxCount
     }
 
@@ -236,6 +237,32 @@ public class Define
         Legend_Angel,
         Legend_Devil,
         Legend_Wizard,
+        MaxCount
+    }
+
+    public enum ItemShop
+    {
+        Gold,
+        Time,
+        Shield,
+        Save,
+        StartBooster,
+        GachaTicket,
+        MaxCount
+    }
+
+    public enum GachaShop
+    {
+        Normalskin,
+        Epicskin,
+        Legendskin,
+        Gold,
+        Time,
+        Shield,
+        Save,
+        StartBooster,
+        GachaPiece3,
+        GachaPiece5,
         MaxCount
     }
 }

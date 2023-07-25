@@ -2,13 +2,26 @@
     "isFirst": false,
     "inGameData": {
         "cost": {
-            "gold": 110655,
+            "gold": 110635,
             "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
-            "gachaPiece": 0
+            "gachaPiece": 0,
+            "gachaTicket": 0
         },
+        "gachaPercent": [
+            27.0,
+            2.25,
+            0.75,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            10.0,
+            15.0,
+            5.0
+        ],
         "itemList": {
             "headItem": [
                 "Normal_BlueCap",
@@ -92,7 +105,7 @@
             "isUseTimeItem": false,
             "isUseBoostItem": false,
             "shieldItemAmount": 39,
-            "saveItemAmount": 29,
+            "saveItemAmount": 30,
             "coinItemAmount": 9,
             "timeItemAmount": 28,
             "boostItemAmount": 32
@@ -159,7 +172,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-26 AM 5:04:20",
+        "beforeTime": "2023-07-26 AM 7:05:46",
         "crruentTime": ""
     },
     "missionData": {

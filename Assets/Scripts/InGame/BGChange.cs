@@ -36,7 +36,6 @@ public class BGChange : MonoBehaviour
         {
             for (int j = 0; j < bg[i].Length; j++)
             {
-                //Debug.Log(sb.Append(i.ToString() + "_" + (j % 2 + 1).ToString()).ToString());
                 bg[i][j].sprite = MainController.main.resource.sprite[sb.Append((i+1).ToString() + "_" + (j%2 + 1).ToString()).ToString()];
                 bg[i][j].gameObject.AddComponent<MoveBG>().Init(speed[i], Speed);
                 sb.Remove(10, 3);

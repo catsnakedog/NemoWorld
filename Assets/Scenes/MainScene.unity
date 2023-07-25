@@ -341,6 +341,18 @@ MonoBehaviour:
         clothGacha: 0
         wingGacha: 0
         gachaPiece: 0
+        gachaTicket: 0
+      gachaPercent:
+      - 27
+      - 2.25
+      - 0.75
+      - 10
+      - 10
+      - 10
+      - 10
+      - 10
+      - 15
+      - 5
       itemList:
         headItem: []
         clothItem: []
@@ -885,6 +897,10 @@ PrefabInstance:
     - target: {fileID: 2419870566520977649, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_Name
       value: FirstCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419870566520977649, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_Pivot.x
