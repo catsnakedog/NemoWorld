@@ -3,7 +3,7 @@
     "inGameData": {
         "cost": {
             "gold": 110620,
-            "energy": 14,
+            "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
@@ -159,7 +159,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-25 AM 6:50:29",
+        "beforeTime": "2023-07-25 PM 10:59:06",
         "crruentTime": ""
     },
     "missionData": {
