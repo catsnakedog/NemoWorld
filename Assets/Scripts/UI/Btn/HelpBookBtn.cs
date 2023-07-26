@@ -22,6 +22,7 @@ public class HelpBookBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         right.transform.GetChild(0).gameObject.SetActive(false);
         right.transform.GetChild(1).gameObject.SetActive(false);
         right.transform.GetChild(2).gameObject.SetActive(false);

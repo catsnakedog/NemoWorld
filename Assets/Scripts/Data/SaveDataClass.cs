@@ -14,9 +14,10 @@ public class SaveDataClass
     public QuestData questData;
     public TimeData timeData;
     public MissionData missionData;
+    public RankingData rankingData;
 
 
-    public SaveDataClass(bool isFirst,InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData)
+    public SaveDataClass(bool isFirst,InGameData inGameData, OptionData optionData, QuestData questData, TimeData timeData, MissionData missionData, RankingData rankingData)
     {
         this.isFirst = isFirst;
         this.inGameData = inGameData;
@@ -24,6 +25,7 @@ public class SaveDataClass
         this.questData = questData;
         this.timeData = timeData;
         this.missionData = missionData;
+        this.rankingData = rankingData;
     }
     public SaveDataClass()
     {
@@ -33,6 +35,7 @@ public class SaveDataClass
         questData = new QuestData();
         timeData = new TimeData();
         missionData = new MissionData();
+        rankingData = new RankingData();
     }
 }
 
@@ -41,6 +44,8 @@ public class SaveDataClass
 [System.Serializable]
 public class InGameData
 {
+    public int playerNumber;
+    public int score;
     public Cost cost; // 재화 관련
     public ItemList itemList;//보유 스킨
     public Ch ch;//캐릭터 스킨 착장
@@ -76,8 +81,12 @@ public class InGameData
     public bool isTimeUp;
     public bool isTimeDown;
     public bool isItem;
+    public bool isRankAward;
+    public bool isFirstStage1;
+    public bool isFirstStage2;
+    public bool isFirstStage3;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem, int playerNumber, bool isRankAward, bool isFirstStage1, bool isFirstStage2, bool isFirstStage3)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -114,6 +123,11 @@ public class InGameData
         this.isTimeUp = isTImeUp;
         this.isTimeDown = isTimeDown;
         this.isItem = isItem;
+        this.playerNumber = playerNumber;
+        this.isRankAward = isRankAward;
+        this.isFirstStage1 = isFirstStage1;
+        this.isFirstStage2 = isFirstStage2;
+        this.isFirstStage3 = isFirstStage3;
     }
 
     public InGameData()
@@ -153,6 +167,11 @@ public class InGameData
         isTimeUp = false;
         isTimeDown = false;
         isItem = false;
+        playerNumber = 0;
+        isRankAward = false;
+        isFirstStage1 = true;
+        isFirstStage2 = true;
+        isFirstStage3 = true;
     }
 }
 
@@ -375,17 +394,20 @@ public class TimeData
 {
     public string beforeTime;
     public string crruentTime;
+    public int lastWeek;
 
-    public TimeData(string beforeTime, string crruentTime)
+    public TimeData(string beforeTime, string crruentTime, int lastWeek)
     {
         this.beforeTime = beforeTime;
         this.crruentTime = crruentTime;
+        this.lastWeek = lastWeek;
     }
 
     public TimeData()
     {
         this.beforeTime = "2023 - 07 - 13 PM 10:30:47";
         this.crruentTime = "";
+        lastWeek = 1;
     }
 }
 #endregion
@@ -411,6 +433,54 @@ public class MissionData
         jumpCount = 0;
         silverCoinCount = 0;
         hitCount = 0;
+    }
+}
+
+#endregion
+
+#region RankingData
+
+[System.Serializable]
+public class RankingData
+{
+    public List<RankInfo> rankInfo = new List<RankInfo>();
+    public int rank;
+    public int awardType;
+    public RankInfo playerRank;
+
+    public RankingData(List<RankInfo> rankInfo, int rank, RankInfo playerRank, int awardType)
+    {
+        this.rankInfo = rankInfo;
+        this.rank = rank;
+        this.playerRank = playerRank;
+        this.awardType = awardType;
+    }
+
+    public RankingData()
+    {
+        rankInfo = new List<RankInfo>();
+        rank = 0;
+        playerRank = new RankInfo();
+        awardType = 0;
+    }
+}
+
+[System.Serializable]
+public class RankInfo
+{
+    public string name;
+    public string score;
+
+    public RankInfo(string name, string score)
+    {
+        this.name = name;
+        this.score = score;
+    }
+
+    public RankInfo()
+    {
+        name = "";
+        score = "";
     }
 }
 

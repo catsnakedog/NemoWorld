@@ -293,7 +293,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1123246165}
+  - {fileID: 1187267097}
   m_Father: {fileID: 1757433658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -334,6 +334,8 @@ MonoBehaviour:
   Data:
     isFirst: 0
     inGameData:
+      playerNumber: 0
+      score: 0
       cost:
         gold: 0
         energy: 0
@@ -400,6 +402,7 @@ MonoBehaviour:
       isTimeUp: 0
       isTimeDown: 0
       isItem: 0
+      isRankAward: 0
     optionData:
       volumeBGM: 0
       volumeSFX: 0
@@ -410,10 +413,18 @@ MonoBehaviour:
     timeData:
       beforeTime: 
       crruentTime: 
+      lastWeek: 1
     missionData:
       jumpCount: 0
       silverCoinCount: 0
       hitCount: 0
+    rankingData:
+      rankInfo: []
+      rank: 0
+      awardType: 0
+      playerRank:
+        name: 
+        score: 
   quest: {fileID: 11400000, guid: 5d86dcd3f806ecd4498b2c77391d7569, type: 2}
 --- !u!4 &352979551
 Transform:
@@ -875,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e96ae3a485c0a6448dff00a5a7fcc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1123246164
+--- !u!1001 &1187267096
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -896,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -940,15 +951,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -972,10 +983,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
---- !u!224 &1123246165 stripped
+--- !u!224 &1187267097 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2419870566520977654, guid: 3acd79c3e040a1342975cc32746ecef0, type: 3}
-  m_PrefabInstance: {fileID: 1123246164}
+  m_PrefabInstance: {fileID: 1187267096}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1407035717
 GameObject:

@@ -31,6 +31,14 @@ public class Define
         CutToon,
         FirstUI,
         RankingMode,
+        Energy,
+        Award1,
+        Award2,
+        Award3,
+        Award4,
+        Award5,
+        StoryFirst,
+        RankLoading,
         MaxCount
     }
 
@@ -93,6 +101,9 @@ public class Define
         Book2,
         Book3,
         Book4,
+        StoryHelp1,
+        StoryHelp2,
+        StoryHelp3,
         EffectRed,
         EffectOrange,
         EffectYellow,
@@ -101,7 +112,6 @@ public class Define
         EffectNavy,
         EffectPurple,
         EffectFever,
-        EffectSaw,
         stage1EasyCutToon,
         stage2EasyCutToon,
         stage3EasyCutToon,
