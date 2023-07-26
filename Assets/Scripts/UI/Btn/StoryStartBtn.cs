@@ -70,12 +70,57 @@ public class StoryStartBtn : EventTriggerEX
 
         DataManager.Single.Data.inGameData.cost.energy--;
 
-        GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
-        ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);
+        bool flag = false;
 
-        MapTypeSetting();
-        MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.InGameBG);
-        MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
-        MainController.main.sound.Play("storyBGM");
+        if(DataManager.Single.Data.inGameData.crruentQuest.stage == 1)
+        {
+            if(DataManager.Single.Data.inGameData.isFirstStage1)
+            {
+                flag = true;
+            }    
+        }
+        else if (DataManager.Single.Data.inGameData.crruentQuest.stage == 2)
+        {
+            if (DataManager.Single.Data.inGameData.isFirstStage2)
+            {
+                flag = true;
+            }
+        }
+        else if (DataManager.Single.Data.inGameData.crruentQuest.stage == 3)
+        {
+            if (DataManager.Single.Data.inGameData.isFirstStage3)
+            {
+                flag = true;
+            }
+        }
+
+
+        if (flag)
+        {
+            MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.StoryFirst);
+            Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);
+        }
+        else
+        {
+            if (DataManager.Single.Data.inGameData.crruentQuest.stage == 1)
+            {
+                DataManager.Single.Data.inGameData.isFirstStage1 = false;
+            }
+            else if (DataManager.Single.Data.inGameData.crruentQuest.stage == 2)
+            {
+                DataManager.Single.Data.inGameData.isFirstStage2 = false;
+            }
+            else if (DataManager.Single.Data.inGameData.crruentQuest.stage == 3)
+            {
+                DataManager.Single.Data.inGameData.isFirstStage3 = false;
+            }
+            GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);
+            ch.transform.SetParent(GameObject.FindWithTag("Ch").transform, false);
+
+            MapTypeSetting();
+            MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.InGameBG);
+            MainController.main.UI.UIsetting(Define.UIlevel.Level2, Define.UItype.InGameUI);
+            MainController.main.sound.Play("storyBGM");
+        }
     }
 }

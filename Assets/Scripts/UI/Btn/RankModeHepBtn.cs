@@ -18,6 +18,7 @@ public class RankModeHepBtn : EventTriggerEX
 
     protected override void OnPointerDown(PointerEventData data)
     {
+        MainController.main.sound.Play("buttonSFX");
         helpPanel.SetActive(isOn);
     }
 }

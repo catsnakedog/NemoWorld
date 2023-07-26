@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
+using UnityEngine.Networking;
+using JetBrains.Annotations;
 
 public class GameResultText : MonoBehaviour
 {
@@ -58,6 +61,14 @@ public class GameResultText : MonoBehaviour
             transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["BG1_1"];
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["diePlayer"];
             transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
+            if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
+            {
+                transform.GetChild(8).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
+                DataManager.Single.Data.inGameData.score = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300));
+                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
+                RankingData();
+            }
         }
         else if (DataManager.Single.Data.inGameData.result == "clear")
         {
@@ -70,9 +81,69 @@ public class GameResultText : MonoBehaviour
             }
             if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
             {
+                transform.GetChild(8).gameObject.SetActive(true);
                 transform.GetChild(5).gameObject.SetActive(true);
-                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300 + DataManager.Single.Data.inGameData.crruentQuest.time * 1000)).ToString();
+                DataManager.Single.Data.inGameData.score = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300 + DataManager.Single.Data.inGameData.crruentQuest.time * 1000));
+                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
+                RankingData();
             }
         }
+    }
+
+    void RankingData()
+    {
+        StartCoroutine(DataPost());
+    }
+
+    const string URL = "https://script.google.com/macros/s/AKfycbzD6pKj5-JGVICcb4Jkl39AzsJkjyhxYZ2-SKk__8G5RDpS6xUpna0tBm1tYQ4MFHo/exec";
+
+    IEnumerator DataPost()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", DataManager.Single.Data.inGameData.name);
+        form.AddField("type", "rankData");
+        form.AddField("score", DataManager.Single.Data.inGameData.score.ToString());
+
+        using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isDone) DataProcessing(www.downloadHandler.text);
+            else StartCoroutine(DataPost());
+        }
+    }
+
+    void DataProcessing(string text)
+    {
+        string[] splitText = text.Split(',');
+        DataManager.Single.Data.rankingData.rankInfo.Clear();
+
+        
+
+        for (int i = 0; i < splitText.Length / 2; i++)
+        {
+            RankInfo temp = new RankInfo(splitText[i * 2 + 0], splitText[i * 2 + 1]);
+            DataManager.Single.Data.rankingData.rankInfo.Add(temp);
+        }
+
+        DataManager.Single.Data.rankingData.rankInfo.Sort(compare1);
+
+        for (int i = 0; i < DataManager.Single.Data.rankingData.rankInfo.Count; i++)
+        {
+            if (DataManager.Single.Data.rankingData.rankInfo[i].name == DataManager.Single.Data.inGameData.name)
+            {
+                DataManager.Single.Data.rankingData.playerRank = DataManager.Single.Data.rankingData.rankInfo[i];
+                DataManager.Single.Data.rankingData.rank = i + 1;
+            }
+
+        }
+
+        DataManager.Single.Save();
+        transform.GetChild(8).gameObject.SetActive(false);
+    }
+
+    int compare1(RankInfo a, RankInfo b)
+    {
+        return int.Parse(a.score) < int.Parse(b.score) ? 1 : -1;
     }
 }

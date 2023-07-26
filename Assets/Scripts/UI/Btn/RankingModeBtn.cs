@@ -14,6 +14,6 @@ public class RankingModeBtn : EventTriggerEX
     {
         MainController.main.sound.Play("buttonSFX");
         DataManager.Single.Data.inGameData.gameMode = "rank";
-        MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.RankingMode);
+        MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.RankLoading);
     }
 }
