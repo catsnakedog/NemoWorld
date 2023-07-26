@@ -344,17 +344,6 @@ MonoBehaviour:
         wingGacha: 0
         gachaPiece: 0
         gachaTicket: 0
-      gachaPercent:
-      - 27
-      - 2.25
-      - 0.75
-      - 10
-      - 10
-      - 10
-      - 10
-      - 10
-      - 15
-      - 5
       itemList:
         headItem: []
         clothItem: []
