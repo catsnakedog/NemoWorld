@@ -1,13 +1,15 @@
 {
     "isFirst": false,
     "inGameData": {
+        "playerNumber": 0,
+        "score": 0,
         "cost": {
-            "gold": 108985,
+            "gold": 104035,
             "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
-            "gachaPiece": 9,
+            "gachaPiece": 38,
             "gachaTicket": 0
         },
         "itemList": {
@@ -15,7 +17,9 @@
                 "Normal_BlueCap",
                 "Normal_Mario",
                 "Epic_Pororo",
-                "Normal_DevilHorn"
+                "Normal_DevilHorn",
+                "Epic_Satgat",
+                "Normal_Straw"
             ],
             "clothItem": [
                 "Epic_Dress",
@@ -28,7 +32,11 @@
             ],
             "wingItem": [
                 "Epic_BlueClearButterfly",
-                "Epic_PinkClearButterfly"
+                "Epic_PinkClearButterfly",
+                "Normal_Sky",
+                "Normal_Pink",
+                "Normal_Cute",
+                "Normal_Green"
             ]
         },
         "ch": {
@@ -97,11 +105,11 @@
             "isUseCoinItem": false,
             "isUseTimeItem": false,
             "isUseBoostItem": false,
-            "shieldItemAmount": 40,
-            "saveItemAmount": 30,
-            "coinItemAmount": 9,
-            "timeItemAmount": 30,
-            "boostItemAmount": 32
+            "shieldItemAmount": 44,
+            "saveItemAmount": 35,
+            "coinItemAmount": 12,
+            "timeItemAmount": 31,
+            "boostItemAmount": 37
         },
         "ObjList": [],
         "isRedItem": false,
@@ -111,12 +119,16 @@
             0
         ],
         "isFirst": false,
-        "name": "orie",
+        "name": "Orie",
         "maxX": 80.0,
         "moveAmount": 66.88076782226563,
         "isTimeUp": false,
         "isTimeDown": false,
-        "isItem": false
+        "isItem": false,
+        "isRankAward": false,
+        "isFirstStage1": true,
+        "isFirstStage2": true,
+        "isFirstStage3": true
     },
     "optionData": {
         "volumeBGM": 1.0,
@@ -165,12 +177,22 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-26 PM 4:16:56",
-        "crruentTime": ""
+        "beforeTime": "2023-07-26 PM 4:59:01",
+        "crruentTime": "",
+        "lastWeek": 1
     },
     "missionData": {
         "jumpCount": 0,
         "silverCoinCount": 0,
         "hitCount": 0
+    },
+    "rankingData": {
+        "rankInfo": [],
+        "rank": 0,
+        "awardType": 0,
+        "playerRank": {
+            "name": "",
+            "score": ""
+        }
     }
 }

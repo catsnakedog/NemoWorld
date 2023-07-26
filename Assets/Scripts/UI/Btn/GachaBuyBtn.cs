@@ -18,7 +18,7 @@ public class GachaBuyBtn : EventTriggerEX
     float[] gachaPercent = new float[] {27f, 2.25f, 0.75f, 10f, 10f, 10f, 10f, 10f, 15f, 5f};
 
     List<GameObject> ResultImage;
-    GameObject one, ten;
+    GameObject one, ten, def;
     StringBuilder index, type;
     int grade = 0;
 
@@ -29,6 +29,7 @@ public class GachaBuyBtn : EventTriggerEX
         ResultImage = new List<GameObject>();
         one = GameObject.Find("1_Gacha").gameObject;
         ten = GameObject.Find("10_Gacha").gameObject;
+        def = GameObject.Find("Default").gameObject;
         for (int i=0; i < number; i++)
         {
             ResultImage.Add(GameObject.Find(number.ToString() + "_Gacha").transform.GetChild(i).gameObject);
@@ -41,8 +42,8 @@ public class GachaBuyBtn : EventTriggerEX
     {
         MainController.main.sound.Play("buttonSFX");
 
-        GameObject.Find("Default").SetActive(false);
-        if(number == 1)
+        def.SetActive(false);
+        if (number == 1)
         {
             ten.SetActive(false);
             one.SetActive(true);
@@ -63,7 +64,6 @@ public class GachaBuyBtn : EventTriggerEX
                 result = Gacha();
                 ResultImage[i].SetActive(true);
 
-                Debug.Log(result);
                 if (result < 3)
                 {
                     //½ºÅ²
@@ -89,7 +89,7 @@ public class GachaBuyBtn : EventTriggerEX
                             }
                             else
                             {
-                                index.Append(((Define.ClothSkin)(rand - 16)).ToString());
+                                index.Append(((Define.WingSkin)(rand - 16)).ToString());
                                 type.Append("Wing");
                             }
 
@@ -111,7 +111,7 @@ public class GachaBuyBtn : EventTriggerEX
                             }
                             else
                             {
-                                index.Append(((Define.ClothSkin)(rand - 10 + 8)).ToString());
+                                index.Append(((Define.WingSkin)(rand - 10 + 8)).ToString());
                                 type.Append("Wing");
                             }
 
@@ -133,7 +133,7 @@ public class GachaBuyBtn : EventTriggerEX
                             }
                             else
                             {
-                                index.Append(((Define.ClothSkin)(rand - 6 + 13)).ToString());
+                                index.Append(((Define.WingSkin)(rand - 6 + 13)).ToString());
                                 type.Append("Wing");
                             }
 
