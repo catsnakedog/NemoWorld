@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,36 +6,47 @@ using UnityEngine.EventSystems;
 
 public class ItemBuyBtn : EventTriggerEX
 {
-    [SerializeField]
     int type;
     [SerializeField]
-    int number;
-    [SerializeField]
     int price;
+
     void Start()
     {
-        init();   
+        init();
+        type = (int)Enum.Parse(typeof(Define.ItemShop), gameObject.name);
     }
 
     protected override void OnPointerDown(PointerEventData data)
     {
         MainController.main.sound.Play("buttonSFX");
-        if (DataManager.Single.Data.inGameData.cost.gold >= price)
+
+        if(type == (int)Define.ItemShop.GachaTicket)
+        {
+            if(DataManager.Single.Data.inGameData.cost.gachaPiece >= 10)
+            {
+                DataManager.Single.Data.inGameData.cost.gachaPiece -= 10;
+                DataManager.Single.Data.inGameData.cost.gachaTicket++;
+            }
+        }
+        else if (DataManager.Single.Data.inGameData.cost.gold >= price)
         {
             DataManager.Single.Data.inGameData.cost.gold -= price;
             switch(type)
             {
-                case 0:
-                    DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount += number;
+                case (int)Define.ItemShop.Gold:
+                    DataManager.Single.Data.inGameData.inGameItem.coinItemAmount++;
                     return;
-                case 1:
-                    DataManager.Single.Data.inGameData.inGameItem.saveItemAmount += number;
+                case (int)Define.ItemShop.Time:
+                    DataManager.Single.Data.inGameData.inGameItem.timeItemAmount++;
                     return;
-                case 2:
-                    DataManager.Single.Data.inGameData.inGameItem.coinItemAmount += number;
+                case (int)Define.ItemShop.Shield:
+                    DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount++;
                     return;
-                case 3:
-                    DataManager.Single.Data.inGameData.inGameItem.timeItemAmount += number;
+                case (int)Define.ItemShop.Save:
+                    DataManager.Single.Data.inGameData.inGameItem.saveItemAmount++;
+                    return;
+                case (int)Define.ItemShop.StartBooster:
+                    DataManager.Single.Data.inGameData.inGameItem.boostItemAmount++;
                     return;
             }
         }

@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     int jumpCount;
     Rigidbody2D rb;
-    Animator playerAnimation;
+    Animator playerAnimation, armAnimation;
 
     private void Start()
     {
@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
         DataManager.Single.Data.inGameData.moveAmount = 0;
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
+        armAnimation = transform.Find("arm").gameObject.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,7 +30,10 @@ public class PlayerMove : MonoBehaviour
                 return;
             }
             jumpCount = 0;
+
+            //Run Animation
             playerAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), false);
+            armAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), false);
         }
     }
 
@@ -38,7 +42,11 @@ public class PlayerMove : MonoBehaviour
         if(jumpCount < DataManager.Single.Data.inGameData.jumpMaxCount)
         {
             MainController.main.sound.Play("jumpSFX");
+
+            //Jump Animation
             playerAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), true);
+            armAnimation.SetBool(Define.PlayerAnim.Jump.ToString(), true);
+
             rb.velocity = new Vector3(0, jumpPower, 0);
             jumpCount++;
             DataManager.Single.Data.missionData.jumpCount++;

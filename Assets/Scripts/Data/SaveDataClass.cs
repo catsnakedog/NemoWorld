@@ -47,6 +47,7 @@ public class InGameData
     public int playerNumber;
     public int score;
     public Cost cost; // 재화 관련
+    public float[] gachaPercent;
     public ItemList itemList;//보유 스킨
     public Ch ch;//캐릭터 스킨 착장
     public List<string> storyClearList;
@@ -86,9 +87,10 @@ public class InGameData
     public bool isFirstStage2;
     public bool isFirstStage3;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem, int playerNumber, bool isRankAward, bool isFirstStage1, bool isFirstStage2, bool isFirstStage3)
+    public InGameData(Cost cost, float[] gachaPercent, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem, int playerNumber, bool isRankAward, bool isFirstStage1, bool isFirstStage2, bool isFirstStage3)
     {
         this.cost = cost;
+        this.gachaPercent = gachaPercent;
         this.itemList = itemList;
         this.ch = ch;
         this.storyClearList = storyClearList;
@@ -133,6 +135,7 @@ public class InGameData
     public InGameData()
     {
         cost = new Cost();
+        gachaPercent = new float[] { 27f, 2.25f, 0.75f, 10f, 10f, 10f, 10f, 10f, 15f, 5f };
         itemList = new ItemList();
         ch = new Ch();
         storyClearList = new List<string>();
@@ -245,8 +248,9 @@ public class Cost
     public int clothGacha;
     public int wingGacha;
     public int gachaPiece;
+    public int gachaTicket;//TODO : UI 추가 해야함
 
-    public Cost(int gold, int energy, int hatGacha, int clothGacha, int wingGacha, int gachaPiece)
+    public Cost(int gold, int energy, int hatGacha, int clothGacha, int wingGacha, int gachaPiece, int gachaTicket)
     {
         this.gold = gold;
         this.energy = energy;
@@ -254,6 +258,7 @@ public class Cost
         this.clothGacha = clothGacha;
         this.wingGacha = wingGacha;
         this.gachaPiece = gachaPiece;
+        this.gachaTicket = gachaTicket;
     }
 
     public Cost()
@@ -264,6 +269,7 @@ public class Cost
         clothGacha = 0;
         wingGacha = 0;
         gachaPiece = 0;
+        gachaTicket = 0;
     }
 }
 

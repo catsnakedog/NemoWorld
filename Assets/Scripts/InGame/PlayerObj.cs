@@ -23,7 +23,7 @@ public class PlayerObj : MonoBehaviour
     GameObject shield;
     SpriteRenderer effect;
 
-    Animator playerAnimation, armAnimation;
+    Animator playerAnimation;
 
     bool isBoost;
 
@@ -31,7 +31,6 @@ public class PlayerObj : MonoBehaviour
     {
         playerCoroutine = new Coroutine[items.Length];
         playerAnimation = GetComponent<Animator>();
-        armAnimation = transform.Find("arm").gameObject.GetComponent<Animator>();
         shield = transform.GetChild(1).gameObject;
         effect = transform.GetChild(2).GetComponent<SpriteRenderer>();
 
@@ -138,7 +137,6 @@ public class PlayerObj : MonoBehaviour
         MainController.main.sound.Play("coinSFX");
         //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
-        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         if(DataManager.Single.Data.inGameData.isPurple)
         {
             DataManager.Single.Data.inGameData.coinGetAmount += 2;
@@ -155,7 +153,6 @@ public class PlayerObj : MonoBehaviour
         MainController.main.sound.Play("coinSFX");
         //Get Coin Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
-        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
         if (DataManager.Single.Data.inGameData.isPurple)
         {
             DataManager.Single.Data.inGameData.coinGetAmount += 10;
@@ -218,7 +215,6 @@ public class PlayerObj : MonoBehaviour
         }
         //Get Item Animation
         playerAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
-        armAnimation.SetTrigger(Define.PlayerAnim.CoinGet.ToString());
 
         StringBuilder sb = new StringBuilder(itemType);
         sb.Remove(0, 4);
