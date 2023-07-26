@@ -12,6 +12,8 @@ public class Energy : MonoBehaviour
         energyTime = 5;
         maxEnergy = 15;
 
+        Time.timeScale = 1;
+
         TimeSpan timespan;
         DateTime userIndate;
         DateTime now;

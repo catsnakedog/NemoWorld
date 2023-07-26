@@ -22,6 +22,12 @@ public class SoundController : MonoBehaviour
         SFXSource.volume = DataManager.Single.Data.optionData.volumeSFX;
     }
 
+    private void Update()
+    {
+        BGMSource.volume = DataManager.Single.Data.optionData.volumeBGM;
+        SFXSource.volume = DataManager.Single.Data.optionData.volumeSFX;
+    }
+
     void SoundPooling() // enum에서 사운드 이름을 읽어와서 해당하는 사운드 파일을 로드 시킨다
     {
         string[] BGMNames = System.Enum.GetNames(typeof(Define.BGM));
