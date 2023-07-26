@@ -26,18 +26,12 @@ public class AdventureStartBtn : EventTriggerEX
         List<int> partList = new List<int>() { 1, 2, 3, 4 };
         List<int> mapList = new List<int>();
 
-        /*
         for (int i = 0; i < 2; i++)
         {
             int randomNum = UnityEngine.Random.Range(0, partList.Count);
             mapList.Add(partList[randomNum]);
             partList.RemoveAt(randomNum);
         }
-        */
-
-        mapList.Add(number);
-        mapList.Add(number);
-
 
 
         while (DataManager.Single.Data.inGameData.beforeMapList == mapList)
