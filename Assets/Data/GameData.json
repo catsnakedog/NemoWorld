@@ -2,36 +2,29 @@
     "isFirst": false,
     "inGameData": {
         "cost": {
-            "gold": 110635,
+            "gold": 108985,
             "energy": 15,
             "hatGacha": 0,
             "clothGacha": 0,
             "wingGacha": 0,
-            "gachaPiece": 0,
+            "gachaPiece": 9,
             "gachaTicket": 0
         },
-        "gachaPercent": [
-            27.0,
-            2.25,
-            0.75,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            10.0,
-            15.0,
-            5.0
-        ],
         "itemList": {
             "headItem": [
                 "Normal_BlueCap",
-                "Normal_Mario"
+                "Normal_Mario",
+                "Epic_Pororo",
+                "Normal_DevilHorn"
             ],
             "clothItem": [
                 "Epic_Dress",
                 "Epic_Mermaid",
                 "Epic_BlackCape1",
-                "Epic_BlackCape2"
+                "Epic_BlackCape2",
+                "Normal_BlackOveralls",
+                "Normal_PinkOveralls",
+                "Normal_GreenPants"
             ],
             "wingItem": [
                 "Epic_BlueClearButterfly",
@@ -40,7 +33,7 @@
         },
         "ch": {
             "head": "Normal_Mario",
-            "cloth": "Epic_Mermaid",
+            "cloth": "Normal_BlackOveralls",
             "wing": "Epic_PinkClearButterfly"
         },
         "storyClearList": [
@@ -104,10 +97,10 @@
             "isUseCoinItem": false,
             "isUseTimeItem": false,
             "isUseBoostItem": false,
-            "shieldItemAmount": 39,
+            "shieldItemAmount": 40,
             "saveItemAmount": 30,
             "coinItemAmount": 9,
-            "timeItemAmount": 28,
+            "timeItemAmount": 30,
             "boostItemAmount": 32
         },
         "ObjList": [],
@@ -172,7 +165,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-26 AM 7:05:46",
+        "beforeTime": "2023-07-26 PM 4:16:56",
         "crruentTime": ""
     },
     "missionData": {

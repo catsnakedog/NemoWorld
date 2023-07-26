@@ -144,6 +144,13 @@ public class Define
         rank_bg_c_3_2,
         BG1_1,
         BG1_4,
+        Gold,
+        Time,
+        Shield,
+        Save,
+        StartBooster,
+        GachaPiece3,
+        GachaPiece5,
         MaxCount
     }
 
