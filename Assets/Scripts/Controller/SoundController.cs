@@ -18,6 +18,7 @@ public class SoundController : MonoBehaviour
         SoundPooling(); // 사운드 파일들을 풀링 해온다
         BGMSource = gameObject.AddComponent<AudioSource>();
         SFXSource = gameObject.AddComponent<AudioSource>();
+        BGMSource.loop = true;
         BGMSource.volume = DataManager.Single.Data.optionData.volumeBGM;
         SFXSource.volume = DataManager.Single.Data.optionData.volumeSFX;
     }
