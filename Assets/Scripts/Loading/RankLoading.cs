@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class RankLoading : MonoBehaviour
             DataManager.Single.Data.rankingData.rankInfo.Add(temp);
         }
 
-        DataManager.Single.Data.rankingData.rankInfo.Sort(compare1);
+        DataManager.Single.Data.rankingData.rankInfo.Sort(Compare1);
         
         for(int i = 0; i < DataManager.Single.Data.rankingData.rankInfo.Count; i++)
         {
@@ -55,7 +56,7 @@ public class RankLoading : MonoBehaviour
         }
     }
 
-    int compare1(RankInfo a, RankInfo b)
+    int Compare1(RankInfo a, RankInfo b)
     {
         return int.Parse(a.score) < int.Parse(b.score) ? 1 : -1;
     }
