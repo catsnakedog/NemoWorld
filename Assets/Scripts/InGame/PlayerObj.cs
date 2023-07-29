@@ -25,6 +25,8 @@ public class PlayerObj : MonoBehaviour
 
     Animator playerAnimation;
 
+    public InGameUISetting gameUISetting;
+
     bool isBoost;
 
     private void Start()
@@ -146,6 +148,7 @@ public class PlayerObj : MonoBehaviour
             DataManager.Single.Data.inGameData.coinGetAmount += 1;
         }
         DataManager.Single.Data.missionData.silverCoinCount++;
+        gameUISetting.CoinUI();
     }
 
     void GoldCoinGet()
@@ -161,6 +164,7 @@ public class PlayerObj : MonoBehaviour
         {
             DataManager.Single.Data.inGameData.coinGetAmount += 5;
         }
+        gameUISetting.CoinUI();
     }
 
     void PlayerHurt()

@@ -15,5 +15,6 @@ public class ItemGage : MonoBehaviour
     {
         ch = GameObject.Find("Ch").transform.GetChild(0).gameObject;
         ch.GetComponent<PlayerMove>().slider = gameObject.GetComponent<Slider>();
+        gameObject.SetActive(false);
     }
 }

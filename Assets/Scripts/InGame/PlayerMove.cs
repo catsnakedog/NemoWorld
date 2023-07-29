@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        slider.gameObject.SetActive(false);
+        gameObject.transform.Translate(DataManager.Single.Data.inGameData.speed * Time.deltaTime, 0f, 0f);
         slider.gameObject.transform.localPosition = new Vector3(-831f, transform.position.y * 150 + 7, 0f);
         cam.transform.position = new Vector3(transform.position.x + 5.5f, 0.6f, -10f);
 
@@ -45,11 +45,6 @@ public class PlayerMove : MonoBehaviour
         }
 
         action?.Invoke();
-    }
-
-    private void FixedUpdate()
-    {
-        gameObject.transform.Translate(DataManager.Single.Data.inGameData.speed * Time.deltaTime, 0f, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -95,21 +90,6 @@ public class PlayerMove : MonoBehaviour
         return (raycastHit.collider != null);
     }
 
-    void OnDrawGizmos()
-    {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(transform.position, boxCastSize, 0f, Vector2.down, boxCastMaxDistance, LayerMask.GetMask("Ground"));
-
-        Gizmos.color = Color.red;
-        if (raycastHit.collider != null)
-        {
-            Gizmos.DrawRay(transform.position, Vector2.down * raycastHit.distance);
-            Gizmos.DrawWireCube(transform.position + Vector3.down * raycastHit.distance, boxCastSize);
-        }
-        else
-        {
-            Gizmos.DrawRay(transform.position, Vector2.down * boxCastMaxDistance);
-        }
-    }
 
     Coroutine effect;
     Action action;
