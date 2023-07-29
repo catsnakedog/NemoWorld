@@ -9,6 +9,7 @@ public class GameLeftBtn : EventTriggerEX
 {
     protected void Start()
     {
+        GameObject.FindWithTag("MainCamera").transform.position = new Vector3(0f, 0.6f, -10f);
         init();
     }
 

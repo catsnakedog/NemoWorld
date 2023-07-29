@@ -25,19 +25,16 @@ public class ReStartBtn : EventTriggerEX
         {
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
             temp = Instantiate(map[1], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
             temp = Instantiate(map[2], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         }
         else if (DataManager.Single.Data.inGameData.gameMode == "hard")
@@ -45,20 +42,17 @@ public class ReStartBtn : EventTriggerEX
             List<int> mapList = DataManager.Single.Data.inGameData.mapList;
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             for (int i = 0; i < 2; i++)
             {
                 temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
                 temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-                temp.AddComponent<MapMove>();
                 temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
                 size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             }
             temp = Instantiate(map[4], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }
@@ -72,20 +66,17 @@ public class ReStartBtn : EventTriggerEX
             List<int> mapList = DataManager.Single.Data.inGameData.mapList;
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             for (int i = 0; i < 2; i++)
             {
                 temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
                 temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-                temp.AddComponent<MapMove>();
                 temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
                 size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
             }
             temp = Instantiate(map[13], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }

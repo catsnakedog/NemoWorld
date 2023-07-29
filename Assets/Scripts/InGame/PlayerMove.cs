@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     int jumpCount;
     Rigidbody2D rb;
     Animator playerAnimation, armAnimation;
+    GameObject cam;
 
     private void Start()
     {
@@ -19,6 +20,18 @@ public class PlayerMove : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         armAnimation = transform.Find("arm").gameObject.GetComponent<Animator>();
+        cam = GameObject.FindWithTag("MainCamera");
+        cam.transform.position = new Vector3(0f, 0.6f, -10f);
+    }
+
+    private void Update()
+    {
+        cam.transform.position = new Vector3(transform.position.x + 5.5f, 0.6f, -10f);
+    }
+
+    private void FixedUpdate()
+    {
+        gameObject.transform.Translate(DataManager.Single.Data.inGameData.speed * Time.deltaTime, 0f, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

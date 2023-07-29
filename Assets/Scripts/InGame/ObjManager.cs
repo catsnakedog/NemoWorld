@@ -22,7 +22,7 @@ public class ObjManager : MonoBehaviour
 
         for (int i = 0; i < DataManager.Single.Data.inGameData.ObjList.Count; i++)
         {
-            if (objs[i].transform.position.x < 14f)
+            if (objs[i].transform.position.x < transform.position.x + 14f)
             {
                 objs[i].SetActive(true);
                 if(objs[i].GetComponent<ObjMove>() != null)
@@ -50,7 +50,7 @@ public class ObjManager : MonoBehaviour
 
         for (int i = 0; i < ObjList2.Count; i++)
         {
-            if (ObjList2[i].transform.position.x < -14f)
+            if (ObjList2[i].transform.position.x < transform.position.x -14f)
             {
                 ObjList2[i].SetActive(false);
                 DList.Add(i);

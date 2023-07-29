@@ -33,19 +33,16 @@ public class StoryStartBtn : EventTriggerEX
         int size = 0;
         GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-        temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
         temp = Instantiate(map[1], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-        temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
         temp = Instantiate(map[2], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-        temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         DataManager.Single.Data.inGameData.maxX = size;

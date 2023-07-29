@@ -50,20 +50,17 @@ public class AdventureStartBtn : EventTriggerEX
 
         GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-        temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         for (int i = 0; i < 2; i++)
         {
             temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-            temp.AddComponent<MapMove>();
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
         }
         temp = Instantiate(map[5], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
-        temp.AddComponent<MapMove>();
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
 
