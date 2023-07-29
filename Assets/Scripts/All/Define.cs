@@ -107,6 +107,8 @@ public class Define
         stage1HardCutToon,
         stage2HardCutToon,
         stage3HardCutToon,
+        FeverOn,
+        FeverOff,
         Up,
         Down,
         skin_none,
