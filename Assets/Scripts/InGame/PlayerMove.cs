@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     Animator playerAnimation, armAnimation;
     GameObject cam;
+    GameObject gage;
 
     private void Start()
     {
@@ -26,7 +28,23 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        slider.gameObject.SetActive(false);
+        slider.gameObject.transform.localPosition = new Vector3(-831f, transform.position.y * 150 + 7, 0f);
         cam.transform.position = new Vector3(transform.position.x + 5.5f, 0.6f, -10f);
+
+        if (DataManager.Single.Data.inGameData.isItem)
+        {
+            if (effect != null)
+            {
+                StopCoroutine(effect);
+            }
+            action = null;
+
+            effect = StartCoroutine(Effect());
+            DataManager.Single.Data.inGameData.isItem = false;
+        }
+
+        action?.Invoke();
     }
 
     private void FixedUpdate()
@@ -91,5 +109,21 @@ public class PlayerMove : MonoBehaviour
         {
             Gizmos.DrawRay(transform.position, Vector2.down * boxCastMaxDistance);
         }
+    }
+
+    Coroutine effect;
+    Action action;
+    public Slider slider;
+
+
+    IEnumerator Effect()
+    {
+        slider.gameObject.SetActive(true);
+        for (int i = 0; i < 50; i++)
+        {
+            slider.value = 50 - i;
+            yield return new WaitForSeconds(0.1f);
+        }
+        slider.gameObject.SetActive(false);
     }
 }

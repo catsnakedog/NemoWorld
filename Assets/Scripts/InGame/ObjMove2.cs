@@ -23,11 +23,9 @@ public class ObjMove2 : MonoBehaviour
 
     private void Start()
     {
-        DataManager.Single.Data.inGameData.ObjList.Add(gameObject);
-
         ch = GameObject.FindWithTag("Ch").transform.GetChild(0).gameObject;
 
-        gameObject.SetActive(false);
+        Init();
     }
 
     public void Init()

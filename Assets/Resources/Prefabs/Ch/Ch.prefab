@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 4764439534938704677}
   - component: {fileID: 6420648850859846340}
   - component: {fileID: -5312957674390875139}
-  - component: {fileID: 823167664936886864}
+  - component: {fileID: 720613855390805622}
   m_Layer: 0
   m_Name: Ch
   m_TagString: Untagged
@@ -765,6 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 7
+  slider: {fileID: 0}
 --- !u!114 &-5027875870439518194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +831,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.32, y: 1.3870301}
   m_EdgeRadius: 0
---- !u!114 &823167664936886864
+--- !u!114 &720613855390805622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -842,4 +843,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b94a7ebe6eb624288b1cc82eb6181b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjList2: []

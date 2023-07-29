@@ -63,8 +63,6 @@ public class StoryStartBtn : EventTriggerEX
         DataManager.Single.Data.inGameData.inGameItem.isUseTimeItem = false;
         DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem = false;
 
-        DataManager.Single.Data.inGameData.ObjList.Clear();
-
         DataManager.Single.Data.inGameData.cost.energy--;
 
         bool flag = false;

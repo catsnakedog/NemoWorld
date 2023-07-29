@@ -123,6 +123,7 @@ public class PlayerResult : MonoBehaviour
 
     void Die()
     {
+        Destroy(GameObject.FindWithTag("Level1").transform.GetChild(0).gameObject);
         MainController.main.sound.Play("deathSFX");
         DataManager.Single.Data.inGameData.result = "die";
         Destroy(GameObject.FindWithTag("Level2").transform.GetChild(0).gameObject);

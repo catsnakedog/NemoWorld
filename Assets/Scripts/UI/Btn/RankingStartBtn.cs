@@ -50,6 +50,10 @@ public class RankingStartBtn : EventTriggerEX
         DataManager.Single.Data.inGameData.beforeMapList = mapList;
 
 
+        MapObj temp2;
+
+        DataManager.Single.Data.inGameData.mapObj.Clear();
+
         GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
@@ -57,14 +61,24 @@ public class RankingStartBtn : EventTriggerEX
         for (int i = 0; i < 2; i++)
         {
             temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp2 = new MapObj(size - 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+            temp2 = new MapObj(size + 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+            temp.SetActive(false);
         }
         temp = Instantiate(map[13], new Vector3(size, 0f, 0f), Quaternion.identity);
+        temp2 = new MapObj(size - 24f, temp);
+        DataManager.Single.Data.inGameData.mapObj.Add(temp2);
         temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
         temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
         size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+        temp2 = new MapObj(size + 24f, temp);
+        DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+        temp.SetActive(false);
 
         DataManager.Single.Data.inGameData.maxX = size;
         DataManager.Single.Data.inGameData.mapList = mapList;
@@ -104,8 +118,6 @@ public class RankingStartBtn : EventTriggerEX
             DataManager.Single.Data.inGameData.inGameItem.timeItemAmount--;
         if (DataManager.Single.Data.inGameData.inGameItem.isUseBoostItem)
             DataManager.Single.Data.inGameData.inGameItem.boostItemAmount--;
-
-        DataManager.Single.Data.inGameData.ObjList.Clear();
 
         DataManager.Single.Data.inGameData.cost.energy--;
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);

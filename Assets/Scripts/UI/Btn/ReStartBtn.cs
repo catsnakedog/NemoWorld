@@ -40,6 +40,11 @@ public class ReStartBtn : EventTriggerEX
         else if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {
             List<int> mapList = DataManager.Single.Data.inGameData.mapList;
+
+            DataManager.Single.Data.inGameData.mapObj.Clear();
+
+            MapObj temp2;
+
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
@@ -47,14 +52,24 @@ public class ReStartBtn : EventTriggerEX
             for (int i = 0; i < 2; i++)
             {
                 temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
+                temp2 = new MapObj(size - 24f, temp);
+                DataManager.Single.Data.inGameData.mapObj.Add(temp2);
                 temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
                 temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
                 size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+                temp2 = new MapObj(size + 24f, temp);
+                DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+                temp.SetActive(false);
             }
-            temp = Instantiate(map[4], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp = Instantiate(map[5], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp2 = new MapObj(size - 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+            temp2 = new MapObj(size + 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+            temp.SetActive(false);
         }
         else if (DataManager.Single.Data.inGameData.gameMode == "rank")
         {
@@ -64,6 +79,10 @@ public class ReStartBtn : EventTriggerEX
             DataManager.Single.Data.inGameData.crruentQuest.time = 190;
 
             List<int> mapList = DataManager.Single.Data.inGameData.mapList;
+            MapObj temp2;
+
+            DataManager.Single.Data.inGameData.mapObj.Clear();
+
             GameObject temp = Instantiate(map[0], new Vector3(size, 0f, 0f), Quaternion.identity);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
@@ -71,14 +90,24 @@ public class ReStartBtn : EventTriggerEX
             for (int i = 0; i < 2; i++)
             {
                 temp = Instantiate(map[mapList[i]], new Vector3(size, 0f, 0f), Quaternion.identity);
+                temp2 = new MapObj(size - 24f, temp);
+                DataManager.Single.Data.inGameData.mapObj.Add(temp2);
                 temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
                 temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
                 size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+                temp2 = new MapObj(size + 24f, temp);
+                DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+                temp.SetActive(false);
             }
             temp = Instantiate(map[13], new Vector3(size, 0f, 0f), Quaternion.identity);
+            temp2 = new MapObj(size - 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
             temp.transform.SetParent(GameObject.FindWithTag("Map").transform, false);
             temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().CompressBounds();
             size += temp.transform.GetChild(0).GetChild(0).GetComponent<Tilemap>().size.x;
+            temp2 = new MapObj(size + 24f, temp);
+            DataManager.Single.Data.inGameData.mapObj.Add(temp2);
+            temp.SetActive(false);
         }
 
         DataManager.Single.Data.inGameData.maxX = size;
@@ -117,7 +146,6 @@ public class ReStartBtn : EventTriggerEX
     protected override void OnPointerDown(PointerEventData data)
     {
         MainController.main.sound.Play("buttonSFX");
-        DataManager.Single.Data.inGameData.ObjList.Clear();
 
         QuestInfoTextSet();
         GameObject ch = Instantiate(MainController.main.resource.ch, new Vector3(-5.5f, -0.5f, 0f), Quaternion.identity);

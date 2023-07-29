@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEditor;
 using System.Runtime.InteropServices;
+using JetBrains.Annotations;
 
 [System.Serializable]
 public class SaveDataClass
@@ -70,7 +71,7 @@ public class InGameData
     public bool isHit;
     public int coinGetAmount;
     public InGameItem inGameItem; // 도전모드 아이템 관련
-    public List<GameObject> ObjList;
+    public List<MapObj> mapObj;
     public bool isRedItem;
     public bool isGreenItem;
     public List<int> beforeMapList;
@@ -86,7 +87,7 @@ public class InGameData
     public bool isFirstStage2;
     public bool isFirstStage3;
 
-    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<GameObject> objList, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem)
+    public InGameData(Cost cost, ItemList itemList, Ch ch, List<string> storyClearList, List<string> adventureClearList, List<string> missionClearList, int stage, string gameMode, Dictionary<int, int> adventureModeHighScore, QuestInfo crruentQuest, float speed, string color, bool isGod, bool isPurple, bool isShield, int jumpMaxCount, List<int> mapList, string result, int fever, string cutToonName, bool isFever, bool isHit, int coinGetAmount, InGameItem inGameItem, List<MapObj> mapObj, bool isRedItem, bool isGreenItem, List<int> beforeMapList, bool isFirst, string name, float maxX, float moveAmount, bool isTImeUp, bool isTimeDown, bool isItem, int playerNumber,bool isRankAward, bool isFirstStage1, bool isFirstStage2, bool isFirstStage3)
     {
         this.cost = cost;
         this.itemList = itemList;
@@ -112,7 +113,7 @@ public class InGameData
         this.isHit = isHit;
         this.coinGetAmount = coinGetAmount;
         this.inGameItem = inGameItem;
-        ObjList = objList;
+        this.mapObj = mapObj;
         this.isRedItem = isRedItem;
         this.isGreenItem = isGreenItem;
         this.beforeMapList = beforeMapList;
@@ -156,7 +157,7 @@ public class InGameData
         isHit = false;
         coinGetAmount = 0;
         inGameItem = new InGameItem();
-        ObjList = new List<GameObject>();
+        mapObj = new List<MapObj>();
         isRedItem = false;
         isGreenItem = false;
         beforeMapList = new List<int>();
@@ -174,6 +175,26 @@ public class InGameData
         isFirstStage3 = true;
     }
 }
+
+[System.Serializable]
+public class MapObj
+{
+    public float x;
+    public GameObject map;
+
+    public MapObj(float x, GameObject map)
+    {
+        this.x = x;
+        this.map = map;
+    }
+
+    public MapObj()
+    {
+        x = 0;
+        map = null;
+    }
+}
+
 
 [System.Serializable]
 public class InGameItem

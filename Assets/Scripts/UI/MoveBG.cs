@@ -6,6 +6,7 @@ public class MoveBG : MonoBehaviour
 {
     float Speed, mult, posX;
     RectTransform rt;
+    GameObject ch;
     
     public void Init(float m, float s)
     {
@@ -13,15 +14,16 @@ public class MoveBG : MonoBehaviour
         Speed = s;
 
         rt = GetComponent<RectTransform>();
+        ch = GameObject.FindWithTag("Ch").transform.GetChild(0).gameObject;
         posX = (Camera.main.orthographicSize * Camera.main.aspect) * 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rt.position.x < -posX)
+        if (rt.position.x < ch.transform.position.x -posX)
         {
-            rt.position = new Vector3(posX * 2, rt.position.y, rt.position.z);
+            rt.position = new Vector3(ch.transform.position.x + posX * 2, rt.position.y, rt.position.z);
         }
         rt.Translate(new Vector3(-(mult * Speed * DataManager.Single.Data.inGameData.speed) * Time.deltaTime, 0, 0));
     }
