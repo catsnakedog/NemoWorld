@@ -13,15 +13,6 @@ public class FeverBtnUI : MonoBehaviour
     }
     void Update()
     {
-        if(DataManager.Single.Data.inGameData.fever >= 20f)
-        {
-            image.sprite = MainController.main.resource.sprite["FeverOn"];
-        }
-        else if (DataManager.Single.Data.inGameData.fever <= 0f)
-        {
-            image.sprite = MainController.main.resource.sprite["FeverOff"];
-        }
-
         image.fillAmount = (DataManager.Single.Data.inGameData.fever / 20f);
     }
 }

@@ -24,8 +24,8 @@ public class GameResultText : MonoBehaviour
             {
                 sb.Append(DataManager.Single.Data.inGameData.coinGetAmount);
             }
-            transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>().text = "È¹µæ °ñµå (º¸³Ê½º Ãß°¡!)";
-            transform.GetChild(4).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
+            transform.GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = "È¹µæ °ñµå (º¸³Ê½º Ãß°¡!)";
+            transform.GetChild(3).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
             if (DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount < 10)
             {
                 sb.Clear();
@@ -37,7 +37,7 @@ public class GameResultText : MonoBehaviour
                 sb.Clear();
                 sb.Append((int)(DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount));
             }
-            transform.GetChild(4).GetChild(2).GetComponent<TMP_Text>().text = sb.ToString();
+            transform.GetChild(3).GetChild(2).GetComponent<TMP_Text>().text = sb.ToString();
         }
         else
         {
@@ -50,8 +50,8 @@ public class GameResultText : MonoBehaviour
             {
                 sb.Append(DataManager.Single.Data.inGameData.coinGetAmount);
             }
-            transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>().text = "È¹µæ °ñµå";
-            transform.GetChild(4).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
+            transform.GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = "È¹µæ °ñµå";
+            transform.GetChild(3).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
         }
 
 
@@ -60,14 +60,13 @@ public class GameResultText : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["BG1_1"];
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["diePlayer"];
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(true);
+            transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
             if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
             {
-                transform.GetChild(9).gameObject.SetActive(true);
-                transform.GetChild(6).gameObject.SetActive(true);
+                transform.GetChild(8).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
                 DataManager.Single.Data.inGameData.score = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300));
-                transform.GetChild(6).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
+                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
                 RankingData();
             }
         }
@@ -75,19 +74,17 @@ public class GameResultText : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["BG1_4"];
             transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-            transform.GetChild(2).gameObject.SetActive(true);
-            transform.GetChild(3).gameObject.SetActive(false);
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["clearPlayer"];
             if(DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
             {
-                transform.GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(true);
             }
             if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
             {
-                transform.GetChild(9).gameObject.SetActive(true);
-                transform.GetChild(6).gameObject.SetActive(true);
+                transform.GetChild(8).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
                 DataManager.Single.Data.inGameData.score = ((int)(DataManager.Single.Data.inGameData.moveAmount * 300 + DataManager.Single.Data.inGameData.crruentQuest.time * 1000));
-                transform.GetChild(6).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
+                transform.GetChild(5).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.score.ToString();
                 RankingData();
             }
         }
@@ -142,7 +139,7 @@ public class GameResultText : MonoBehaviour
         }
 
         DataManager.Single.Save();
-        transform.GetChild(9).gameObject.SetActive(false);
+        transform.GetChild(8).gameObject.SetActive(false);
     }
 
     int compare1(RankInfo a, RankInfo b)

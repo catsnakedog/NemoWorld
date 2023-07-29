@@ -451,7 +451,6 @@ GameObject:
   - component: {fileID: 203135270488402469}
   - component: {fileID: 203135270488402468}
   - component: {fileID: 203135270488402467}
-  - component: {fileID: 5652890365340769980}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -570,27 +569,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &5652890365340769980
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203135270488402471}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &204926052922533904
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +580,6 @@ GameObject:
   - component: {fileID: 6998047864830439607}
   - component: {fileID: 647603937312500934}
   - component: {fileID: 3832821666885472643}
-  - component: {fileID: 1292305532635794282}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -692,27 +669,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0328362, y: 0}
   serializedVersion: 2
   m_Radius: 0.78478545
---- !u!50 &1292305532635794282
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204926052922533904}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &292336089538312551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1108,6 @@ GameObject:
   - component: {fileID: 6404238594958648125}
   - component: {fileID: 4523200139083724209}
   - component: {fileID: 1281167250690894155}
-  - component: {fileID: 5725697659851113787}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -1254,27 +1209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &5725697659851113787
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716904562141362297}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &762356617558891477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1412,6 @@ GameObject:
   - component: {fileID: 891390241466980577}
   - component: {fileID: 891390241466980576}
   - component: {fileID: 891390241466980583}
-  - component: {fileID: 6127134546341553201}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -1597,27 +1530,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &6127134546341553201
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891390241466980579}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &910436343655069718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1601,6 @@ GameObject:
   - component: {fileID: 7820314365428488731}
   - component: {fileID: 3350938786819324626}
   - component: {fileID: 8619973970969892174}
-  - component: {fileID: 686045455480438579}
   m_Layer: 0
   m_Name: ItemGreen
   m_TagString: Untagged
@@ -1779,27 +1690,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &686045455480438579
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944130095288182201}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &970885515158360026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1845,6 @@ GameObject:
   - component: {fileID: 1084159269378551068}
   - component: {fileID: 1084159269378551069}
   - component: {fileID: 1084159269378551067}
-  - component: {fileID: 5712820139523516038}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -2077,27 +1966,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &5712820139523516038
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084159269378551071}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1084159270592154945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2098,6 @@ GameObject:
   - component: {fileID: 1204724844648022311}
   - component: {fileID: 1204724844648022310}
   - component: {fileID: 1204724844648022309}
-  - component: {fileID: 1833389640939788663}
   m_Layer: 0
   m_Name: ItemRed
   m_TagString: Untagged
@@ -2320,27 +2187,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &1833389640939788663
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204724844648022304}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1204724845069462782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2513,6 @@ GameObject:
   - component: {fileID: 6390989910197357065}
   - component: {fileID: 4973345456908579261}
   - component: {fileID: 649872413268341758}
-  - component: {fileID: 4789353178806901517}
   m_Layer: 0
   m_Name: ItemBlue
   m_TagString: Untagged
@@ -2757,27 +2602,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &4789353178806901517
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447421997503425273}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1533903578977924572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,7 +2766,6 @@ GameObject:
   - component: {fileID: 1556692173301630695}
   - component: {fileID: 1556692173301630688}
   - component: {fileID: 1556692173301630694}
-  - component: {fileID: 1799846284026148530}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -3064,27 +2887,6 @@ MonoBehaviour:
   speed: 2
   whatDistanceItStart: 3
   number: 60
---- !u!50 &1799846284026148530
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556692173301630690}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1563525391826927007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,7 +3029,6 @@ GameObject:
   - component: {fileID: 1615090609493520372}
   - component: {fileID: 1615090609493520373}
   - component: {fileID: 1615090609493520371}
-  - component: {fileID: 6945249443167451662}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -3349,27 +3150,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &6945249443167451662
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615090609493520375}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1615090610421157801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4003,7 +3783,6 @@ GameObject:
   - component: {fileID: 2452427244007170850}
   - component: {fileID: 2452427244007170851}
   - component: {fileID: 2452427244007170852}
-  - component: {fileID: 235707951353216840}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -4122,27 +3901,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &235707951353216840
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452427244007170848}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2491184762151571377
 GameObject:
   m_ObjectHideFlags: 0
@@ -12494,7 +12252,6 @@ GameObject:
   - component: {fileID: 2774284989412362100}
   - component: {fileID: 2774284989412362101}
   - component: {fileID: 2774284989412362098}
-  - component: {fileID: 3770167454451651547}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -12613,27 +12370,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &3770167454451651547
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2774284989412362102}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2790401884653681226
 GameObject:
   m_ObjectHideFlags: 0
@@ -12914,7 +12650,6 @@ GameObject:
   - component: {fileID: 2968042070884238841}
   - component: {fileID: 2968042070884238840}
   - component: {fileID: 2968042070884238846}
-  - component: {fileID: 6241977010100895968}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -13036,27 +12771,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &6241977010100895968
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2968042070884238842}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2979868537220674800
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,7 +12937,6 @@ GameObject:
   - component: {fileID: 3320730860401959941}
   - component: {fileID: 3320730860401959938}
   - component: {fileID: 3320730860401959940}
-  - component: {fileID: 3033452967510065401}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -13345,27 +13058,6 @@ MonoBehaviour:
   speed: 5
   whatDistanceItStart: 4
   number: 60
---- !u!50 &3033452967510065401
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3320730860401959936}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &3403357394022557643
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,7 +14589,6 @@ GameObject:
   - component: {fileID: 5657562155170970816}
   - component: {fileID: 3035550926429896451}
   - component: {fileID: 8048354745604281431}
-  - component: {fileID: 3537274518316043577}
   m_Layer: 0
   m_Name: ItemYellow
   m_TagString: Untagged
@@ -14987,27 +14678,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &3537274518316043577
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4478624505590236277}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4511022941687768953
 GameObject:
   m_ObjectHideFlags: 0
@@ -15164,7 +14834,6 @@ GameObject:
   - component: {fileID: 4515050178761138173}
   - component: {fileID: 4515050178761138162}
   - component: {fileID: 4515050178761138163}
-  - component: {fileID: 1648288810267808380}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -15283,27 +14952,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &1648288810267808380
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4515050178761138174}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4556594096992490610
 GameObject:
   m_ObjectHideFlags: 0
@@ -15315,7 +14963,6 @@ GameObject:
   - component: {fileID: 6818776506634251216}
   - component: {fileID: 2064498502552570649}
   - component: {fileID: 5009748562323399813}
-  - component: {fileID: 6670565885661160912}
   m_Layer: 0
   m_Name: ItemGreen
   m_TagString: Untagged
@@ -15405,27 +15052,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &6670565885661160912
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4556594096992490610}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4569855441525140138
 GameObject:
   m_ObjectHideFlags: 0
@@ -15711,7 +15337,6 @@ GameObject:
   - component: {fileID: 4776111235359026362}
   - component: {fileID: 4776111235359026363}
   - component: {fileID: 4776111235359026364}
-  - component: {fileID: 5607086981077609857}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -15830,27 +15455,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &5607086981077609857
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4776111235359026360}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4795713742512682839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16014,7 +15618,6 @@ GameObject:
   - component: {fileID: 4861547080402029128}
   - component: {fileID: 4861547080402029129}
   - component: {fileID: 4861547080402029135}
-  - component: {fileID: 8806630441011044825}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -16131,27 +15734,6 @@ MonoBehaviour:
   speed: 2
   whatDistanceItStart: 3
   number: 60
---- !u!50 &8806630441011044825
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861547080402029131}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4928883972078219603
 GameObject:
   m_ObjectHideFlags: 0
@@ -16195,7 +15777,6 @@ GameObject:
   - component: {fileID: 4928883972948166630}
   - component: {fileID: 4928883972948166631}
   - component: {fileID: 4928883972948166625}
-  - component: {fileID: 6955795069765178147}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -16312,27 +15893,6 @@ MonoBehaviour:
   speed: 2
   whatDistanceItStart: 2
   number: 60
---- !u!50 &6955795069765178147
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4928883972948166629}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &4956172113683848133
 GameObject:
   m_ObjectHideFlags: 0
@@ -16407,7 +15967,6 @@ GameObject:
   - component: {fileID: 4998946572637530263}
   - component: {fileID: 4998946572637530262}
   - component: {fileID: 4998946572637530257}
-  - component: {fileID: 1736581849967844219}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -16526,27 +16085,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &1736581849967844219
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4998946572637530261}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5011522969484524677
 GameObject:
   m_ObjectHideFlags: 0
@@ -16621,7 +16159,6 @@ GameObject:
   - component: {fileID: 1650925088881231249}
   - component: {fileID: 8128025371989087005}
   - component: {fileID: 6903649199390969831}
-  - component: {fileID: 2305700092929055884}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -16723,27 +16260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &2305700092929055884
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5186979551503867605}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5226319850065539470
 GameObject:
   m_ObjectHideFlags: 0
@@ -17013,7 +16529,6 @@ GameObject:
   - component: {fileID: 5383037528209054301}
   - component: {fileID: 5383037528209054298}
   - component: {fileID: 5383037528209054300}
-  - component: {fileID: 8212560609226338079}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -17135,27 +16650,6 @@ MonoBehaviour:
   speed: 5
   whatDistanceItStart: 4
   number: 60
---- !u!50 &8212560609226338079
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5383037528209054296}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5383037528780475172
 GameObject:
   m_ObjectHideFlags: 0
@@ -17571,7 +17065,6 @@ GameObject:
   - component: {fileID: 5636888482413053896}
   - component: {fileID: 5636888482413053903}
   - component: {fileID: 5636888482413053897}
-  - component: {fileID: 3784192163475895873}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -17693,27 +17186,6 @@ MonoBehaviour:
   speed: 5
   whatDistanceItStart: 4
   number: 60
---- !u!50 &3784192163475895873
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5636888482413053901}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5636888482976192177
 GameObject:
   m_ObjectHideFlags: 0
@@ -18059,7 +17531,6 @@ GameObject:
   - component: {fileID: 6036010785115823915}
   - component: {fileID: 6036010785115823914}
   - component: {fileID: 6036010785115823913}
-  - component: {fileID: 2257702686971869056}
   m_Layer: 0
   m_Name: ItemRed
   m_TagString: Untagged
@@ -18149,27 +17620,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &2257702686971869056
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036010785115823916}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6048025697078230639
 GameObject:
   m_ObjectHideFlags: 0
@@ -18213,7 +17663,6 @@ GameObject:
   - component: {fileID: 6051237397098362383}
   - component: {fileID: 6051237397098362382}
   - component: {fileID: 6051237397098362377}
-  - component: {fileID: 4657366871707751226}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -18332,27 +17781,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &4657366871707751226
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6051237397098362381}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6090656845707565355
 GameObject:
   m_ObjectHideFlags: 0
@@ -18396,7 +17824,6 @@ GameObject:
   - component: {fileID: 6090656846984834974}
   - component: {fileID: 6090656846984834975}
   - component: {fileID: 6090656846984834969}
-  - component: {fileID: 5119266027117216743}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -18513,27 +17940,6 @@ MonoBehaviour:
   speed: 2
   whatDistanceItStart: 3
   number: 60
---- !u!50 &5119266027117216743
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090656846984834973}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6252477309037668894
 GameObject:
   m_ObjectHideFlags: 0
@@ -18766,7 +18172,6 @@ GameObject:
   - component: {fileID: 1651560127896310123}
   - component: {fileID: 819093342477920991}
   - component: {fileID: 7889126306431302739}
-  - component: {fileID: 5219544018983044573}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -18856,27 +18261,6 @@ CircleCollider2D:
   m_Offset: {x: 0.025720764, y: 0}
   serializedVersion: 2
   m_Radius: 0.7789426
---- !u!50 &5219544018983044573
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506743764061073819}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6524980710924597086
 GameObject:
   m_ObjectHideFlags: 0
@@ -18889,7 +18273,6 @@ GameObject:
   - component: {fileID: 837663579107634202}
   - component: {fileID: 7906690419959822998}
   - component: {fileID: 4807602875778606700}
-  - component: {fileID: 729039746642676011}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -18991,27 +18374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &729039746642676011
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6524980710924597086}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6537281326024292558
 GameObject:
   m_ObjectHideFlags: 0
@@ -19371,7 +18733,6 @@ GameObject:
   - component: {fileID: 755196270846945066}
   - component: {fileID: 7809013726476399014}
   - component: {fileID: 4854049993852988764}
-  - component: {fileID: 1445598013867445212}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -19473,27 +18834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1445598013867445212
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6586627659002395758}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6628872717720084757
 GameObject:
   m_ObjectHideFlags: 0
@@ -19716,7 +19056,6 @@ GameObject:
   - component: {fileID: 4573218194238799726}
   - component: {fileID: 6239062847242183455}
   - component: {fileID: 7735407609912745562}
-  - component: {fileID: 4003699699684306614}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -19806,27 +19145,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0328362, y: 0}
   serializedVersion: 2
   m_Radius: 0.78478545
---- !u!50 &4003699699684306614
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6679209795451971529}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6683184188326984507
 GameObject:
   m_ObjectHideFlags: 0
@@ -20058,7 +19376,6 @@ GameObject:
   - component: {fileID: 3387804887883940121}
   - component: {fileID: 5449396413793895130}
   - component: {fileID: 1022646596331743630}
-  - component: {fileID: 5539169059916626402}
   m_Layer: 0
   m_Name: ItemYellow
   m_TagString: Untagged
@@ -20148,27 +19465,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &5539169059916626402
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892496535886494124}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6981661722302330280
 GameObject:
   m_ObjectHideFlags: 0
@@ -20181,7 +19477,6 @@ GameObject:
   - component: {fileID: 6981661722302330282}
   - component: {fileID: 6981661722302330283}
   - component: {fileID: 6981661722302330284}
-  - component: {fileID: 387989970895133641}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -20300,27 +19595,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &387989970895133641
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6981661722302330280}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7007484648501170321
 GameObject:
   m_ObjectHideFlags: 0
@@ -20364,7 +19638,6 @@ GameObject:
   - component: {fileID: 7007484649233311268}
   - component: {fileID: 7007484649233311269}
   - component: {fileID: 7007484649233311267}
-  - component: {fileID: 1830536021909398044}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -20481,27 +19754,6 @@ MonoBehaviour:
   speed: 3
   whatDistanceItStart: 5
   number: 60
---- !u!50 &1830536021909398044
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007484649233311271}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7010207768062319248
 GameObject:
   m_ObjectHideFlags: 0
@@ -20576,7 +19828,6 @@ GameObject:
   - component: {fileID: 7027960113269304278}
   - component: {fileID: 7027960113269304279}
   - component: {fileID: 7027960113269304272}
-  - component: {fileID: 5006870091366572711}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -20695,27 +19946,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &5006870091366572711
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7027960113269304276}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7037928268690769986
 GameObject:
   m_ObjectHideFlags: 0
@@ -20728,7 +19958,6 @@ GameObject:
   - component: {fileID: 3510880867850375942}
   - component: {fileID: 6241118346287351178}
   - component: {fileID: 8763675356231096688}
-  - component: {fileID: 1554572364268330894}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -20830,27 +20059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1812eefbe9d6ee4a970b0c972ccdc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1554572364268330894
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7037928268690769986}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7045727053885765046
 GameObject:
   m_ObjectHideFlags: 0
@@ -21307,7 +20515,6 @@ GameObject:
   - component: {fileID: 7549653241671648596}
   - component: {fileID: 7549653241671648597}
   - component: {fileID: 7549653241671648594}
-  - component: {fileID: 5622371502978258223}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -21426,27 +20633,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!50 &5622371502978258223
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7549653241671648598}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7558062596646166824
 GameObject:
   m_ObjectHideFlags: 0
@@ -21900,7 +21086,6 @@ GameObject:
   - component: {fileID: 2508623822766282989}
   - component: {fileID: 4568312702495941465}
   - component: {fileID: 6431183900464297429}
-  - component: {fileID: 7839606971322898900}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -21990,27 +21175,6 @@ CircleCollider2D:
   m_Offset: {x: 0.025720764, y: 0}
   serializedVersion: 2
   m_Radius: 0.7789426
---- !u!50 &7839606971322898900
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7959955963333408797}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8015534269376173688
 GameObject:
   m_ObjectHideFlags: 0
@@ -22054,7 +21218,6 @@ GameObject:
   - component: {fileID: 8015534270329517605}
   - component: {fileID: 8015534270329517604}
   - component: {fileID: 8015534270329517602}
-  - component: {fileID: 8705715316498645318}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -22176,27 +21339,6 @@ MonoBehaviour:
   speed: 2
   whatDistanceItStart: 3
   number: 60
---- !u!50 &8705715316498645318
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015534270329517606}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8039955421286280308
 GameObject:
   m_ObjectHideFlags: 0
@@ -22792,7 +21934,6 @@ GameObject:
   - component: {fileID: 8270994555079689759}
   - component: {fileID: 8270994555079689758}
   - component: {fileID: 8270994555079689752}
-  - component: {fileID: 7207450227798203700}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -22914,27 +22055,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &7207450227798203700
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8270994555079689756}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8330248603113465493
 GameObject:
   m_ObjectHideFlags: 0
@@ -22947,7 +22067,6 @@ GameObject:
   - component: {fileID: 8330248603113465494}
   - component: {fileID: 8330248603113465495}
   - component: {fileID: 8330248603113465489}
-  - component: {fileID: 5531592622297491666}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -23069,27 +22188,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &5531592622297491666
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8330248603113465493}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8330248604058076875
 GameObject:
   m_ObjectHideFlags: 0
@@ -23245,7 +22343,6 @@ GameObject:
   - component: {fileID: 1701409428461144514}
   - component: {fileID: 9114812793087628723}
   - component: {fileID: 4878096961576265974}
-  - component: {fileID: 2811334634022381028}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -23335,27 +22432,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0328362, y: 0}
   serializedVersion: 2
   m_Radius: 0.78478545
---- !u!50 &2811334634022381028
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8384183531472998757}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8432730434488447912
 GameObject:
   m_ObjectHideFlags: 0
@@ -23586,7 +22662,6 @@ GameObject:
   - component: {fileID: 3858654501861047693}
   - component: {fileID: 2898407152821356089}
   - component: {fileID: 7221844302876869754}
-  - component: {fileID: 5215092682844899869}
   m_Layer: 0
   m_Name: ItemBlue
   m_TagString: Untagged
@@ -23676,27 +22751,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &5215092682844899869
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8731261446493560189}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8742640610629537049
 GameObject:
   m_ObjectHideFlags: 0
@@ -23991,7 +23045,6 @@ GameObject:
   - component: {fileID: 8860763155628774878}
   - component: {fileID: 8860763155628774879}
   - component: {fileID: 8860763155628774873}
-  - component: {fileID: 5499472199404372136}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -24113,27 +23166,6 @@ MonoBehaviour:
   speed: 0
   whatDistanceItStart: 3
   number: 60
---- !u!50 &5499472199404372136
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8860763155628774877}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8994082900392701808
 GameObject:
   m_ObjectHideFlags: 0
