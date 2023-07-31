@@ -262,32 +262,29 @@ public class Cost
 {
     public int gold; // 골드
     public int energy; // 에너지
-    public int hatGacha; // 여기서부터는 마음대로 수정하셔서 사용하시면 됩니다.
-    public int clothGacha;
-    public int wingGacha;
-    public int gachaPiece;
-    public int gachaTicket;//TODO : UI 추가 해야함
+    public int headTicket; // 모자 뽑기권
+    public int clothTicket; // 옷 뽑기권
+    public int wingTicket; // 날개 뽑기권
+    public int gachaPiece; // 뽑기권 조각
 
-    public Cost(int gold, int energy, int hatGacha, int clothGacha, int wingGacha, int gachaPiece, int gachaTicket)
+    public Cost(int gold, int energy, int headTicket, int clothTicket, int wingTicket, int gachaPiece)
     {
         this.gold = gold;
         this.energy = energy;
-        this.hatGacha = hatGacha;
-        this.clothGacha = clothGacha;
-        this.wingGacha = wingGacha;
+        this.headTicket = headTicket;
+        this.clothTicket = clothTicket;
+        this.wingTicket = wingTicket;
         this.gachaPiece = gachaPiece;
-        this.gachaTicket = gachaTicket;
     }
 
     public Cost()
     {
         gold = 0;
         energy = 0;
-        hatGacha = 0;
-        clothGacha = 0;
-        wingGacha = 0;
+        headTicket = 0;
+        clothTicket = 0;
+        wingTicket = 0;
         gachaPiece = 0;
-        gachaTicket = 0;
     }
 }
 

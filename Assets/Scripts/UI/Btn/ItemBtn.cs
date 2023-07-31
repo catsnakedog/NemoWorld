@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 using UnityEngine.EventSystems;
 
 public class ItemBtn : EventTriggerEX
 {
-    [SerializeField]
-    int number;
-
-    [SerializeField]
-    bool flag;
-
-    [SerializeField]
-    GameObject obj;
+    
+    private bool check = false;
 
     private void Start()
     {
@@ -22,6 +14,35 @@ public class ItemBtn : EventTriggerEX
     protected override void OnPointerDown(PointerEventData data)
     {
         MainController.main.sound.Play("buttonSFX");
+        
+        check = false;
+        switch (gameObject.name)
+        {
+            case "HeadTicket":
+                if (DataManager.Single.Data.inGameData.cost.headTicket >= 10)
+                    check = true;
+                break;
+            case "ClothTicket":
+                if (DataManager.Single.Data.inGameData.cost.clothTicket >= 10)
+                    check = true;
+                break;
+            case "WingTicket":
+                if (DataManager.Single.Data.inGameData.cost.wingTicket >= 10)
+                    check = true;
+                break;
+            default:
+                if (DataManager.Single.Data.inGameData.cost.gold >= 20)
+                    check = true;
+                break;
+        }
+
+        if (check)
+        {
+            MainController.main.UI.UIsetting(Define.UIlevel.Level3, Define.UItype.ItemBuyPanel);
+            ItemManager.selectItem = gameObject.name;
+        }
+
+        /*
         if (flag)
         {
             switch (number)
@@ -104,5 +125,6 @@ public class ItemBtn : EventTriggerEX
                     return;
             }
         }
+        */
     }
 }

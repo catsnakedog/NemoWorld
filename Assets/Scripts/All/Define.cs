@@ -25,8 +25,6 @@ public class Define
         InGameUI,
         InGameBG,
         Pause,
-        Gacha,
-        Shop,
         GameResult,
         CutToon,
         FirstUI,
@@ -39,7 +37,13 @@ public class Define
         Award5,
         StoryFirst,
         RankLoading,
+        Shop,
+        Coin,
+        PurchaseCheckPanel,
+        Ad,
         Item,
+        ItemBuyPanel,
+        Gacha,
         MaxCount
     }
 
@@ -111,8 +115,8 @@ public class Define
         FeverOff,
         Up,
         Down,
-        skin_none,
-        easy_bg_n_BG,
+        skin_none,//Skin
+        easy_bg_n_BG,//BackGroundImage
         easy_bg_n_1_1,
         easy_bg_n_1_2,
         easy_bg_n_2_1,
@@ -154,15 +158,21 @@ public class Define
         rank_bg_c_2_2,
         rank_bg_c_3_1,
         rank_bg_c_3_2,
-        BG1_1,
+        BG1_1,//BackGround UI
         BG1_4,
+        HeadCoupon,//Item Shop
+        ClothCoupon,
+        WingCoupon,
         Gold,
         Time,
         Shield,
         Save,
         StartBooster,
-        GachaPiece3,
+        GachaPiece,
+        GachaPiece3,//Gacha Shop
         GachaPiece5,
+        ButtonCircleGrey,
+        ButtonCircleYellow,
         MaxCount
     }
 
@@ -261,12 +271,14 @@ public class Define
 
     public enum ItemShop
     {
+        HeadTicket,
+        ClothTicket,
+        WingTicket,
         Gold,
         Time,
         Shield,
         Save,
         StartBooster,
-        GachaTicket,
         MaxCount
     }
 

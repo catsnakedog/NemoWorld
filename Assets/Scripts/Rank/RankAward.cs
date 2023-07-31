@@ -18,33 +18,33 @@ public class RankAward : MonoBehaviour
         {
             case 1:
                 DataManager.Single.Data.inGameData.isRankAward = false;
-                DataManager.Single.Data.inGameData.cost.hatGacha += 10;
-                DataManager.Single.Data.inGameData.cost.wingGacha += 10;
-                DataManager.Single.Data.inGameData.cost.clothGacha += 10;
+                DataManager.Single.Data.inGameData.cost.headTicket += 10;
+                DataManager.Single.Data.inGameData.cost.wingTicket += 10;
+                DataManager.Single.Data.inGameData.cost.clothTicket += 10;
                 DataManager.Single.Data.inGameData.cost.gold += 1500;
                 Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
                 return;
             case 2:
                 DataManager.Single.Data.inGameData.isRankAward = false;
-                DataManager.Single.Data.inGameData.cost.hatGacha += 5;
-                DataManager.Single.Data.inGameData.cost.wingGacha += 5;
-                DataManager.Single.Data.inGameData.cost.clothGacha += 5;
+                DataManager.Single.Data.inGameData.cost.headTicket += 5;
+                DataManager.Single.Data.inGameData.cost.wingTicket += 5;
+                DataManager.Single.Data.inGameData.cost.clothTicket += 5;
                 DataManager.Single.Data.inGameData.cost.gold += 900;
                 Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
                 return;
             case 3:
                 DataManager.Single.Data.inGameData.isRankAward = false;
-                DataManager.Single.Data.inGameData.cost.hatGacha += 3;
-                DataManager.Single.Data.inGameData.cost.wingGacha += 3;
-                DataManager.Single.Data.inGameData.cost.clothGacha += 3;
+                DataManager.Single.Data.inGameData.cost.headTicket += 3;
+                DataManager.Single.Data.inGameData.cost.wingTicket += 3;
+                DataManager.Single.Data.inGameData.cost.clothTicket += 3;
                 DataManager.Single.Data.inGameData.cost.gold += 600;
                 Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
                 return;
             case 4:
                 DataManager.Single.Data.inGameData.isRankAward = false;
-                DataManager.Single.Data.inGameData.cost.hatGacha += 1;
-                DataManager.Single.Data.inGameData.cost.wingGacha += 1;
-                DataManager.Single.Data.inGameData.cost.clothGacha += 1;
+                DataManager.Single.Data.inGameData.cost.headTicket += 1;
+                DataManager.Single.Data.inGameData.cost.wingTicket += 1;
+                DataManager.Single.Data.inGameData.cost.clothTicket += 1;
                 DataManager.Single.Data.inGameData.cost.gold += 300;
                 Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
                 return;

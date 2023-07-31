@@ -21,10 +21,14 @@ public class MoveBG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rt.position.x < ch.transform.position.x -posX)
+        //if(!DataManager.Single.Data.inGameData.result.Equals("clear") && !DataManager.Single.Data.inGameData.result.Equals("die"))
+        if(ch != null)
         {
-            rt.position = new Vector3(ch.transform.position.x + posX * 2, rt.position.y, rt.position.z);
+            if (rt.position.x < ch.transform.position.x - posX)
+            {
+                rt.position = new Vector3(ch.transform.position.x + posX * 2, rt.position.y, rt.position.z);
+            }
+            rt.Translate(new Vector3(-(mult * Speed * DataManager.Single.Data.inGameData.speed) * Time.deltaTime, 0, 0));
         }
-        rt.Translate(new Vector3(-(mult * Speed * DataManager.Single.Data.inGameData.speed) * Time.deltaTime, 0, 0));
     }
 }
