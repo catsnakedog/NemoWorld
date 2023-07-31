@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -35,9 +36,15 @@ public class RankLoading : MonoBehaviour
             DataManager.Single.Data.rankingData.rankInfo.Add(temp);
         }
 
-        DataManager.Single.Data.rankingData.rankInfo.Sort(Compare1);
-        
-        for(int i = 0; i < DataManager.Single.Data.rankingData.rankInfo.Count; i++)
+        //DataManager.Single.Data.rankingData.rankInfo.Sort(Compare1);
+
+        DataManager.Single.Data.rankingData.rankInfo = DataManager.Single.Data.rankingData.rankInfo.OrderByDescending(x => int.Parse(x.score)).ThenBy(x => x.name).ToList();
+
+        Dictionary<string, int> test = new Dictionary<string, int>();
+        test.OrderBy(x => x.Key).ThenBy(x => x.Value).ToList();
+
+
+        for (int i = 0; i < DataManager.Single.Data.rankingData.rankInfo.Count; i++)
         {
             if (DataManager.Single.Data.rankingData.rankInfo[i].name == DataManager.Single.Data.inGameData.name)
             {
