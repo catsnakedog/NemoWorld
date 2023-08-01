@@ -50,15 +50,15 @@ public class BGChange : MonoBehaviour
     {
         if (DataManager.Single.Data.inGameData.crruentQuest.gameMode.Equals("easy"))
         {
-            time = 20f;
+            time = 13f;
         }
         else if (DataManager.Single.Data.inGameData.crruentQuest.gameMode.Equals("hard"))
         {
-            time = 40f;
+            time = 20f;
         }
         else if (DataManager.Single.Data.inGameData.crruentQuest.gameMode.Equals("rank"))
         {
-            time = 40f;
+            time = 20f;
         }
 
         yield return new WaitForSeconds(time);
