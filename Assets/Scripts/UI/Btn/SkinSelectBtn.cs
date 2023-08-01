@@ -24,9 +24,22 @@ public class SkinSelectBtn : EventTriggerEX
             if (value.Equals(""))
             {
                 transform.GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["skin_none"];
+                GetComponent<Image>().sprite = MainController.main.resource.sprite["NormalSkinBG"];
             }
             else
             {
+                switch (value.Split('_')[0])
+                {
+                    case "Normal":
+                        GetComponent<Image>().sprite = MainController.main.resource.sprite["NormalSkinBG"];
+                        break;
+                    case "Epic":
+                        GetComponent<Image>().sprite = MainController.main.resource.sprite["EpicSkinBG"];
+                        break;
+                    case "Legend":
+                        GetComponent<Image>().sprite = MainController.main.resource.sprite["LegendSkinBG"];
+                        break;
+                }
                 switch (type)
                 {
                     case "Head":

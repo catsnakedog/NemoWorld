@@ -160,9 +160,9 @@ public class Define
         rank_bg_c_3_2,
         BG1_1,//BackGround UI
         BG1_4,
-        HeadCoupon,//Item Shop
-        ClothCoupon,
-        WingCoupon,
+        HeadTicket,//Item Shop
+        ClothTicket,
+        WingTicket,
         Gold,
         Time,
         Shield,
@@ -173,6 +173,9 @@ public class Define
         GachaPiece5,
         ButtonCircleGrey,
         ButtonCircleYellow,
+        NormalSkinBG,//Skin BG
+        EpicSkinBG,
+        LegendSkinBG,
         MaxCount
     }
 
@@ -269,6 +272,7 @@ public class Define
         MaxCount
     }
 
+
     public enum ItemShop
     {
         HeadTicket,
@@ -284,9 +288,9 @@ public class Define
 
     public enum GachaShop
     {
-        Normalskin,
-        Epicskin,
-        Legendskin,
+        Normal,
+        Epic,
+        Legend,
         Gold,
         Time,
         Shield,
