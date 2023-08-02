@@ -176,7 +176,10 @@ public class Define
         GachaPiece5,
         ButtonCircleGrey,
         ButtonCircleYellow,
-        NormalSkinBG,//Skin BG
+        HeadBox,
+        ClothBox,
+        WingBox,
+        NormalSkinBG,//Skin
         EpicSkinBG,
         LegendSkinBG,
         MaxCount

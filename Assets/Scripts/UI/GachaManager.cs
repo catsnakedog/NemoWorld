@@ -9,8 +9,12 @@ public class GachaManager : MonoBehaviour
     public static int page = 2;
     public static string GachaType = "Cloth";//Head or Cloth or Wing
     public static Action<string> PageMove;//string : Left or Right
-    private TMP_Text GachaText;
-    
+
+    [SerializeField]private TMP_Text GachaText;
+    [SerializeField] private Image BoxImage;
+    [SerializeField] private Image BtnImage1;
+    [SerializeField] private Image BtnImage10;
+
 
     //Result
     private GameObject OneResultPanel, TenResultPanel;//ResultPanel
@@ -36,19 +40,26 @@ public class GachaManager : MonoBehaviour
 
     public void SetGachaType(string name)
     {
-        GachaText = GameObject.Find("GachaText").GetComponent<TMP_Text>();
-
         switch (page)
         {
             case 1: 
                 GachaType = "Head";
                 GachaText.text = "¸ðÀÚ »Ì±â";
+                BoxImage.sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadBox.ToString()];
+                BtnImage1.sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadTicket.ToString()];
+                BtnImage10.sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadTicket.ToString()];
                 break;
             case 2: GachaType = "Cloth";
-                GachaText.text = "ÀÇ»ó »Ì±â"; 
+                GachaText.text = "ÀÇ»ó »Ì±â";
+                BoxImage.sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothBox.ToString()];
+                BtnImage1.sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothTicket.ToString()];
+                BtnImage10.sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothTicket.ToString()];
                 break;
             case 3: GachaType = "Wing";
-                GachaText.text = "³¯°³ »Ì±â"; 
+                GachaText.text = "³¯°³ »Ì±â";
+                BoxImage.sprite = MainController.main.resource.sprite[Define.SpriteDict.WingBox.ToString()];
+                BtnImage1.sprite = MainController.main.resource.sprite[Define.SpriteDict.WingTicket.ToString()];
+                BtnImage10.sprite = MainController.main.resource.sprite[Define.SpriteDict.WingTicket.ToString()];
                 break;
         }
     }
