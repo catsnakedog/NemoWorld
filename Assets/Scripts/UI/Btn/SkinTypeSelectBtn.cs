@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class SkinTypeSelectBtn : EventTriggerEX
 {
@@ -21,7 +19,7 @@ public class SkinTypeSelectBtn : EventTriggerEX
         if (type != "Head") return;
 
         Transform parent = GameObject.Find("Content").transform;
-        for (int i = -1; i < DataManager.Single.Data.inGameData.itemList.headItem.Count; i++)
+        for (int i = -1; i < (int)Define.HeadSkin.MaxCount; i++)
         {
             GameObject skin_temp = Instantiate(skin_prefab);
             skin_temp.transform.parent = parent;
@@ -36,7 +34,7 @@ public class SkinTypeSelectBtn : EventTriggerEX
             else
             {
                 temp.type = "Head";
-                temp.SetUI = DataManager.Single.Data.inGameData.itemList.headItem[i];
+                temp.SetUI = ((Define.HeadSkin)i).ToString();
             }
         }
     }
@@ -49,9 +47,9 @@ public class SkinTypeSelectBtn : EventTriggerEX
         GameObject[] skin_transforms = GameObject.FindGameObjectsWithTag("Skin");
         Transform parent = GameObject.Find("Content").transform;
 
-        if (type.Equals("Head")) cnt = DataManager.Single.Data.inGameData.itemList.headItem.Count + 1;
-        else if (type.Equals("Cloth")) cnt = DataManager.Single.Data.inGameData.itemList.clothItem.Count + 1;
-        else if (type.Equals("Wing")) cnt = DataManager.Single.Data.inGameData.itemList.wingItem.Count + 1;
+        if (type.Equals("Head")) cnt = (int)Define.HeadSkin.MaxCount + 1;
+        else if (type.Equals("Cloth")) cnt = (int)Define.ClothSkin.MaxCount + 1;
+        else if (type.Equals("Wing")) cnt = (int)Define.WingSkin.MaxCount + 1;
 
         skin_transforms[0].GetComponent<SkinSelectBtn>().type = type;
 
@@ -71,9 +69,9 @@ public class SkinTypeSelectBtn : EventTriggerEX
             }
 
             temp.type = type;
-            if (type.Equals("Head")) temp.SetUI = DataManager.Single.Data.inGameData.itemList.headItem[i - 1];
-            else if (type.Equals("Cloth")) temp.SetUI = DataManager.Single.Data.inGameData.itemList.clothItem[i - 1];
-            else if (type.Equals("Wing")) temp.SetUI = DataManager.Single.Data.inGameData.itemList.wingItem[i - 1];
+            if (type.Equals("Head")) temp.SetUI = ((Define.HeadSkin)(i -1)).ToString();
+            else if (type.Equals("Cloth")) temp.SetUI = ((Define.ClothSkin)(i - 1)).ToString();
+            else if (type.Equals("Wing")) temp.SetUI = ((Define.WingSkin)(i - 1)).ToString();
         }
 
         if(cnt < skin_transforms.Length)
