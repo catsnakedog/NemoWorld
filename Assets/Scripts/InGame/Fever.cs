@@ -22,6 +22,7 @@ public class Fever : MonoBehaviour
     {
         isFever = false;
         effect = transform.GetChild(2).gameObject;
+        StartCoroutine(EffectFever());
     }
 
     public void FeverCheck()
@@ -39,7 +40,6 @@ public class Fever : MonoBehaviour
         effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite["EffectFever"];
         DataManager.Single.Data.inGameData.isFever = true;
         DataManager.Single.Data.inGameData.isGod = true;
-        StartCoroutine(EffectFever());
         for(int i= 0; i < 20; i++)
         {
             yield return new WaitForSeconds(feverTime / 20);
@@ -58,7 +58,7 @@ public class Fever : MonoBehaviour
     IEnumerator EffectFever()
     {
         float a = 0f;
-        for(int i=0; i < 60; i++)
+        while(true)
         {
             effect.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, a));
             yield return new WaitForSeconds(feverTime / 60f);

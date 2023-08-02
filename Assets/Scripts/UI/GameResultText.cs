@@ -12,6 +12,8 @@ public class GameResultText : MonoBehaviour
 {
     void Start()
     {
+        DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount = 0.1f;
+
         StringBuilder sb = new StringBuilder();
         if (DataManager.Single.Data.inGameData.inGameItem.coinItem)
         {

@@ -17,24 +17,24 @@ MonoBehaviour:
     - stage: 1
       gameMode: easy
       info: "\uC810\uD504 60\uBC88 \uB2EC\uC131"
-      time: 100
+      time: 90
     - stage: 2
       gameMode: easy
       info: "\uC740\uD654 \uCF54\uC778 10\uAC1C \uD68D\uB4DD"
-      time: 100
+      time: 90
     - stage: 3
       gameMode: easy
       info: "\uC7A5\uC560\uBB3C\uC5D0 2\uBC88 \uC774\uD558\uB85C \uBD80\uB52A\uD788\uAE30"
-      time: 100
+      time: 90
     - stage: 1
       gameMode: hard
       info: "\uC544\uC774\uD15C \uC120\uD0DD"
-      time: 190
+      time: 150
     - stage: 2
       gameMode: hard
       info: "\uC544\uC774\uD15C \uC120\uD0DD"
-      time: 190
+      time: 150
     - stage: 3
       gameMode: hard
       info: "\uC544\uC774\uD15C \uC120\uD0DD"
-      time: 190
+      time: 150

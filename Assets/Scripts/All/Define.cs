@@ -115,6 +115,9 @@ public class Define
         FeverOff,
         Up,
         Down,
+        bg1,
+        bg2,
+        bg3,
         skin_none,//Skin
         easy_bg_n_BG,//BackGroundImage
         easy_bg_n_1_1,

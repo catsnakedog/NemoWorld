@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using UnityEngine.UI;
 
 public class StorySelectText : MonoBehaviour
 {
@@ -27,8 +28,11 @@ public class StorySelectText : MonoBehaviour
             StringBuilder sb = new StringBuilder("stage");
             sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
             transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
+            transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["bg" + DataManager.Single.Data.inGameData.crruentQuest.stage];
             transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
             transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.crruentQuest.info;
+            if (DataManager.Single.Data.inGameData.storyClearList.Contains(sb.ToString()))
+                transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
         {

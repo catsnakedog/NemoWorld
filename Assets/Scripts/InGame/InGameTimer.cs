@@ -68,6 +68,8 @@ public class InGameTimer : MonoBehaviour
 
     IEnumerator TimeDownEffect()
     {
+        left.text = ((int)(DataManager.Single.Data.inGameData.crruentQuest.time / 60f)).ToString();
+        right.text = (DataManager.Single.Data.inGameData.crruentQuest.time % 60).ToString();
         time.color = Color.red;
         left.color = Color.red;
         right.color = Color.red;
@@ -84,6 +86,8 @@ public class InGameTimer : MonoBehaviour
 
     IEnumerator TimeUpEffect()
     {
+        left.text = ((int)(DataManager.Single.Data.inGameData.crruentQuest.time / 60f)).ToString();
+        right.text = (DataManager.Single.Data.inGameData.crruentQuest.time % 60).ToString();
         time.color = Color.blue;
         left.color = Color.blue;
         right.color = Color.blue;
