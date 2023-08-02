@@ -69,7 +69,7 @@ public class InGameData
     public string cutToonName;
     public bool isFever;
     public bool isHit;
-    public int coinGetAmount;
+    public int coinGetAmount;//스테이지 클리어 시 얻는 골드
     public InGameItem inGameItem; // 도전모드 아이템 관련
     public List<MapObj> mapObj;
     public bool isRedItem;
