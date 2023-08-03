@@ -12,7 +12,7 @@ public class GameResultText : MonoBehaviour
 {
     void Start()
     {
-        DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount = 0.1f;
+        DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount = 0.4f;
 
         StringBuilder sb = new StringBuilder();
         if (DataManager.Single.Data.inGameData.inGameItem.coinItem)
@@ -28,6 +28,7 @@ public class GameResultText : MonoBehaviour
             }
             transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>().text = "È¹µæ °ñµå (º¸³Ê½º Ãß°¡!)";
             transform.GetChild(4).GetChild(1).GetComponent<TMP_Text>().text = sb.ToString();
+
             if (DataManager.Single.Data.inGameData.coinGetAmount * DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount < 10)
             {
                 sb.Clear();
@@ -82,7 +83,25 @@ public class GameResultText : MonoBehaviour
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["clearPlayer"];
             if(DataManager.Single.Data.inGameData.crruentQuest.gameMode == "hard")
             {
-                transform.GetChild(5).gameObject.SetActive(true);
+                if(UnityEngine.Random.Range(0,10) < 3)
+                {
+                    transform.GetChild(5).gameObject.SetActive(true);
+                    switch (DataManager.Single.Data.inGameData.stage)
+                    {
+                        case 1:
+                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadTicket.ToString()];
+                            DataManager.Single.Data.inGameData.cost.headTicket++;
+                            break;
+                        case 2:
+                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothTicket.ToString()];
+                            DataManager.Single.Data.inGameData.cost.clothTicket++;
+                            break;
+                        case 3:
+                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.WingTicket.ToString()];
+                            DataManager.Single.Data.inGameData.cost.wingTicket++;
+                            break;
+                    }
+                }
             }
             if (DataManager.Single.Data.inGameData.crruentQuest.gameMode == "rank")
             {
