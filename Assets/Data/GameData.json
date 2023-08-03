@@ -5,7 +5,7 @@
         "score": 0,
         "cost": {
             "gold": 104035,
-            "energy": 14,
+            "energy": 15,
             "headTicket": 0,
             "clothTicket": 0,
             "wingTicket": 0,
@@ -163,8 +163,8 @@
     "optionData": {
         "volumeBGM": 1.0,
         "volumeSFX": 1.0,
-        "muteBGM": true,
-        "muteSFX": true
+        "muteBGM": false,
+        "muteSFX": false
     },
     "questData": {
         "questInfo": [
@@ -207,7 +207,7 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-08-04 AM 3:17:14",
+        "beforeTime": "2023-08-04 AM 3:44:20",
         "crruentTime": "",
         "lastWeek": 1
     },
