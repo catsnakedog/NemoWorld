@@ -62,15 +62,16 @@ public class MissionUI : MonoBehaviour
     void Mission2()
     {
         sb.Clear();
-        sb.Append("은화 코인 10개 획득\n(");
+        sb.Append("은화 코인\n10개 획득\n(");
         sb.Append(DataManager.Single.Data.missionData.silverCoinCount.ToString() + " / 10)");
         missionText.text = sb.ToString();
     }
     void Mission3()
     {
         sb.Clear();
-        sb.Append("장애물에 2번 이하로 부딪히기\n(");
+        sb.Append("장애물에 2번 이하로\n부딪히기\n(");
         sb.Append(DataManager.Single.Data.missionData.hitCount.ToString());
+        sb.Append("/2)");
         missionText.text = sb.ToString();
     }
 }

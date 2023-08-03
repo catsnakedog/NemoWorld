@@ -118,6 +118,8 @@ public class Define
         bg1,
         bg2,
         bg3,
+        Button_Fever_unable,
+        Button_Fever_able,
         skin_none,//Skin
         easy_bg_n_BG,//BackGroundImage
         easy_bg_n_1_1,

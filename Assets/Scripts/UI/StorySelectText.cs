@@ -31,7 +31,7 @@ public class StorySelectText : MonoBehaviour
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["bg" + DataManager.Single.Data.inGameData.crruentQuest.stage];
             transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
             transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.crruentQuest.info;
-            if (DataManager.Single.Data.inGameData.storyClearList.Contains(sb.ToString()))
+            if (DataManager.Single.Data.inGameData.missionClearList.Contains(sb.ToString()))
                 transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
         }
         if (DataManager.Single.Data.inGameData.gameMode == "hard")
