@@ -69,7 +69,7 @@ public class InGameData
     public string cutToonName;
     public bool isFever;
     public bool isHit;
-    public int coinGetAmount;
+    public int coinGetAmount;//스테이지 클리어 시 얻는 골드
     public InGameItem inGameItem; // 도전모드 아이템 관련
     public List<MapObj> mapObj;
     public bool isRedItem;
@@ -307,6 +307,64 @@ public class ItemList
         headItem = new List<string>();
         clothItem = new List<string>();
         wingItem = new List<string>();
+    }
+
+    public bool IsCommonSkinSetComplete()
+    {
+        for(int i=0; i < (int)Define.SkinCnt.Normal; i++)
+        {
+            if (!headItem.Contains(((Define.HeadSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!clothItem.Contains(((Define.ClothSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!wingItem.Contains(((Define.WingSkin)i).ToString()))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public bool IsEpicSkinSetComplete()
+    {
+        for (int i = (int)Define.SkinCnt.Normal; i < (int)Define.SkinCnt.Epic; i++)
+        {
+            if (!headItem.Contains(((Define.HeadSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!clothItem.Contains(((Define.ClothSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!wingItem.Contains(((Define.WingSkin)i).ToString()))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public bool IsLegendSkinSetComplete()
+    {
+        for (int i = (int)Define.SkinCnt.Epic; i < (int)Define.SkinCnt.Legend; i++)
+        {
+            if (!headItem.Contains(((Define.HeadSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!clothItem.Contains(((Define.ClothSkin)i).ToString()))
+            {
+                return false;
+            }
+            if (!wingItem.Contains(((Define.WingSkin)i).ToString()))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 

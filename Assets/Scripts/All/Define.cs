@@ -176,7 +176,10 @@ public class Define
         GachaPiece5,
         ButtonCircleGrey,
         ButtonCircleYellow,
-        NormalSkinBG,//Skin BG
+        HeadBox,
+        ClothBox,
+        WingBox,
+        NormalSkinBG,//Skin
         EpicSkinBG,
         LegendSkinBG,
         MaxCount
@@ -213,7 +216,12 @@ public class Define
         CoinGet,
         Hit
     }
-
+    public enum SkinCnt
+    {
+        Normal = 8,
+        Epic = 13,
+        Legend = 16
+    }
     public enum HeadSkin
     {
         Normal_BlueCap,

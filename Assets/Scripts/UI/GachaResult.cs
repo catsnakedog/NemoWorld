@@ -74,24 +74,39 @@ public class GachaResult : MonoBehaviour
         {
             case "Head":
                 if (DataManager.Single.Data.inGameData.itemList.headItem.Contains(((Define.HeadSkin)r).ToString()))
+                {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
+                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                }
                 else
+                {
                     DataManager.Single.Data.inGameData.itemList.headItem.Add(((Define.HeadSkin)r).ToString());
-                reults[index].sprite = MainController.main.resource.head_skin_sprite[((Define.HeadSkin)r).ToString()];
+                    reults[index].sprite = MainController.main.resource.head_skin_sprite[((Define.HeadSkin)r).ToString()];
+                } 
                 break;
             case "Cloth":
                 if (DataManager.Single.Data.inGameData.itemList.clothItem.Contains(((Define.ClothSkin)r).ToString()))
+                {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
+                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                }
                 else
+                {
                     DataManager.Single.Data.inGameData.itemList.clothItem.Add(((Define.ClothSkin)r).ToString());
-                reults[index].sprite = MainController.main.resource.cloth_skin_sprite[((Define.ClothSkin)r).ToString()];
+                    reults[index].sprite = MainController.main.resource.cloth_skin_sprite[((Define.ClothSkin)r).ToString()];
+                }
                 break;
             case "Wing":
                 if (DataManager.Single.Data.inGameData.itemList.wingItem.Contains(((Define.WingSkin)r).ToString()))
+                {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
+                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                }
                 else
+                {
                     DataManager.Single.Data.inGameData.itemList.wingItem.Add(((Define.WingSkin)r).ToString());
-                reults[index].sprite = MainController.main.resource.wing_skin_sprite[((Define.WingSkin)r).ToString()];
+                    reults[index].sprite = MainController.main.resource.wing_skin_sprite[((Define.WingSkin)r).ToString()];
+                }
                 break;
         }
     }
