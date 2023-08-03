@@ -35,7 +35,6 @@ public class ObjMove : MonoBehaviour
     {
         time = 0;
         ObjAction += ObjStart;
-        ObjAction += TimeCheck;
     }
 
     private void Update()
@@ -79,6 +78,7 @@ public class ObjMove : MonoBehaviour
 
     void TimeCheck()
     {
+        ObjAction += TimeCheck;
         time += Time.deltaTime;
         if(time >= distance / speed)
         {

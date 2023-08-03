@@ -17,7 +17,7 @@ public class StartCutToonImageChange : MonoBehaviour
         MainController.main.sound.Play("buttonSFX");
         if (num == cutToons.Count)
         {
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
             return;
         }
         gameObject.GetComponent<Image>().sprite = cutToons[num];
