@@ -6,11 +6,10 @@
         "cost": {
             "gold": 104035,
             "energy": 15,
-            "hatGacha": 0,
-            "clothGacha": 0,
-            "wingGacha": 0,
-            "gachaPiece": 38,
-            "gachaTicket": 0
+            "headTicket": 0,
+            "clothTicket": 0,
+            "wingTicket": 0,
+            "gachaPiece": 38
         },
         "itemList": {
             "headItem": [
@@ -111,7 +110,7 @@
             "timeItemAmount": 31,
             "boostItemAmount": 37
         },
-        "ObjList": [],
+        "mapObj": [],
         "isRedItem": false,
         "isGreenItem": false,
         "beforeMapList": [
@@ -142,42 +141,42 @@
                 "stage": 1,
                 "gameMode": "easy",
                 "info": "점프 60번 달성",
-                "time": 100
+                "time": 90
             },
             {
                 "stage": 2,
                 "gameMode": "easy",
                 "info": "은화 코인 10개 획득",
-                "time": 100
+                "time": 90
             },
             {
                 "stage": 3,
                 "gameMode": "easy",
                 "info": "장애물에 2번 이하로 부딪히기",
-                "time": 100
+                "time": 90
             },
             {
                 "stage": 1,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 190
+                "time": 150
             },
             {
                 "stage": 2,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 190
+                "time": 150
             },
             {
                 "stage": 3,
                 "gameMode": "hard",
                 "info": "아이템 선택",
-                "time": 190
+                "time": 150
             }
         ]
     },
     "timeData": {
-        "beforeTime": "2023-07-26 PM 4:59:01",
+        "beforeTime": "2023-08-04 AM 1:49:52",
         "crruentTime": "",
         "lastWeek": 1
     },
