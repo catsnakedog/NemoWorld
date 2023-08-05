@@ -15,7 +15,8 @@ public class Option : MonoBehaviour
 
         BGMSlider.value = DataManager.Single.Data.optionData.volumeBGM;
         SFXSlider.value = DataManager.Single.Data.optionData.volumeSFX;
-        if(DataManager.Single.Data.optionData.muteBGM)
+        
+        if (DataManager.Single.Data.optionData.muteBGM)
         {
             transform.GetChild(2).gameObject.SetActive(false);
             transform.GetChild(3).gameObject.SetActive(true);
