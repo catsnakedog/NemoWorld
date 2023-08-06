@@ -128,7 +128,16 @@ public class ItemManager : MonoBehaviour
             Down = transform.Find("Down").GetComponent<Image>();
         }
 
-        int max = DataManager.Single.Data.inGameData.cost.gold / 20;
+        int max = 0;
+        switch (selectItem)
+        {
+            case "HeadTicket": case "ClothTicket": case "WingTicket":
+                max = DataManager.Single.Data.inGameData.cost.gachaPiece / 10;
+                break;
+            default:
+                max = DataManager.Single.Data.inGameData.cost.gold / 20;
+                break;
+        }
 
         if (btnName.Equals("Up") && up)
         {

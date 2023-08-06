@@ -18,16 +18,8 @@ public class ItemBtn : EventTriggerEX
         check = false;
         switch (gameObject.name)
         {
-            case "HeadTicket":
-                if (DataManager.Single.Data.inGameData.cost.headTicket >= 10)
-                    check = true;
-                break;
-            case "ClothTicket":
-                if (DataManager.Single.Data.inGameData.cost.clothTicket >= 10)
-                    check = true;
-                break;
-            case "WingTicket":
-                if (DataManager.Single.Data.inGameData.cost.wingTicket >= 10)
+            case "HeadTicket": case "ClothTicket": case "WingTicket":
+                if (DataManager.Single.Data.inGameData.cost.gachaPiece >= 10)
                     check = true;
                 break;
             default:
