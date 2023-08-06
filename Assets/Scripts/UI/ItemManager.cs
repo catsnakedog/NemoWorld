@@ -6,9 +6,20 @@ using UnityEngine.UI;
 public class ItemManager : MonoBehaviour
 {
     public static Action<string> ItemCount;
+    public static Action ItemBuy;
+
     public static string selectItem { get; set; }
-    public static int count { get; set; }
-    public static int price { get; set; }
+    
+
+    private Image Up;
+    private Image Down;
+    private TMP_Text Count;
+    private TMP_Text Price;
+    private bool up = true;
+    private bool down = false; 
+    private int count = 1;
+    private int price = 0;
+
 
     private string GetItemExplain()
     {
@@ -42,7 +53,6 @@ public class ItemManager : MonoBehaviour
                 return "";
         }
     }
-
     private string GetItemName()
     {
         switch (selectItem)
@@ -76,16 +86,141 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        count = 1;
-        price = 0;
 
+    private void Start()
+    { 
+        //Item Count Reset
+        Count = transform.Find("Count").transform.GetChild(0).GetComponent<TMP_Text>();
+        Count.text = "1";
+
+        //Item Price Reset
+        Price = transform.Find("BuyBtn").transform.Find("ItemPrice").GetComponent<TMP_Text>();
+        if ((int)Enum.Parse(typeof(Define.ItemShop), selectItem) < 3)
+            price = 10;
+        else
+            price = 20;
+        Price.text = (price).ToString();
+
+        //Up Down Button Set
+        Up = transform.Find("Up").GetComponent<Image>();
+        Down = transform.Find("Down").GetComponent<Image>();
+        Down.sprite = MainController.main.resource.sprite[Define.SpriteDict.ButtonCircleGrey.ToString()];
+
+        //Item Info Set
         transform.Find("ItemImage").GetComponent<Image>().sprite = MainController.main.resource.sprite[selectItem];
         transform.Find("ItemName").GetComponent<TMP_Text>().text = GetItemName();
         transform.Find("ItemExplain").GetComponent<TMP_Text>().text = GetItemExplain();
-
+        
+        //if Ticket
         if((int)Enum.Parse(typeof(Define.ItemShop),selectItem) < 3)
-        transform.Find("BuyBtn").GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["GachaPiece"];
+            transform.Find("BuyBtn").GetChild(0).GetComponent<Image>().sprite = MainController.main.resource.sprite["GachaPiece"];
+
+        //Action
+        ItemCount += ItemCountFunc;
+        ItemBuy += ItemBuyFunc;
+    }
+
+    void ItemCountFunc(string btnName)
+    {
+        if(Up == null || Down == null)
+        {
+            Up = transform.Find("Up").GetComponent<Image>();
+            Down = transform.Find("Down").GetComponent<Image>();
+        }
+
+        int max = DataManager.Single.Data.inGameData.cost.gold / 20;
+
+        if (btnName.Equals("Up") && up)
+        {
+            count++;
+            TextSet();
+
+            if (count == max)
+            {
+                Up.sprite = MainController.main.resource.sprite[Define.SpriteDict.ButtonCircleGrey.ToString()];
+                up = false;
+            }
+
+            if (!down)
+            {
+                Down.sprite = MainController.main.resource.sprite[Define.SpriteDict.ButtonCircleYellow.ToString()];
+                down = true;
+            }
+        }
+        else if(btnName.Equals("Down") && down)
+        {
+            count--;
+            TextSet();
+
+            if(count == 1)
+            {
+                Down.sprite = MainController.main.resource.sprite[Define.SpriteDict.ButtonCircleGrey.ToString()];
+                down = false;
+            }
+
+            if (!up)
+            {
+                Up.sprite = MainController.main.resource.sprite[Define.SpriteDict.ButtonCircleYellow.ToString()];
+                up = true;
+            }
+        }
+    }
+
+    private void TextSet()
+    {
+        if(Count == null || Price == null)
+        {
+            Count = transform.Find("Count").transform.GetChild(0).GetComponent<TMP_Text>();
+            Price = transform.Find("ItemPrice").GetComponent<TMP_Text>();
+        }
+
+        Count.text = count.ToString();
+        Price.text = (count * price).ToString();
+    }
+
+
+    public void ItemBuyFunc()
+    {
+        switch (selectItem)
+        {
+            case "HeadTicket":
+                DataManager.Single.Data.inGameData.cost.gachaPiece -= count * price;
+                DataManager.Single.Data.inGameData.cost.headTicket += count;
+                break;
+            case "ClothTicket":
+                DataManager.Single.Data.inGameData.cost.gachaPiece -= count * price;
+                DataManager.Single.Data.inGameData.cost.clothTicket += count;
+                break;
+            case "WingTicket":
+                DataManager.Single.Data.inGameData.cost.gachaPiece -= count * price;
+                DataManager.Single.Data.inGameData.cost.wingTicket += count;
+                break;
+            case "Gold":
+                DataManager.Single.Data.inGameData.cost.gold -= count * price;
+                DataManager.Single.Data.inGameData.inGameItem.coinItemAmount += count;
+                break;
+            case "Time":
+                DataManager.Single.Data.inGameData.cost.gold -= count * price;
+                DataManager.Single.Data.inGameData.inGameItem.timeItemAmount += count;
+                break;
+            case "Shield":
+                DataManager.Single.Data.inGameData.cost.gold -= count * price;
+                DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount += count;
+                break;
+            case "Save":
+                DataManager.Single.Data.inGameData.cost.gold -= count * price;
+                DataManager.Single.Data.inGameData.inGameItem.saveItemAmount += count;
+                break;
+            case "StartBooster":
+                DataManager.Single.Data.inGameData.cost.gold -= count * price;
+                DataManager.Single.Data.inGameData.inGameItem.boostItemAmount += count;
+                break;
+        }
+
+        Destroy(GameObject.FindWithTag("Level3").transform.GetChild(0).gameObject);
+    }
+    private void OnDestroy()
+    {
+        ItemCount -= ItemCountFunc;
     }
 }
