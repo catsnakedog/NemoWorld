@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GachaResult : MonoBehaviour
 {
+    [SerializeField] private int count;
     List<Image> reults = new List<Image>();
     [SerializeField] GameObject resultlist;
 
@@ -70,9 +71,9 @@ public class GachaResult : MonoBehaviour
             grade = 10;
         }
 
-        switch (GachaManager.GachaType)
+        switch (GachaManager.page)
         {
-            case "Head":
+            case 1:
                 if (DataManager.Single.Data.inGameData.itemList.headItem.Contains(((Define.HeadSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
@@ -84,7 +85,7 @@ public class GachaResult : MonoBehaviour
                     reults[index].sprite = MainController.main.resource.head_skin_sprite[((Define.HeadSkin)r).ToString()];
                 } 
                 break;
-            case "Cloth":
+            case 2:
                 if (DataManager.Single.Data.inGameData.itemList.clothItem.Contains(((Define.ClothSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
@@ -96,7 +97,7 @@ public class GachaResult : MonoBehaviour
                     reults[index].sprite = MainController.main.resource.cloth_skin_sprite[((Define.ClothSkin)r).ToString()];
                 }
                 break;
-            case "Wing":
+            case 3:
                 if (DataManager.Single.Data.inGameData.itemList.wingItem.Contains(((Define.WingSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
