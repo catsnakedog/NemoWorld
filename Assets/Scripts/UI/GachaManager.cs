@@ -6,40 +6,16 @@ using UnityEngine.UI;
 public class GachaManager : MonoBehaviour
 {
     public static Action PageMove;
-    public static Action<string, int> Gacha;//string : cost, int : count(1 or 10)
 
 
     public static int page;
-
+    public static int count;
 
     //Gacha Page
     private TMP_Text GachaName;
     private Image BoxImage, BtnImage1, BtnImage10;
     private GameObject LeftBtn, RightBtn;
-    //Gacha Result
-    private GameObject OneResultPanel, TenResultPanel;
-
-
-    private float GetGachaPercent(int i)
-    {
-        switch (i)
-        {
-            case 0: return 27f;
-            case 1: return 29.25f;
-            case 2: return 30f;
-            case 3: return 40f;
-            case 4: return 50f;
-            case 5: return 60f;
-            case 6: return 70f;
-            case 7: return 80f;
-            case 8: return 95f;
-            default: return 100f;
-        }
-    }
-    private int GetLength() { return 10; }
-
-    public static int[] Results;
-
+    
 
     void Start()
     {
@@ -59,14 +35,8 @@ public class GachaManager : MonoBehaviour
         LeftBtn.SetActive(false);
         RightBtn = transform.Find("Right").gameObject;
 
-        //Result Panel Setting
-        Results = new int[11];
-        OneResultPanel = transform.Find("1Result").gameObject;
-        TenResultPanel = transform.Find("10Result").gameObject;
-
         //Action Set
         PageMove += SetGachaType;
-        Gacha += gacha;
     }
 
     public void SetGachaType()
@@ -110,53 +80,9 @@ public class GachaManager : MonoBehaviour
         }
     }
 
-    public void SetGachaResult()
-    {
-
-    }
-    public void gacha(string cost, int count)
-    {
-        //판넬만 띄우기
-        //판넬 안의 GachaResult.cs에서 확률 계산 후 이미지 셋
-        float rand;
-
-        if (count == 10) count++; // 10 + 1
-
-        for(int i = 0; i < count; i++)
-        {
-            rand = UnityEngine.Random.Range(0f, 100f);
-            for(int j=0; j < GetLength(); j++)
-            {
-                if (rand < GetGachaPercent(j))
-                {
-                    Results[i] = j;
-                    break;
-                }
-            }
-        }
-
-        if(count == 1)
-        {
-            OneResultPanel.SetActive(true);
-            OneResultPanel.GetComponent<GachaResult>().SetResult(count);
-        }
-        else
-        {
-            TenResultPanel.SetActive(true);
-            TenResultPanel.GetComponent<GachaResult>().SetResult(count);
-        }
-    }
-
-    public void Close()
-    {
-        MainController.main.sound.Play("buttonSFX");
-        OneResultPanel.SetActive(false);
-        TenResultPanel.SetActive(false);
-    }
 
     private void OnDestroy()
     {
         PageMove -= SetGachaType;
-        Gacha -= gacha;
     }
 }

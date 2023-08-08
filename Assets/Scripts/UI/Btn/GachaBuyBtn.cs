@@ -27,7 +27,7 @@ public class GachaBuyBtn : EventTriggerEX
             if (price * cnt <= DataManager.Single.Data.inGameData.cost.gold)
             {
                 DataManager.Single.Data.inGameData.cost.gold -= price * cnt;
-                GachaManager.Gacha(cost, cnt);
+                OnGacha();
             }
         }
         else
@@ -38,24 +38,30 @@ public class GachaBuyBtn : EventTriggerEX
                     if(price * cnt <= DataManager.Single.Data.inGameData.cost.headTicket)
                     {
                         DataManager.Single.Data.inGameData.cost.headTicket -= price * cnt;
-                        GachaManager.Gacha(cost, cnt);
+                        OnGacha();
                     }
                     break;
                 case 2:
                     if (price * cnt <= DataManager.Single.Data.inGameData.cost.clothTicket)
                     {
                         DataManager.Single.Data.inGameData.cost.clothTicket -= price * cnt;
-                        GachaManager.Gacha(cost, cnt);
+                        OnGacha();
                     }
                     break;
                 case 3:
                     if (price * cnt <= DataManager.Single.Data.inGameData.cost.wingTicket)
                     {
                         DataManager.Single.Data.inGameData.cost.wingTicket -= price * cnt;
-                        GachaManager.Gacha(cost, cnt);
+                        OnGacha();
                     }
                     break;
             }
         }
+    }
+
+    private void OnGacha()
+    {
+        GachaManager.count = cnt;
+        MainController.main.UI.UIsetting(Define.UIlevel.Level3, Define.UItype.GachaResult);
     }
 }
