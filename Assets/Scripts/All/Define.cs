@@ -44,6 +44,7 @@ public class Define
         Item,
         ItemBuyPanel,
         Gacha,
+        GachaResult,
         MaxCount
     }
 

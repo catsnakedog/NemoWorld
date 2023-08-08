@@ -4,7 +4,7 @@
         "playerNumber": 0,
         "score": 0,
         "cost": {
-            "gold": 104035,
+            "gold": 44,
             "energy": 15,
             "headTicket": 0,
             "clothTicket": 0,
@@ -68,13 +68,13 @@
             "stage2",
             "stage3"
         ],
-        "stage": 2,
-        "gameMode": "hard",
+        "stage": 1,
+        "gameMode": "rank",
         "crruentQuest": {
-            "stage": 2,
+            "stage": 1,
             "gameMode": "hard",
             "info": "아이템 선택",
-            "time": 149
+            "time": 145
         },
         "speed": 4.0,
         "color": "default",
@@ -83,11 +83,11 @@
         "isShield": false,
         "jumpMaxCount": 2,
         "mapList": [
-            2,
-            3
+            1,
+            4
         ],
         "result": "clear",
-        "fever": 0,
+        "fever": 3,
         "cutToonName": "stage1EasyCutToon",
         "isFever": false,
         "isHit": false,
@@ -112,46 +112,46 @@
         },
         "mapObj": [
             {
-                "x": 252.0,
+                "x": 250.0,
                 "map": {
-                    "instanceID": -122724
+                    "instanceID": -48146
                 }
             },
             {
-                "x": 204.0,
+                "x": 202.0,
                 "map": {
-                    "instanceID": -124120
+                    "instanceID": -49210
                 }
             },
             {
-                "x": 453.0,
+                "x": 451.0,
                 "map": {
-                    "instanceID": -124120
+                    "instanceID": -49210
                 }
             },
             {
-                "x": 405.0,
+                "x": 403.0,
                 "map": {
-                    "instanceID": -126222
+                    "instanceID": -50738
                 }
             },
             {
-                "x": 488.0,
+                "x": 486.0,
                 "map": {
-                    "instanceID": -126222
+                    "instanceID": -50738
                 }
             }
         ],
         "isRedItem": false,
         "isGreenItem": false,
         "beforeMapList": [
-            2,
-            3
+            1,
+            4
         ],
         "isFirst": false,
         "name": "Orie",
-        "maxX": 464.0,
-        "moveAmount": 5.7599968910217289,
+        "maxX": 462.0,
+        "moveAmount": 20.159984588623048,
         "isTimeUp": false,
         "isTimeDown": false,
         "isItem": false,
@@ -161,7 +161,7 @@
         "isFirstStage3": true
     },
     "optionData": {
-        "volumeBGM": 1.0,
+        "volumeBGM": 0.13697904348373414,
         "volumeSFX": 1.0,
         "muteBGM": false,
         "muteSFX": false
@@ -207,22 +207,167 @@
         ]
     },
     "timeData": {
-        "beforeTime": "2023-08-04 AM 3:44:20",
+        "beforeTime": "2023-08-06 PM 1:21:54",
         "crruentTime": "",
         "lastWeek": 1
     },
     "missionData": {
-        "jumpCount": 0,
+        "jumpCount": 3,
         "silverCoinCount": 0,
         "hitCount": 0
     },
     "rankingData": {
-        "rankInfo": [],
-        "rank": 0,
+        "rankInfo": [
+            {
+                "name": "비실이3",
+                "score": "219994"
+            },
+            {
+                "name": "Orie",
+                "score": "215383"
+            },
+            {
+                "name": "비실이2",
+                "score": "196006"
+            },
+            {
+                "name": "달려유모찌",
+                "score": "192361"
+            },
+            {
+                "name": "고고",
+                "score": "191112"
+            },
+            {
+                "name": "소짱",
+                "score": "179763"
+            },
+            {
+                "name": "비실이",
+                "score": "179456"
+            },
+            {
+                "name": "징",
+                "score": "100845"
+            },
+            {
+                "name": "김도현",
+                "score": "95539"
+            },
+            {
+                "name": "뚱뚱이",
+                "score": "41785"
+            },
+            {
+                "name": "마지막",
+                "score": "24"
+            },
+            {
+                "name": "네모네모",
+                "score": "23"
+            },
+            {
+                "name": "나는야",
+                "score": "22"
+            },
+            {
+                "name": "악기바리",
+                "score": "21"
+            },
+            {
+                "name": "모찌킹",
+                "score": "20"
+            },
+            {
+                "name": "미미",
+                "score": "19"
+            },
+            {
+                "name": "한효빈",
+                "score": "18"
+            },
+            {
+                "name": "asd",
+                "score": "17"
+            },
+            {
+                "name": "오지",
+                "score": "16"
+            },
+            {
+                "name": "모모",
+                "score": "14"
+            },
+            {
+                "name": "asdf",
+                "score": "11"
+            },
+            {
+                "name": "diorl",
+                "score": "10"
+            },
+            {
+                "name": "입력창",
+                "score": "8"
+            },
+            {
+                "name": "다주겅",
+                "score": "7"
+            },
+            {
+                "name": "아이",
+                "score": "6"
+            },
+            {
+                "name": "모찌맨",
+                "score": "5"
+            },
+            {
+                "name": "냐냐",
+                "score": "4"
+            },
+            {
+                "name": "모찌",
+                "score": "3"
+            },
+            {
+                "name": "테스트",
+                "score": "2"
+            },
+            {
+                "name": "000p",
+                "score": "0"
+            },
+            {
+                "name": "eveni",
+                "score": "0"
+            },
+            {
+                "name": "xjxj",
+                "score": "0"
+            },
+            {
+                "name": "모찌대장",
+                "score": "0"
+            },
+            {
+                "name": "버그테스트용",
+                "score": "0"
+            },
+            {
+                "name": "응애",
+                "score": "0"
+            },
+            {
+                "name": "키키",
+                "score": "0"
+            }
+        ],
+        "rank": 2,
         "awardType": 0,
         "playerRank": {
-            "name": "",
-            "score": ""
+            "name": "Orie",
+            "score": "215383"
         }
     }
 }

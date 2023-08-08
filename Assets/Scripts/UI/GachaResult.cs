@@ -5,25 +5,90 @@ using UnityEngine.UI;
 
 public class GachaResult : MonoBehaviour
 {
-    List<Image> reults = new List<Image>();
-    [SerializeField] GameObject resultlist;
-
-    public void SetResult(int cnt)
+    [SerializeField] private int count;
+    
+    
+    private float GetGachaPercent(int i)
     {
-        if (reults.Count == 0)
+        switch (i)
         {
-            for (int i = 0; i < resultlist.transform.childCount; i++)
+            case 0: return 27f;
+            case 1: return 29.25f;
+            case 2: return 30f;
+            case 3: return 40f;
+            case 4: return 50f;
+            case 5: return 60f;
+            case 6: return 70f;
+            case 7: return 80f;
+            case 8: return 95f;
+            default: return 100f;
+        }
+    }
+    private int GetLength() { return 10; }
+
+
+    private int[] Results;
+    List<Image> results = new List<Image>();
+
+    private void Start()
+    {
+        if (GachaManager.count == count)
+        {
+            if(results.Count == 0)
             {
-                reults.Add(resultlist.transform.GetChild(i).GetChild(0).GetComponent<Image>());
+                Init();
+            }
+
+            OnGacha();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void Init()
+    {
+        GameObject resultlist = transform.GetChild(1).gameObject;
+
+        for (int i = 0; i < resultlist.transform.childCount; i++)
+        {
+            results.Add(resultlist.transform.GetChild(i).GetChild(0).GetComponent<Image>());
+        }
+
+        Results = new int[results.Count];
+    }
+
+
+    private void OnGacha()
+    {
+        float rand;
+
+        if (count == 10) count++; // 10 + 1
+
+        for (int i = 0; i < count; i++)
+        {
+            rand = Random.Range(0f, 100f);
+            for (int j = 0; j < GetLength(); j++)
+            {
+                if (rand < GetGachaPercent(j))
+                {
+                    Results[i] = j;
+                    break;
+                }
             }
         }
 
+        SetResultUI(count); 
+    }
+    public void SetResultUI(int cnt)
+    {
         for (int i=0; i < cnt; i++)
         {
-            switch (GachaManager.Results[i])
+            switch (Results[i])
             {
                 case 0: case 1: case 2://Skin
-                    SetSkin(i, GachaManager.Results[i]);
+                    SetSkin(i, Results[i]);
                     break;
                 case 3://Gold
                     SetGoldItem(i);
@@ -70,79 +135,80 @@ public class GachaResult : MonoBehaviour
             grade = 10;
         }
 
-        switch (GachaManager.GachaType)
+        switch (GachaManager.page)
         {
-            case "Head":
+            case 1:
                 if (DataManager.Single.Data.inGameData.itemList.headItem.Contains(((Define.HeadSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
-                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                    results[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
                 }
                 else
                 {
                     DataManager.Single.Data.inGameData.itemList.headItem.Add(((Define.HeadSkin)r).ToString());
-                    reults[index].sprite = MainController.main.resource.head_skin_sprite[((Define.HeadSkin)r).ToString()];
+                    results[index].sprite = MainController.main.resource.head_skin_sprite[((Define.HeadSkin)r).ToString()];
                 } 
                 break;
-            case "Cloth":
+            case 2:
                 if (DataManager.Single.Data.inGameData.itemList.clothItem.Contains(((Define.ClothSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
-                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                    results[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
                 }
                 else
                 {
                     DataManager.Single.Data.inGameData.itemList.clothItem.Add(((Define.ClothSkin)r).ToString());
-                    reults[index].sprite = MainController.main.resource.cloth_skin_sprite[((Define.ClothSkin)r).ToString()];
+                    results[index].sprite = MainController.main.resource.cloth_skin_sprite[((Define.ClothSkin)r).ToString()];
                 }
                 break;
-            case "Wing":
+            case 3:
                 if (DataManager.Single.Data.inGameData.itemList.wingItem.Contains(((Define.WingSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
-                    reults[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
+                    results[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
                 }
                 else
                 {
                     DataManager.Single.Data.inGameData.itemList.wingItem.Add(((Define.WingSkin)r).ToString());
-                    reults[index].sprite = MainController.main.resource.wing_skin_sprite[((Define.WingSkin)r).ToString()];
+                    results[index].sprite = MainController.main.resource.wing_skin_sprite[((Define.WingSkin)r).ToString()];
                 }
                 break;
         }
     }
     private void SetGoldItem(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["Gold"];
+        results[index].sprite = MainController.main.resource.sprite["Gold"];
         DataManager.Single.Data.inGameData.inGameItem.coinItemAmount++;
     }
     private void SetTimeItem(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["Time"];
+        results[index].sprite = MainController.main.resource.sprite["Time"];
         DataManager.Single.Data.inGameData.inGameItem.timeItemAmount++;
     }
     private void SetShieldItem(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["Shield"];
+        results[index].sprite = MainController.main.resource.sprite["Shield"];
         DataManager.Single.Data.inGameData.inGameItem.shieldItemAmount++;
     }
     private void SetSaveItem(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["Save"];
+        results[index].sprite = MainController.main.resource.sprite["Save"];
         DataManager.Single.Data.inGameData.inGameItem.saveItemAmount++;
     }
     private void SetStartBoosterItem(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["StartBooster"];
+        results[index].sprite = MainController.main.resource.sprite["StartBooster"];
         DataManager.Single.Data.inGameData.inGameItem.boostItemAmount++;
     }
     private void SetGachaPiece3Item(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["GachaPiece3"];
+        results[index].sprite = MainController.main.resource.sprite["GachaPiece3"];
         DataManager.Single.Data.inGameData.cost.gachaPiece += 3;
     }
     private void SetGachaPiece5Item(int index)
     {
-        reults[index].sprite = MainController.main.resource.sprite["GachaPiece5"];
+        results[index].sprite = MainController.main.resource.sprite["GachaPiece5"];
         DataManager.Single.Data.inGameData.cost.gachaPiece += 5;
     }
+
 }
