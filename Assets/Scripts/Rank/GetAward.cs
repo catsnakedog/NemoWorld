@@ -25,6 +25,8 @@ public class GetAward : MonoBehaviour
                 case 5:
                     MainController.main.UI.UIsetting(Define.UIlevel.Level3, Define.UItype.Award5);
                     return;
+                default:
+                    return;
             }
         }
     }

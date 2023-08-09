@@ -48,8 +48,10 @@ public class SoundController : MonoBehaviour
     {
         BGMSource.volume = DataManager.Single.Data.optionData.volumeBGM;
         SFXSource.volume = DataManager.Single.Data.optionData.volumeSFX;
+        /*
         BGMSource.mute = DataManager.Single.Data.optionData.muteBGM;
         SFXSource.mute = DataManager.Single.Data.optionData.muteSFX;
+        */
         if (BGMNames.Contains(soundName))
         {
             if (BGMSource.isPlaying)

@@ -11,6 +11,7 @@ public class FirstCheck : MonoBehaviour
         {
             DataManager.Single.Data.optionData.volumeBGM = 0.5f;
             DataManager.Single.Data.optionData.volumeSFX = 0.5f;
+            DataManager.Single.Data.inGameData.isFirst = false;
             MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.FirstUI);
         }
         else

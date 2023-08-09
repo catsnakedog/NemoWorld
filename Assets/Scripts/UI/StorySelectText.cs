@@ -27,7 +27,7 @@ public class StorySelectText : MonoBehaviour
         {
             StringBuilder sb = new StringBuilder("stage");
             sb.Append(DataManager.Single.Data.inGameData.crruentQuest.stage);
-            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "하드 모드 해금 미션";
+            transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = "모험 모드 " + DataManager.Single.Data.inGameData.crruentQuest.stage.ToString() + "스테이지\n"+ "해금 미션";
             transform.GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite["bg" + DataManager.Single.Data.inGameData.crruentQuest.stage];
             transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
             transform.GetChild(2).GetChild(1).GetComponent<TMP_Text>().text = DataManager.Single.Data.inGameData.crruentQuest.info;

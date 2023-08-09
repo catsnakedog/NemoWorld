@@ -78,7 +78,20 @@ public class RankLoading : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            if (www.isDone) Award(int.Parse(www.downloadHandler.text));
+            if (www.isDone)
+            {
+                if (www.downloadHandler.text != "null")
+                {
+                    DataManager.Single.Data.inGameData.isRankAward = false;
+                    Award(int.Parse(www.downloadHandler.text));
+                }
+                else
+                {
+                    DataManager.Single.Data.inGameData.isRankAward = false;
+                    DataManager.Single.Data.rankingData.awardType = 11;
+                    MainController.main.UI.UIsetting(Define.UIlevel.Level1, Define.UItype.RankingMode);
+                }
+            }
             else StartCoroutine(AwardCheck());
         }
     }
