@@ -45,6 +45,8 @@ public class Define
         ItemBuyPanel,
         Gacha,
         GachaResult,
+        StoryBook,
+        StoryBookPage,
         MaxCount
     }
 
@@ -185,6 +187,11 @@ public class Define
         NormalSkinBG,//Skin
         EpicSkinBG,
         LegendSkinBG,
+        CutToon1_1,
+        CutToon1_2,
+        CutToon2,
+        CutToon3,
+        CutToon4,
         MaxCount
     }
 
