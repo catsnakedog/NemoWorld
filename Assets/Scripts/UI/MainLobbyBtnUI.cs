@@ -8,11 +8,11 @@ public class MainLobbyBtnUI : MonoBehaviour
     {
         if(DataManager.Single.Data.inGameData.adventureClearList.Count > 2)
         {
-            transform.GetChild(6).gameObject.SetActive(false);
+            transform.GetChild(7).gameObject.SetActive(false);
         }
-        if (DataManager.Single.Data.inGameData.storyClearList.Count > 2)
+        if (DataManager.Single.Data.inGameData.storyClearList.Count > 2 )
         {
-            transform.GetChild(5).gameObject.SetActive(false);
+            transform.GetChild(6).gameObject.SetActive(false);
         }
     }
 }
