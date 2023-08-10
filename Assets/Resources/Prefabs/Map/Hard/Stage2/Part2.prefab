@@ -6518,7 +6518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: Left
   distance: 5
-  speed: 4
+  speed: 3
   whatDistanceItStart: 20
   number: 60
 --- !u!1 &8742883866706015666
