@@ -168,6 +168,6 @@ public class GameResultText : MonoBehaviour
 
     int compare1(RankInfo a, RankInfo b)
     {
-        return int.Parse(a.score) < int.Parse(b.score) ? 1 : -1;
+        return int.Parse(a.score) <= int.Parse(b.score) ? 1 : -1;
     }
 }
