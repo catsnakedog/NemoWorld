@@ -179,6 +179,7 @@ public class Define
         GachaPiece,
         GachaPiece3,//Gacha Shop
         GachaPiece5,
+        GachaPiece10,
         ButtonCircleGrey,
         ButtonCircleYellow,
         HeadBox,

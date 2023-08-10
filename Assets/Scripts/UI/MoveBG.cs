@@ -22,13 +22,16 @@ public class MoveBG : MonoBehaviour
     void Update()
     {
         //if(!DataManager.Single.Data.inGameData.result.Equals("clear") && !DataManager.Single.Data.inGameData.result.Equals("die"))
-        if(ch != null)
+        if (Time.timeScale != 0)
         {
-            if (rt.position.x < ch.transform.position.x - posX)
+            if (ch != null)
             {
-                rt.position = new Vector3(ch.transform.position.x + posX * 2, rt.position.y, rt.position.z);
+                if (rt.position.x < ch.transform.position.x - posX)
+                {
+                    rt.position = new Vector3(ch.transform.position.x + posX * 2, rt.position.y, rt.position.z);
+                }
+                rt.Translate(new Vector3(-(mult * Speed * DataManager.Single.Data.inGameData.speed) * Time.deltaTime, 0, 0));
             }
-            rt.Translate(new Vector3(-(mult * Speed * DataManager.Single.Data.inGameData.speed) * Time.deltaTime, 0, 0));
         }
     }
 }
