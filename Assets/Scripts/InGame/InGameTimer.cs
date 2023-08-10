@@ -21,6 +21,10 @@ public class InGameTimer : MonoBehaviour
         time = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
         left = gameObject.transform.GetChild(1).GetComponent<TMP_Text>();
         right = gameObject.transform.GetChild(2).GetComponent<TMP_Text>();
+
+        left.text = ((int)(DataManager.Single.Data.inGameData.crruentQuest.time / 60f)).ToString();
+        right.text = (DataManager.Single.Data.inGameData.crruentQuest.time % 60).ToString();
+
         StartCoroutine(Timer());
     }
 

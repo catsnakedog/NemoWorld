@@ -46,7 +46,7 @@ public class PlayerResult : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         DataManager.Single.Data.inGameData.speed = 0;
         yield return new WaitForSeconds(2f);
-        gameObject.transform.position = new Vector3(-5.5f, 2f, 0f);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 2f, 0f);
 
         bool flag = true;
 
