@@ -89,15 +89,15 @@ public class GameResultText : MonoBehaviour
                     switch (DataManager.Single.Data.inGameData.stage)
                     {
                         case 1:
-                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadTicket.ToString()];
+                            transform.GetChild(5).GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.HeadTicket.ToString()];
                             DataManager.Single.Data.inGameData.cost.headTicket++;
                             break;
                         case 2:
-                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothTicket.ToString()];
+                            transform.GetChild(5).GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.ClothTicket.ToString()];
                             DataManager.Single.Data.inGameData.cost.clothTicket++;
                             break;
                         case 3:
-                            transform.GetChild(5).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.WingTicket.ToString()];
+                            transform.GetChild(5).GetChild(1).GetComponent<Image>().sprite = MainController.main.resource.sprite[Define.SpriteDict.WingTicket.ToString()];
                             DataManager.Single.Data.inGameData.cost.wingTicket++;
                             break;
                     }
