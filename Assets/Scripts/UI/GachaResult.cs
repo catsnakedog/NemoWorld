@@ -141,6 +141,7 @@ public class GachaResult : MonoBehaviour
                 if (DataManager.Single.Data.inGameData.itemList.headItem.Contains(((Define.HeadSkin)r).ToString()))
                 {
                     DataManager.Single.Data.inGameData.cost.gachaPiece += grade;
+                    Debug.Log("GachaPiece" + grade.ToString());
                     results[index].sprite = MainController.main.resource.sprite["GachaPiece" + grade.ToString()];
                 }
                 else

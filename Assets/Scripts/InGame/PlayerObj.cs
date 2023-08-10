@@ -73,6 +73,16 @@ public class PlayerObj : MonoBehaviour
         DataManager.Single.Data.inGameData.fever = 0;
         DataManager.Single.Data.inGameData.jumpMaxCount = 2;
         DataManager.Single.Data.inGameData.coinGetAmount = 0;
+
+        if(DataManager.Single.Data.inGameData.itemList.IsCommonSkinSetComplete())
+        {
+            DataManager.Single.Data.inGameData.crruentQuest.time += 5;
+        }
+
+        if (DataManager.Single.Data.inGameData.itemList.IsLegendSkinSetComplete())
+        {
+            DataManager.Single.Data.inGameData.crruentQuest.time += 15;
+        }
     }
 
     IEnumerator Boost()

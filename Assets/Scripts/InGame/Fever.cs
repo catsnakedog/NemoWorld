@@ -37,6 +37,12 @@ public class Fever : MonoBehaviour
 
     IEnumerator FeverStart()
     {
+        feverTime = 2;
+        if (DataManager.Single.Data.inGameData.itemList.IsEpicSkinSetComplete())
+        {
+            feverTime = 3;
+        }
+
         effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite["EffectFever"];
         DataManager.Single.Data.inGameData.isFever = true;
         DataManager.Single.Data.inGameData.isGod = true;

@@ -14,6 +14,15 @@ public class GameResultText : MonoBehaviour
     {
         DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount = 0.4f;
 
+        if(DataManager.Single.Data.inGameData.itemList.IsLegendSkinSetComplete())
+        {
+            DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount += 0.05f;
+        }
+        if (DataManager.Single.Data.inGameData.itemList.IsCommonSkinSetComplete())
+        {
+            DataManager.Single.Data.inGameData.inGameItem.goldIncreaseAmount += 0.05f;
+        }
+
         StringBuilder sb = new StringBuilder();
         if (DataManager.Single.Data.inGameData.inGameItem.coinItem)
         {
