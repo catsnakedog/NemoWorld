@@ -10,10 +10,12 @@ public class SkinSelectBtn : EventTriggerEX
     public string type { get; set; }
     public bool Get = false;
 
+    private ScrollRect Scroll;
 
     protected void Start()
     {
         init();
+        Scroll = transform.parent.parent.parent.GetComponent<ScrollRect>();
     }
 
     public string SetUI
@@ -69,12 +71,27 @@ public class SkinSelectBtn : EventTriggerEX
         }
     }
 
-    protected override void OnPointerDown(PointerEventData data)
+    protected override void OnPointerClick(PointerEventData data)
     {
+        MainController.main.sound.Play("ButtonSFX");
+
         if (Get)
         {
             MainController.main.sound.Play("buttonSFX");
             SkinSet.UISet(type, name);
         }
+    }
+
+    protected override void OnBeginDrag(PointerEventData data)
+    {
+        Scroll.OnBeginDrag(data);
+    }
+    protected override void OnDrag(PointerEventData data)
+    {
+        Scroll.OnDrag(data);
+    }
+    protected override void OnEndDrag(PointerEventData data)
+    {
+        Scroll.OnEndDrag(data);
     }
 }
