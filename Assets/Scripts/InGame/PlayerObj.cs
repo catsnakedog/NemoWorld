@@ -87,10 +87,13 @@ public class PlayerObj : MonoBehaviour
 
     IEnumerator Boost()
     {
+        effect.gameObject.SetActive(true);
+        effect.GetComponent<SpriteRenderer>().sprite = MainController.main.resource.sprite["EffectFever"];
         DataManager.Single.Data.inGameData.speed = 6f;
         yield return new WaitForSeconds(10f);
         DataManager.Single.Data.inGameData.speed = 4f;
         isBoost = false;
+        effect.GetComponent<SpriteRenderer>().sprite = null;
     }
 
 
