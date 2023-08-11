@@ -100,7 +100,6 @@ public class PlayerResult : MonoBehaviour
                 DataManager.Single.Data.inGameData.adventureClearList.Add(sb.ToString());
                 sb.Append("HardCutToon");
                 DataManager.Single.Data.inGameData.cutToonName = sb.ToString();
-                isCutToon = true;
             }
         }
 
