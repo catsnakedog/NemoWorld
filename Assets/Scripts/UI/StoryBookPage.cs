@@ -15,9 +15,8 @@ public class StoryBookPage : EventTriggerEX
         
         if (StoryBookPageBtn.page != 1)
         {
-            image.SetActive(false);
             next.SetActive(false);
-
+            image.SetActive(false);
             GetComponent<Image>().sprite = MainController.main.resource.sprite[sb.ToString()];
         }
     }
